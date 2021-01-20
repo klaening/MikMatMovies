@@ -1,3 +1,49 @@
-.card-main {
+.container {
   background-color: var(--bg-card);
+  width: 284px;
+  height: 400px;
+  border-radius: 20px;
+  margin: 20px;
+  padding: 4px;
+}
+.container .movie-poster {
+  display: flex;
+  justify-content: center;
+}
+.container img {
+  height: 300px;
+  border-radius: 20px 20px 0px 0px;
+  object-fit: fill;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.favourited {
+  width: 20px;
+  height: auto;
+  opacity: 0.3;
+}
+
+.favourited.active {
+  width: 20px;
+  height: auto;
+  opacity: 1;
+}
+
+#heartBtn {
+  width: 40px;
+  height: 40px;
+}
+
+#heartImg {
+  width: 20px;
+  height: auto;
+}
+
+#heartImg.active {
+  width: 140px;
+  height: auto;
 }

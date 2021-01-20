@@ -1,4 +1,5 @@
 import "./App.css";
+import "./Components/Global.css";
 
 //Imported components
 import Nav from "./Components/Nav";
@@ -9,6 +10,7 @@ function App() {
     <div className="main">
       <div className="App">
         <Nav />
+        <Card />
         <Card />
       </div>
     </div>
