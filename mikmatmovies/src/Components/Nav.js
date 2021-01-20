@@ -17,6 +17,7 @@ function Nav() {
         <li>
           <a href="#">Favourites</a>
         </li>
+        <li></li>
       </ul>
     </nav>
   );
