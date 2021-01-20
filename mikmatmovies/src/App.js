@@ -1,13 +1,16 @@
-import logo from "./logo.svg";
 import "./App.css";
 
 //Imported components
 import Nav from "./Components/Nav";
+import Card from "./Components/Card";
 
 function App() {
   return (
-    <div className="App">
-      <Nav />
+    <div className="main">
+      <div className="App">
+        <Nav />
+        <Card />
+      </div>
     </div>
   );
 }

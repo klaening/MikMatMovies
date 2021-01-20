@@ -1,0 +1,10 @@
+:root {
+  --bg-primary: #292f41;
+  --bg-navbar: #242935;
+  --bg-card: #495870;
+  --text-primary: #edecec;
+}
+
+* {
+  color: var(--text-primary);
+}
