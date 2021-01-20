@@ -1,6 +1,13 @@
+:root {
+  --background-main: #292f41;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #292f41;
+}
+
+body {
+  background-color: var(--background-main);
 }

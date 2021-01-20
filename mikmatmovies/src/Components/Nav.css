@@ -1,0 +1,23 @@
+:root {
+  --background-navbar: #242935;
+}
+
+.logo {
+  padding: 1vw 0 1vw 4vw;
+  scale: 0.7;
+}
+
+ul {
+  background-color: var(--background-navbar);
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style: none;
+}
+
+a {
+  color: white;
+  list-style: none;
+  text-decoration: none;
+}

@@ -4,9 +4,9 @@ import "./Nav.css";
 function Nav() {
   return (
     <nav>
-      <ul className="nav-ul">
+      <ul>
         <li>
-          <img src="logo3.png" alt="" />
+          <img className="logo" src="logo3.png" alt="" />
         </li>
         <li>
           <a href="#">Top-Rated</a>
