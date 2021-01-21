@@ -1,31 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Card.css";
 import "./Global.css";
 
 function Card() {
+  const [liked, setLiked] = useState(false);
+  const toggleLiked = () => {
+    setLiked(!liked);
+    //anropa databas
+  };
+
   return (
-    <div className="container">
-      <div className="movie-poster">
-        <img src="black-panther-web.jpg" alt="Movie Poster" />
-      </div>
+    <div className="card">
+      <img src="black-panther-web.jpg" alt="Movie Poster" />
 
-      <button id="heartBtn">{/* <img src="heart.png" alt="" /> */}</button>
+      {/* <button onClick={toggleLiked} id="heartBtn"></button> */}
 
-      <div className="card-footer">
+      <div className="footer">
         <p>Movie Title</p>
         <p>Rating</p>
-        <img id="heartImg" src="heart(1).png" alt="" />
+        {liked && <img id="heartImg" src="heart(1).png" alt="" />}
       </div>
     </div>
   );
 }
-
-// const heartImg = document.getElementById("heartImg");
-// const heartBtn = document.getElementById("heartBtn");
-
-// heartBtn.addEventListener("click", () => {
-//   console.log("Hello");
-//   //   heartImg.classList.add("active");
-// });
 
 export default Card;
