@@ -1,0 +1,18 @@
+.ch-overlay {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: blue; */
+}
+
+.buttons button {
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  margin: 0px 16px;
+}
+
+button img {
+  height: 30px;
+}
