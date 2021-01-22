@@ -3,7 +3,7 @@ import "./Components/Global.css";
 
 //Imported components
 import Nav from "./Components/Nav";
-import Card from "./Components/Card";
+import Card from "./Components/Card/Card";
 
 function App() {
   return (

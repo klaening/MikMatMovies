@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CardOverlay from "./CardOverlay.js";
 import "./Card.css";
-import "./Global.css";
+import "../Global.css";
 
 function Card() {
   const [liked, setLiked] = useState(false);
@@ -16,25 +16,24 @@ function Card() {
     <div className="card">
       <div className="body">
         <img src="antman.jpg" alt="Movie Poster" />
-        {/* <button onClick={toggleLiked} id="heartBtn">
+        <button onClick={toggleLiked} id="heartBtn">
           Heart
-        </button> */}
+        </button>
         {/* <div className="hover">
           <button ref={isHovered}>Click me!</button>
          </div> */}
 
         <div className="footer">
-          <p>Movie Title</p>
-
-          <img id="menuImg" src="menu.png" alt="" />
+          <div className="left">
+            <p>Movie Title</p>
+          </div>
 
           <div className="right">
             <p>Rating 7.2</p>
-
             {/* Det här funkar inte... */}
             <i className="fas fa-caret-up"></i>
 
-            {liked && <img id="heartImg" src="heart(1).png" alt="" />}
+            {liked && <img id="heartImg" src="heart-filled.png" alt="" />}
           </div>
         </div>
       </div>
