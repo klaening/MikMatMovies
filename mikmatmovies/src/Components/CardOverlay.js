@@ -15,7 +15,8 @@ function CardOverlay() {
           <img src="message.png" alt="Message button" />
         </button>
         <button onClick={toggleLiked} id="heartBtn">
-          <img src="heart.png" alt="Heart button" />
+          {!liked && <img src="heart(1).png" alt="Heart button" />}
+          {liked && <img src="heart.png" alt="Heart button" />}
         </button>
       </div>
 
@@ -25,6 +26,7 @@ function CardOverlay() {
       </div>
       <div className="quick-read">
         <p>Quick read</p>
+        <img src="menu.png" id="test" alt="" />
       </div>
     </div>
   );
