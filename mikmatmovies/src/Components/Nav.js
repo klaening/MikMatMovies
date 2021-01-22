@@ -2,11 +2,18 @@ import React, { useState } from "react";
 import "./Nav.css";
 
 function Nav() {
+  const [menuVis, setMenuVis] = useState(false);
+  const toggleMenu = () => {
+    setMenuVis(!menuVis);
+  };
+
   return (
     <nav>
       <ul>
         <li>
-          <img className="logo" src="logo3.png" alt="" />
+          <a href="https://www.google.com">
+            <img className="logo" src="logo3.png" alt="" />
+          </a>
         </li>
         <li>
           <a href="#">Top-Rated</a>
@@ -18,9 +25,22 @@ function Nav() {
           <a href="#">Favourites</a>
         </li>
         <li>
-          <img id="menu" src="menu.png" alt="" />
+          <img
+            className="small"
+            onClick={toggleMenu}
+            id="menu"
+            src="menu.png"
+            alt=""
+          />
         </li>
       </ul>
+
+      {menuVis && (
+        <div className="menu">
+          <img className="small" onClick={toggleMenu} src="menu.png" alt="" />
+          <p>Ful meny</p>
+        </div>
+      )}
     </nav>
   );
 }

@@ -1,6 +1,7 @@
 .logo {
   height: 4vw;
   min-height: 40px;
+  cursor: pointer;
 }
 
 ul {
@@ -20,7 +21,24 @@ a {
   text-decoration: none;
 }
 
-#menu {
+.small {
   height: 30px;
+  width: 30px;
   cursor: pointer;
+}
+
+.menu {
+  height: 50vh;
+  width: 30vw;
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+}
+.menu p {
+  color: black;
 }
