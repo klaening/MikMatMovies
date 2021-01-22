@@ -37,7 +37,7 @@ function Nav() {
 
       {menuVis && (
         <div className="menu">
-          <img className="small" onClick={toggleMenu} src="menu.png" alt="" />
+          <img className="small" onClick={toggleMenu} src="close.png" alt="" />
           <p>Ful meny</p>
         </div>
       )}
