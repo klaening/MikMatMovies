@@ -1,0 +1,11 @@
+:root {
+  --bg-primary: #292f41;
+  --bg-navbar: #242935;
+  --bg-card: #495870;
+  --text-primary: #edecec;
+  --shadow-card: #262a3a;
+}
+
+* {
+  color: var(--text-primary);
+}
