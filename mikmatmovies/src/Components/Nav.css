@@ -1,9 +1,12 @@
 .logo {
-  padding: 1vw 0 1vw 4vw;
-  scale: 0.7;
+  height: 4vw;
+  min-height: 40px;
+  cursor: pointer;
 }
 
 ul {
+  padding: 4vw;
+  height: 14vh;
   background-color: var(--bg-navbar);
   display: flex;
   align-items: center;
@@ -16,4 +19,26 @@ a {
   color: white;
   list-style: none;
   text-decoration: none;
+}
+
+.small {
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.menu {
+  height: 50vh;
+  width: 30vw;
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+}
+.menu p {
+  color: black;
 }
