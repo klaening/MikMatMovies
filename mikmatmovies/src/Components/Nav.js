@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Nav.css";
 
 function Nav() {
@@ -17,7 +17,9 @@ function Nav() {
         <li>
           <a href="#">Favourites</a>
         </li>
-        <li></li>
+        <li>
+          <img id="menu" src="menu.png" alt="" />
+        </li>
       </ul>
     </nav>
   );

@@ -3,11 +3,13 @@
 }
 
 .logo {
-  padding: 1vw 0 1vw 4vw;
-  scale: 0.7;
+  height: 4vw;
+  min-height: 40px;
 }
 
 ul {
+  padding: 4vw;
+  height: 14vh;
   background-color: var(--background-navbar);
   display: flex;
   align-items: center;
@@ -20,4 +22,9 @@ a {
   color: white;
   list-style: none;
   text-decoration: none;
+}
+
+#menu {
+  height: 30px;
+  cursor: pointer;
 }
