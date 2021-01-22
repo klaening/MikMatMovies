@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./CardHover.css";
+import "./CardOverlay.css";
 
-function CardHover() {
+function CardOverlay() {
   const [liked, setLiked] = useState(false);
   const toggleLiked = () => {
     setLiked(!liked);
@@ -9,7 +9,7 @@ function CardHover() {
   };
 
   return (
-    <div className="ch-overlay">
+    <div className="overlay-body">
       <div className="buttons">
         <button>
           <img src="message.png" alt="Message button" />
@@ -21,9 +21,13 @@ function CardHover() {
 
       <div className="rating">
         <p>Your rating:</p>
+        <img src="video-example.jpg" alt="" />
+      </div>
+      <div className="quick-read">
+        <p>Quick read</p>
       </div>
     </div>
   );
 }
 
-export default CardHover;
+export default CardOverlay;

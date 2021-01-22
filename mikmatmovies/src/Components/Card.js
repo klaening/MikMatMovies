@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import CardHover from "./CardHover.js";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import CardOverlay from "./CardOverlay.js";
 import "./Card.css";
 import "./Global.css";
 
@@ -15,24 +16,34 @@ function Card() {
     <div className="card">
       <div className="body">
         <img src="antman.jpg" alt="Movie Poster" />
-        <button onClick={toggleLiked} id="heartBtn">
+        {/* <button onClick={toggleLiked} id="heartBtn">
           Heart
-        </button>
+        </button> */}
         {/* <div className="hover">
           <button ref={isHovered}>Click me!</button>
          </div> */}
 
         <div className="footer">
           <p>Movie Title</p>
-          <p>Rating</p>
 
-          {liked && <img id="heartImg" src="heart(1).png" alt="" />}
+          <img id="menuImg" src="menu.png" alt="" />
+
+          <div className="right">
+            <p>Rating 7.2</p>
+
+            {/* Det här funkar inte... */}
+            <i className="fas fa-caret-up"></i>
+
+            {liked && <img id="heartImg" src="heart(1).png" alt="" />}
+          </div>
         </div>
       </div>
 
       <div className="overlay">
-        {/* Behöver jag skicka med en prop? */}
-        <CardHover />
+        <div id="hidden-overlay">
+          {/* Behöver jag skicka med en prop? */}
+          <CardOverlay />
+        </div>
       </div>
     </div>
   );
