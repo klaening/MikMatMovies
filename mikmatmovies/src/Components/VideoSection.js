@@ -8,16 +8,20 @@ import "./Global.css";
 export class VideoSection extends Component {
   render() {
     return (
-      <Carousel interval={15000}>
+      <Carousel interval={15000} autoPlay={true} loop={true}>
         {VideoData.map((video) => (
           <Carousel.Item id="item-data" data-interval="100">
             <div className="item-container">
               <div className="desc-container">
-                <h3>{video.title}</h3>
-                <h6>{video.description}</h6>
-                <a href={video.VideoURL}>Watch whole trailer here</a>
-                <h6>Realease Year: {video.RealeaseYear}</h6>
-                <img src={video.ImageURL} alt="" />
+                <div className="text-box">
+                  <h3>{video.title}</h3>
+                  <h6>{video.description}</h6>
+                  <a href={video.VideoURL}>Watch whole trailer here</a>
+                  <h6>Realease Year: {video.RealeaseYear}</h6>
+                </div>
+                <div className="Image-box">
+                  <img src={video.ImageURL} alt="" />
+                </div>
               </div>
               <div className="video-container">
                 <iframe

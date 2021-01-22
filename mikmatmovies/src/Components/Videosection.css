@@ -11,14 +11,26 @@
 }
 
 .desc-container {
-  width: 30%;
+  width: 80%;
+  display: flex;
   background-color: var(--bg-navbar);
   padding: 20px;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .desc-container img {
   height: 200px;
   width: auto;
+  float: left;
+}
+
+.text-box {
+  width: 70%;
+}
+
+.image-box {
+  width: 30%;
 }
 
 .video-container {
@@ -29,10 +41,15 @@
 
 .carousel.slide {
   display: flex;
-  width: 100%;
+  right: -3%;
+  width: 95%;
 }
 
 .carousel-inner {
   width: 100%;
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.carousel-control-prev {
+  position: absolute;
 }
