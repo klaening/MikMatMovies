@@ -3,13 +3,13 @@ import "./Components/Global.css";
 
 //Imported components
 import Nav from "./Components/Nav";
-import Preview from "./Components/Preview";
+import VideoSection from "./Components/VideoSection";
 
 function App() {
   return (
     <div className="App">
       <Nav />
-      <Preview />
+      <VideoSection />
     </div>
   );
 }
