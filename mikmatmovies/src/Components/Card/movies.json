@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "image": "black-panther-web.jpg",
+    "title": "Black Panther",
+    "rating": 7.6
+  },
+  {
+    "id": 2,
+    "image": "antman.jpg",
+    "title": "Ant Man",
+    "rating": 6.9
+  }
+]
