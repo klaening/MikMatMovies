@@ -2,13 +2,7 @@ import React, { useState } from "react";
 import "./CardOverlay.css";
 import HalfRating from "../Imported/HalfRating.js";
 
-function CardOverlay() {
-  const [liked, setLiked] = useState(false);
-  const toggleLiked = () => {
-    setLiked(!liked);
-    //anropa databas
-  };
-
+const CardOverlay = (props) => {
   const [message, setMessage] = useState(false);
   const toggleMessage = () => {
     setMessage(!message);
@@ -26,9 +20,9 @@ function CardOverlay() {
             />
           </button>
         </a>
-        <button onClick={toggleLiked} id="heartBtn">
+        <button onClick={props.toggleLiked} id="heartBtn">
           <img
-            src={liked ? "heart-filled.png" : "heart.png"}
+            src={props.liked ? "heart-filled.png" : "heart.png"}
             alt="Heart button"
           />
         </button>
@@ -46,6 +40,6 @@ function CardOverlay() {
       </div>
     </div>
   );
-}
+};
 
 export default CardOverlay;

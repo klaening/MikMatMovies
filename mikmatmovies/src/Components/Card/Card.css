@@ -40,14 +40,11 @@
   display: flex;
   justify-content: space-between;
 }
-.footer .middle {
-  width: 20px;
-  /* padding-top: 10px; */
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
+.footer .left {
+  max-width: 40%;
 }
 .footer .right {
+  max-width: 40%;
   display: flex;
 }
 

@@ -17,9 +17,6 @@ const Card = (props) => {
     <div className="card">
       <div className="body">
         <img src={props.movie.image} alt="Movie Poster" />
-        <button onClick={toggleLiked} id="heartBtn">
-          Heart
-        </button>
         {/* <div className="hover">
           <button ref={isHovered}>Click me!</button>
          </div> */}
@@ -41,8 +38,7 @@ const Card = (props) => {
 
       <div className="overlay">
         <div id="hidden-overlay">
-          {/* Behöver jag skicka med en prop? */}
-          <CardOverlay />
+          <CardOverlay liked={liked} toggleLiked={toggleLiked} />
         </div>
       </div>
     </div>
