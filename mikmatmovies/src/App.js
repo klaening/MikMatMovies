@@ -3,15 +3,14 @@ import "./Components/Global.css";
 
 //Imported components
 import Nav from "./Components/Nav";
-import Card from "./Components/Card/Card";
+import CardHolder from "./Components/Card/CardHolder";
 
 function App() {
   return (
     <div className="main">
       <div className="App">
         <Nav />
-        <Card />
-        <Card />
+        <CardHolder />
       </div>
     </div>
   );

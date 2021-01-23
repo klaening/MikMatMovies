@@ -20,13 +20,17 @@ function CardOverlay() {
         {/* Ska tas till en annan sida när man klickar på message */}
         <a href="#">
           <button onClick={toggleMessage} id="messageBtn">
-            {!message && <img src="message-filled.png" alt="Message button" />}
-            {message && <img src="message.png" alt="Message button" />}
+            <img
+              src={message ? "message-filled.png" : "message.png"}
+              alt="Message button"
+            />
           </button>
         </a>
         <button onClick={toggleLiked} id="heartBtn">
-          {!liked && <img src="heart-filled.png" alt="Heart button" />}
-          {liked && <img src="heart.png" alt="Heart button" />}
+          <img
+            src={liked ? "heart-filled.png" : "heart.png"}
+            alt="Heart button"
+          />
         </button>
       </div>
 
