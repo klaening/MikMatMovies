@@ -1,5 +1,6 @@
 .item-container {
   display: flex;
+  justify-content: center;
   padding: 20px;
   background-color: var(--bg-primary);
   height: 50vh;
@@ -42,17 +43,20 @@
 
 .carousel.slide {
   display: flex;
-  right: -4.3%;
   width: 97%;
   height: 54vh;
 }
 
 .carousel-inner {
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-  margin-right: 100px;
 }
 
 a.carousel-control-next {
-  width: 30px;
+  width: 60px;
   margin-right: 20%;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
 }

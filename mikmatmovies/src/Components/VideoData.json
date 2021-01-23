@@ -6,7 +6,7 @@
     "rating": "7.2",
     "description": "Arthur Curry, the human-born heir to the underwater kingdom of Atlantis, goes on a quest to prevent a war between the worlds of ocean and land.",
     "ImageURL": "aquaman2.jpg",
-    "VideoURL": "https://www.imdb.com/video/imdb/vi3588536857/imdb/embed?autoplay=1"
+    "VideoURL": "https://www.imdb.com/video/imdb/vi3588536857/imdb/embed?autoplay=1&allowfullscreen=1&mute=1"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "rating": "4",
     "description": "Armed with a super-suit with the astonishing ability to shrink in scale but increase in strength, cat burglar Scott Lang must embrace his inner hero and help his mentor, Dr. Hank Pym, plan and pull off a heist that will save the world. ",
     "ImageURL": "antman1.jpg",
-    "VideoURL": "https://www.imdb.com/video/imdb/vi3829444633/imdb/embed?autoplay=1&allowfullscreen=1"
+    "VideoURL": "https://www.imdb.com/video/imdb/vi3829444633/imdb/embed?autoplay=1&mute=1"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "rating": "4.5",
     "description": "Bruce Banner, a scientist on the run from the U.S. Government, must find a cure for the monster he turns into whenever he loses his temper.",
     "ImageURL": "Hulk.jpg",
-    "VideoURL": "https://www.imdb.com/video/imdb/vi1726152985/imdb/embed?autoplay=1"
+    "VideoURL": "https://www.imdb.com/video/imdb/vi1726152985/imdb/embed?autoplay=1&mute=1"
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "rating": "5.8",
     "description": "A working-class African-American father tries to raise his family in the 1950s, while coming to terms with the events of his life.",
     "ImageURL": "fences.jpg",
-    "VideoURL": "https://www.imdb.com/video/imdb/vi1272624665/imdb/embed?autoplay=1"
+    "VideoURL": "https://www.imdb.com/video/imdb/vi1272624665/imdb/embed?autoplay=1&mute=1"
   },
   {
     "id": 5,
@@ -42,6 +42,6 @@
     "rating": "6.6",
     "description": "When New York is put under siege by Oscorp, it is up to Spider-Man to save the city he swore to protect as well as his loved ones. ",
     "ImageURL": "spiderman2.jpg",
-    "VideoURL": "https://www.imdb.com/video/imdb/vi694921753/imdb/embed?autoplay=1"
+    "VideoURL": "https://www.imdb.com/video/imdb/vi694921753/imdb/embed?autoplay=1&mute=1"
   }
 ]
