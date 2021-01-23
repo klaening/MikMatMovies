@@ -8,9 +8,15 @@ import "./Global.css";
 export class VideoSection extends Component {
   render() {
     return (
-      <Carousel interval={15000} autoPlay={true} prevIcon={false}>
+      <Carousel
+        interval={25000}
+        autoPlay={true}
+        prevIcon={false}
+        keyboard={false}
+        pauseOnHover={true}
+      >
         {VideoData.map((video) => (
-          <Carousel.Item id="item-data" data-interval="100" key={video.id}>
+          <Carousel.Item id="item-data" key={video.id}>
             <div className="item-container">
               <div className="desc-container">
                 <div className="text-box">

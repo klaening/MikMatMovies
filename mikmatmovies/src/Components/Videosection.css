@@ -36,18 +36,23 @@
 }
 
 .video-container {
-  width: 100vw;
+  width: 100%;
   height: auto;
 }
 
 .carousel.slide {
   display: flex;
   right: -4.3%;
-  width: 99%;
+  width: 97%;
   height: 54vh;
 }
 
 .carousel-inner {
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
   margin-right: 100px;
+}
+
+a.carousel-control-next {
+  width: 30px;
+  margin-right: 20%;
 }
