@@ -32,7 +32,7 @@ const CardOverlay = (props) => {
         <p>Your rating:</p>
         <HalfRating />
       </div>
-      <div className="quick-read">
+      <div onClick={props.toggleQuickRead} className="quick-read">
         <p className="transition600" id="qrText">
           Quick read
         </p>

@@ -44,12 +44,18 @@ const Card = (props) => {
 
       <section className="overlay">
         <div id="hidden-overlay">
-          <CardOverlay liked={liked} toggleLiked={toggleLiked} />
+          <CardOverlay
+            toggleQuickRead={toggleQuickRead}
+            liked={liked}
+            toggleLiked={toggleLiked}
+          />
         </div>
 
-        <div id="quick-read">
-          <QuickRead movie={props.movie} />
-        </div>
+        {quickRead ? (
+          <div id="quick-read">
+            <QuickRead quickRead={quickRead} movie={props.movie} />
+          </div>
+        ) : null}
       </section>
     </div>
   );
