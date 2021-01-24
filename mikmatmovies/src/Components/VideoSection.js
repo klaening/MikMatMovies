@@ -14,7 +14,6 @@ export class VideoSection extends Component {
           autoPlay={true}
           prevIcon={false}
           keyboard={false}
-          pauseOnHover={true}
         >
           {VideoData.map((video) => (
             <Carousel.Item id="item-data" key={video.id}>
@@ -37,7 +36,7 @@ export class VideoSection extends Component {
                     src={video.VideoURL}
                     frameBorder="0"
                     gesture="media"
-                    allow="autoplay; encrypted-media"
+                    allow="autoplay; encrypted-media; fullscreen"
                   ></iframe>
                   <Carousel.Caption>
                     {/* <h3>RATING: {video.rating}</h3> */}
