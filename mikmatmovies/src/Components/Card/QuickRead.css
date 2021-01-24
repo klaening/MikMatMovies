@@ -1,0 +1,11 @@
+.quick-read-body {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(163, 163, 253);
+  border-radius: 10px;
+  opacity: 0.5;
+}
+
+.article {
+  padding: 5px;
+}

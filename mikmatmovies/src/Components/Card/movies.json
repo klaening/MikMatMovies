@@ -2,7 +2,7 @@
   {
     "id": 1,
     "image": "black-panther-web.jpg",
-    "title": "Black Panther with a long name",
+    "title": "Black Panther with a seriously long name",
     "rating": 7.6
   },
   {
@@ -10,5 +10,11 @@
     "image": "antman.jpg",
     "title": "Ant Man",
     "rating": 6.9
+  },
+  {
+    "id": 3,
+    "image": "moonlight-ver2-xlg.png",
+    "title": "Moonlight",
+    "rating": 7.2
   }
 ]
