@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./CardOverlay.css";
+import "../Global.css";
 import HalfRating from "../Imported/HalfRating.js";
 import QuickRead from "./QuickRead";
 
@@ -9,12 +10,12 @@ const CardOverlay = (props) => {
     setMessage(!message);
   };
 
-  const [className, setClassName] = useState("quick-read");
+  const [className, setClassName] = useState("quickRead-inactive");
   const toggleClassName = () => {
-    if (className === "quick-read") {
-      setClassName((className) => className + " active");
+    if (className === "quickRead-inactive") {
+      setClassName("quickRead-active");
     } else {
-      setClassName("quick-read");
+      setClassName("quickRead-inactive");
     }
   };
 

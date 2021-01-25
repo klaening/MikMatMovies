@@ -40,9 +40,9 @@ const QuickRead = (props) => {
         </div>
       </div>
       {quickReadActive && (
-        <div className="review">
-          <article className="article">
-            <p>{props.movie.title}</p>
+        <div className="scroll">
+          <article>
+            <h4>{props.movie.title}</h4>
             <p>{props.movie.description}</p>
           </article>
         </div>
