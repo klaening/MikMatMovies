@@ -1,8 +1,10 @@
+import { Divider } from "@material-ui/core";
 import React, { useState } from "react";
 import "./QuickRead.css";
 
 const QuickRead = (props) => {
-  const [quickReadClass, setQuickReadClass] = useState("quick-read-body");
+  const qrClassName = "quick-read-body";
+  const [quickReadClass, setQuickReadClass] = useState(qrClassName);
 
   const [quickReadActive, setQuickReadActive] = useState(false);
   const toggleQuickRead = () => {
@@ -10,9 +12,9 @@ const QuickRead = (props) => {
     console.log(quickReadActive);
 
     if (!quickReadActive) {
-      setQuickReadClass((quickReadClass) => quickReadClass + " activeTest");
+      setQuickReadClass(qrClassName + " active");
     } else {
-      setQuickReadClass("quick-read-body");
+      setQuickReadClass(qrClassName);
     }
 
     console.log(quickReadClass);
@@ -21,23 +23,43 @@ const QuickRead = (props) => {
   return (
     <div className={quickReadClass}>
       <div className="icon-holder">
-        <div
-          className="icon"
-          onClick={function () {
-            toggleQuickRead();
-            props.toggleClassName();
-          }}
-        >
-          <p className="transition600 " id="qrText">
-            Quick read
-          </p>
-          <img
-            className="transition600"
-            id="qrIcon"
-            src="menu.png"
-            alt="Quick read"
-          />
-        </div>
+        {!quickReadActive ? (
+          <div
+            className="icon"
+            onClick={function () {
+              toggleQuickRead();
+              props.toggleClassName();
+            }}
+          >
+            <p className="transition600 " id="qrText">
+              Quick read
+            </p>
+            <img
+              className="transition600"
+              id="qrIcon"
+              src="menu.png"
+              alt="Quick read"
+            />
+          </div>
+        ) : (
+          <div
+            className="icon"
+            onClick={function () {
+              toggleQuickRead();
+              props.toggleClassName();
+            }}
+          >
+            <p className="transition600 " id="qrText">
+              Close
+            </p>
+            <img
+              className="transition600"
+              id="qrIcon"
+              src="close.png"
+              alt="Quick read"
+            />
+          </div>
+        )}
       </div>
       {quickReadActive && (
         <div className="scroll">

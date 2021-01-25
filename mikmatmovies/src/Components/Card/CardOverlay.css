@@ -46,10 +46,6 @@
   z-index: 1;
 }
 
-.MuiRating-label {
-  z-index: 0;
-}
-
 #heartBtn img {
   transition: 1s;
 }
