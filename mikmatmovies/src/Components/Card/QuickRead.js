@@ -1,48 +1,45 @@
-import { red } from "@material-ui/core/colors";
 import React, { useState } from "react";
 import "./QuickRead.css";
 
 const QuickRead = (props) => {
-  const [twoClassName, setTwoClassName] = useState("quick-read-body");
+  const [quickReadClass, setQuickReadClass] = useState("quick-read-body");
 
-  const [quickRead, setQuickRead] = useState(false);
+  const [quickReadActive, setQuickReadActive] = useState(false);
   const toggleQuickRead = () => {
-    setQuickRead(!quickRead);
-    console.log(quickRead);
+    setQuickReadActive(!quickReadActive);
+    console.log(quickReadActive);
 
-    if (!quickRead) {
-      setTwoClassName((twoClassName) => twoClassName + " activeTest");
+    if (!quickReadActive) {
+      setQuickReadClass((quickReadClass) => quickReadClass + " activeTest");
     } else {
-      setTwoClassName("quick-read-body");
+      setQuickReadClass("quick-read-body");
     }
 
-    console.log(twoClassName);
+    console.log(quickReadClass);
   };
 
-  //   const quickReadClass = "";
-  //   if (this.quickRead) {
-  //   }
-
   return (
-    <div className={twoClassName}>
-      <div
-        className="icon"
-        onClick={function () {
-          toggleQuickRead();
-          props.toggleClassName();
-        }}
-      >
-        <p className="transition600 " id="qrText">
-          Quick read
-        </p>
-        <img
-          className="transition600"
-          id="qrIcon"
-          src="menu.png"
-          alt="Quick read"
-        />
+    <div className={quickReadClass}>
+      <div className="icon-holder">
+        <div
+          className="icon"
+          onClick={function () {
+            toggleQuickRead();
+            props.toggleClassName();
+          }}
+        >
+          <p className="transition600 " id="qrText">
+            Quick read
+          </p>
+          <img
+            className="transition600"
+            id="qrIcon"
+            src="menu.png"
+            alt="Quick read"
+          />
+        </div>
       </div>
-      {quickRead && (
+      {quickReadActive && (
         <div className="review">
           <article className="article">
             <p>{props.movie.title}</p>

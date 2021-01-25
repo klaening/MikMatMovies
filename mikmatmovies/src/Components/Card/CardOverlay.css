@@ -1,4 +1,7 @@
 .full {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 100%;
 }
 
@@ -9,7 +12,7 @@
   justify-content: space-around;
   width: 100%;
   height: 70%;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 .overlay-body button {
   height: 50px;
@@ -34,22 +37,26 @@
   transition: 0.6s;
 }
 
-.quick-read {
-  position: absolute;
-  bottom: 0;
+/* .quick-read {
   display: flex;
   justify-content: center;
   align-items: flex-end;
   width: 100%;
   height: 20%;
-}
+  z-index: 1;
+} */
 .active {
+  background-color: seagreen;
   position: absolute;
   bottom: 0;
-  display: flex;
-  justify-content: center;
-  width: 100%;
+  align-items: flex-start;
   height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.MuiRating-label {
+  z-index: 0;
 }
 
 #heartBtn img {

@@ -12,7 +12,7 @@ const CardOverlay = (props) => {
   const [className, setClassName] = useState("quick-read");
   const toggleClassName = () => {
     if (className === "quick-read") {
-      setClassName("active");
+      setClassName((className) => className + " active");
     } else {
       setClassName("quick-read");
     }
