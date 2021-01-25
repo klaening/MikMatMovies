@@ -1,4 +1,4 @@
-.quick-read-body {
+.quick-read {
   border-radius: 10px;
   height: 0;
   display: flex;
@@ -23,6 +23,22 @@
 
 article p {
   font-size: 0.8em;
+}
+
+.icon-close {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+  transform: translateY(-14px);
+}
+.icon-close:hover #qrIcon {
+  transform: translateY(14px);
+}
+.icon-close:hover #qrText {
+  transform: translateY(14px);
+  opacity: 1;
 }
 
 .icon {

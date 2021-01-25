@@ -1,9 +1,8 @@
-import { Divider } from "@material-ui/core";
 import React, { useState } from "react";
 import "./QuickRead.css";
 
 const QuickRead = (props) => {
-  const qrClassName = "quick-read-body";
+  const qrClassName = "quick-read";
   const [quickReadClass, setQuickReadClass] = useState(qrClassName);
 
   const [quickReadActive, setQuickReadActive] = useState(false);
@@ -21,7 +20,7 @@ const QuickRead = (props) => {
   };
 
   return (
-    <div className={quickReadClass}>
+    <body className={quickReadClass}>
       <div className="icon-holder">
         {!quickReadActive ? (
           <div
@@ -43,7 +42,7 @@ const QuickRead = (props) => {
           </div>
         ) : (
           <div
-            className="icon"
+            className="icon-close"
             onClick={function () {
               toggleQuickRead();
               props.toggleClassName();
@@ -69,7 +68,7 @@ const QuickRead = (props) => {
           </article>
         </div>
       )}
-    </div>
+    </body>
   );
 };
 
