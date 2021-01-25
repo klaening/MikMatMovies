@@ -1,11 +1,37 @@
 .quick-read-body {
   width: 100%;
-  height: 100%;
-  background-color: rgb(163, 163, 253);
   border-radius: 10px;
-  opacity: 0.5;
+  overflow: hidden;
+}
+
+.activeTest {
+  background-color: seagreen;
+  transition: 1s;
 }
 
 .article {
   padding: 5px;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+.icon:hover #qrIcon {
+  transform: translateY(-14px);
+}
+.icon:hover #qrText {
+  transform: translateY(-14px);
+  opacity: 1;
+}
+
+#qrText {
+  opacity: 0;
+}
+
+#qrIcon {
+  margin-top: 2px;
+  width: 20px;
 }

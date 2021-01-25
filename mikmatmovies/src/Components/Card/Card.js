@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CardOverlay from "./CardOverlay.js";
-import QuickRead from "./QuickRead.js";
-import movies from "./movies.json";
 import "./Card.css";
 import "../Global.css";
 
@@ -13,19 +11,10 @@ const Card = (props) => {
     //anropa databas
   };
 
-  const [quickRead, setQuickRead] = useState(false);
-  const toggleQuickRead = () => {
-    setQuickRead(!quickRead);
-  };
-  //   const [hoverRef, isHovered] = useHover();
-
   return (
     <div className="card">
       <section className="body">
         <img src={props.movie.image} alt="Movie Poster" />
-        {/* <div className="hover">
-          <button ref={isHovered}>Click me!</button>
-         </div> */}
 
         <footer>
           <div className="left">
@@ -45,17 +34,11 @@ const Card = (props) => {
       <section className="overlay">
         <div id="hidden-overlay">
           <CardOverlay
-            toggleQuickRead={toggleQuickRead}
+            movie={props.movie}
             liked={liked}
             toggleLiked={toggleLiked}
           />
         </div>
-
-        {quickRead ? (
-          <div id="quick-read">
-            <QuickRead quickRead={quickRead} movie={props.movie} />
-          </div>
-        ) : null}
       </section>
     </div>
   );
