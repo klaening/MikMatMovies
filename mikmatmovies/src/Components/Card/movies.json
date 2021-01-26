@@ -22,16 +22,9 @@
   },
   {
     "id": 4,
-    "image": "moonlight-ver2-xlg.png",
-    "title": "Moonlight",
-    "rating": 7.2,
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium nulla pariatur laborum voluptatem. Iste, soluta. Animi at ut impedit, fuga maiores enim ab iure, fugit architecto quos, tenetur voluptatibus facilis!"
-  },
-  {
-    "id": 5,
-    "image": "moonlight-ver2-xlg.png",
-    "title": "Moonlight",
-    "rating": 7.2,
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium nulla pariatur laborum voluptatem. Iste, soluta. Animi at ut impedit, fuga maiores enim ab iure, fugit architecto quos, tenetur voluptatibus facilis!"
+    "image": "https://m.media-amazon.com/images/M/MV5BMjMyNDkzMzI1OF5BMl5BanBnXkFtZTgwODcxODg5MjI@._V1_UX182_CR0,0,182,268_AL_.jpg",
+    "title": "Thor: Ragnarok",
+    "rating": 7.9,
+    "description": "Imprisoned on the planet Sakaar, Thor must race against time to return to Asgard and stop Ragnarök, the destruction of his world, at the hands of the powerful and ruthless villain Hela. "
   }
 ]

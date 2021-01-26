@@ -32,7 +32,7 @@
   scale: 1.1;
 }
 
-/* .far {
+.far {
   color: blue;
   stroke: black;
   stroke-width: 10;
@@ -41,7 +41,7 @@
   stroke: black;
   stroke-width: 10;
   color: rgb(211, 26, 26);
-} */
+}
 
 .rating {
   display: flex;

@@ -3,7 +3,7 @@ import Card from "./Card";
 import movies from "./movies.json";
 import "./CardHolder.css";
 
-function CardHolder() {
+const CardHolder = () => {
   return (
     <div className="cardHolder-body">
       <header>
@@ -18,6 +18,6 @@ function CardHolder() {
       </section>
     </div>
   );
-}
+};
 
 export default CardHolder;

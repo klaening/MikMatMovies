@@ -21,6 +21,9 @@
   scrollbar-color: dark;
 }
 
+article h4 {
+  margin-bottom: 5px;
+}
 article p {
   font-size: 0.8em;
 }
