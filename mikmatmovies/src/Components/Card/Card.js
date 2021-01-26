@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import CardOverlay from "./CardOverlay.js";
-import "./Card.css";
+import style from "./Card.module.css";
 import "../Global.css";
 
 const Card = (props) => {
@@ -11,25 +11,25 @@ const Card = (props) => {
   };
 
   return (
-    <div className="card">
-      <section className="body">
+    <div className={style.main}>
+      <section className={style.body}>
         <img src={props.movie.image} alt="Movie Poster" />
 
         <footer>
-          <div className="left">
+          <div className={style.left}>
             <p>{props.movie.title}</p>
           </div>
 
-          <div className="right">
+          <div className={style.right}>
             <p>Rating {props.movie.rating}</p>
 
-            {liked && <img id="heartImg" src="heart-filled.png" alt="" />}
+            {liked && <img id={style.heartImg} src="heart-filled.png" alt="" />}
           </div>
         </footer>
       </section>
 
-      <section className="overlay">
-        <div id="hidden-overlay">
+      <section className={style.overlay}>
+        <div id={style.hiddenOverlay}>
           <CardOverlay
             movie={props.movie}
             liked={liked}

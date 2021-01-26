@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./CardOverlay.css";
+import style from "./CardOverlay.module.css";
 import "../Global.css";
 import HalfRating from "../Imported/HalfRating.js";
 import QuickRead from "./QuickRead";
@@ -13,19 +13,19 @@ const CardOverlay = (props) => {
   const [className, setClassName] = useState("quickRead-inactive");
   const toggleClassName = () => {
     if (className === "quickRead-inactive") {
-      setClassName("quickRead-active");
+      setClassName(style.quickRead);
     } else {
       setClassName("quickRead-inactive");
     }
   };
 
   return (
-    <div className="full">
-      <div className="overlay-body">
-        <div className="buttons">
+    <div className={style.main}>
+      <div className={style.overlayBody}>
+        <div className={style.buttons}>
           {/* Ska tas till en annan sida när man klickar på message */}
           <a href="#">
-            <button onClick={toggleMessage} id="messageBtn">
+            <button id={style.messageBtn} onClick={toggleMessage}>
               {/* <i
                 className={
                   message ? "far fa-comment fa-2x" : "fas fa-comment fa-2x"
@@ -37,7 +37,7 @@ const CardOverlay = (props) => {
               />
             </button>
           </a>
-          <button onClick={props.toggleLiked} id="heartBtn">
+          <button id={style.heartBtn} onClick={props.toggleLiked}>
             {/* <i className={!props.liked ? "far fa-heart" : "fas fa-heart"}></i> */}
             <img
               src={props.liked ? "heart-filled.png" : "heart.png"}
@@ -46,7 +46,7 @@ const CardOverlay = (props) => {
           </button>
         </div>
 
-        <div className="rating">
+        <div className={style.rating}>
           <p>Your rating:</p>
           <HalfRating />
         </div>

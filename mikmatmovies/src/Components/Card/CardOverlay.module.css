@@ -1,11 +1,11 @@
-.full {
+.main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
 }
 
-.overlay-body {
+.overlayBody {
   padding-top: 50px;
   display: flex;
   flex-direction: column;
@@ -15,7 +15,7 @@
   height: 70%;
   border-radius: 12px;
 }
-.overlay-body button {
+.overlayBody button {
   height: 50px;
   width: 50px;
   border-radius: 50px;
@@ -24,11 +24,11 @@
   cursor: pointer;
   transition: 0.1s ease;
 }
-.overlay-body button img {
+.overlayBody button img {
   height: 30px;
   width: auto;
 }
-.overlay-body button:hover {
+.overlayBody button:hover {
   scale: 1.1;
 }
 
@@ -53,7 +53,7 @@
   transition: 0.6s;
 }
 
-.quickRead-active {
+.quickRead {
   position: absolute;
   bottom: 0;
   align-items: flex-start;

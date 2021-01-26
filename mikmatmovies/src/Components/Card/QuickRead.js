@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "./QuickRead.css";
 
 const QuickRead = (props) => {
-  const qrClassName = "quick-read";
+  const qrClassName = "quickRead";
   const [quickReadClass, setQuickReadClass] = useState(qrClassName);
 
   const [quickReadActive, setQuickReadActive] = useState(false);
@@ -31,7 +31,7 @@ const QuickRead = (props) => {
               props.toggleClassName();
             }}
           >
-            <p className="transition600 " id="qrText">
+            <p className="transition600" id="qrText">
               Quick read
             </p>
             <i className="fa fa-caret-up fa-2x transition600" id="qrIcon"></i>
@@ -44,7 +44,7 @@ const QuickRead = (props) => {
               props.toggleClassName();
             }}
           >
-            <p className="transition600 " id="qrText">
+            <p className="transition600" id="qrText">
               Close
             </p>
             <i

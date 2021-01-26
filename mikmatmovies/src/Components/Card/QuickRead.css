@@ -1,4 +1,4 @@
-.quick-read {
+.quickRead {
   border-radius: 10px;
   height: 0;
   display: flex;
@@ -39,6 +39,10 @@ article p {
 .qrIcon-close:hover #qrText {
   transform: translateY(14px);
   opacity: 1;
+}
+
+.transition600 {
+  transition: 0.6s transform 0s;
 }
 
 .qrIcon {

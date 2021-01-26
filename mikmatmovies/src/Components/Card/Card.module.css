@@ -1,4 +1,4 @@
-.card {
+.main {
   position: relative;
   background-color: var(--bg-card);
   width: 200px;
@@ -7,11 +7,11 @@
   transition: 0.6s;
   box-shadow: 4px 5px var(--shadow-card);
 }
-.card:hover .body {
+.main:hover .body {
   filter: blur(2px);
   opacity: 0.4;
 }
-.card:hover #hidden-overlay {
+.main:hover #hiddenOverlay {
   display: block;
 }
 
@@ -54,7 +54,7 @@ footer .right {
   opacity: 0;
 }
 
-#hidden-overlay {
+#hiddenOverlay {
   position: absolute;
   top: 0;
   width: 100%;
