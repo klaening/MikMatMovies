@@ -6,6 +6,7 @@
 }
 
 .overlay-body {
+  padding-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,11 +22,26 @@
   margin: 0px 16px;
   border: none;
   cursor: pointer;
+  transition: 0.1s ease;
 }
 .overlay-body button img {
   height: 30px;
   width: auto;
 }
+.overlay-body button:hover {
+  scale: 1.1;
+}
+
+/* .far {
+  color: blue;
+  stroke: black;
+  stroke-width: 10;
+}
+.fas {
+  stroke: black;
+  stroke-width: 10;
+  color: rgb(211, 26, 26);
+} */
 
 .rating {
   display: flex;

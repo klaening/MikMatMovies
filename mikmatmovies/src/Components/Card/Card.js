@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CardOverlay from "./CardOverlay.js";
 import "./Card.css";
 import "../Global.css";
@@ -23,8 +22,6 @@ const Card = (props) => {
 
           <div className="right">
             <p>Rating {props.movie.rating}</p>
-            {/* Det här funkar inte... */}
-            <i className="fas fa-caret-up"></i>
 
             {liked && <img id="heartImg" src="heart-filled.png" alt="" />}
           </div>
