@@ -25,7 +25,7 @@ article p {
   font-size: 0.8em;
 }
 
-.qrIcon-close {
+.qrIconClose {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -33,10 +33,10 @@ article p {
   cursor: pointer;
   transform: translateY(-14px);
 }
-.qrIcon-close:hover #qrIcon-close {
+.qrIconClose:hover #qrIconClose {
   transform: translateY(14px);
 }
-.qrIcon-close:hover #qrText {
+.qrIconClose:hover #qrText {
   transform: translateY(14px);
   opacity: 1;
 }
@@ -59,7 +59,7 @@ article p {
   transform: translateY(-14px);
   opacity: 1;
 }
-.qrIcon-holder {
+.qrIconHolder {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -74,7 +74,7 @@ article p {
   color: var(--bg-primary);
 }
 
-#qrIcon-close {
+#qrIconClose {
   width: 20px;
   color: var(--bg-primary);
 }

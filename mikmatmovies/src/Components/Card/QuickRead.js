@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import "./QuickRead.css";
 
 const QuickRead = (props) => {
@@ -22,7 +21,7 @@ const QuickRead = (props) => {
 
   return (
     <body className={quickReadClass}>
-      <div className="qrIcon-holder">
+      <div className="qrIconHolder">
         {!quickReadActive ? (
           <div
             className="qrIcon"
@@ -38,7 +37,7 @@ const QuickRead = (props) => {
           </div>
         ) : (
           <div
-            className="qrIcon-close"
+            className="qrIconClose"
             onClick={function () {
               toggleQuickRead();
               props.toggleClassName();
@@ -47,10 +46,7 @@ const QuickRead = (props) => {
             <p className="transition600" id="qrText">
               Close
             </p>
-            <i
-              className="fa fa-times fa-lg transition600"
-              id="qrIcon-close"
-            ></i>
+            <i className="fa fa-times fa-lg transition600" id="qrIconClose"></i>
           </div>
         )}
       </div>
