@@ -2,6 +2,7 @@ import React from "react";
 import Card from "./Card";
 import movies from "./movies.json";
 import "./CardHolder.css";
+import "../Global.css";
 
 function CardHolder() {
   return (

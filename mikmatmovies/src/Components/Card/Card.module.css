@@ -6,12 +6,13 @@
   margin: 20px;
   transition: 0.6s;
   box-shadow: 4px 5px var(--shadow-card);
+  overflow: hidden;
 }
 .main:hover .body {
   filter: blur(2px);
   opacity: 0.4;
 }
-.main:hover #hiddenOverlay {
+.main:hover .overlay {
   display: block;
 }
 
@@ -42,18 +43,6 @@
 }
 
 .overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  border-radius: 10px;
-}
-
-.hidden {
-  opacity: 0;
-}
-
-#hiddenOverlay {
   position: absolute;
   top: 0;
   width: 100%;
