@@ -1,0 +1,58 @@
+.overlay-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding-top: 50px;
+}
+.overlay-body button {
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  margin: 0px 16px;
+  border: none;
+  cursor: pointer;
+}
+.overlay-body button img {
+  height: 30px;
+  width: auto;
+}
+
+.rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quick-read {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+.quick-read:hover #qrImg {
+  transform: translateY(-14px);
+}
+.quick-read:hover #qrText {
+  transform: translateY(-14px);
+  opacity: 1;
+}
+
+.transition600 {
+  transition: 0.6s;
+}
+
+#qrText {
+  opacity: 0;
+}
+
+#qrImg {
+  margin-top: 2px;
+  width: 20px;
+}
+
+#heartBtn img {
+  transition: 1s;
+}
