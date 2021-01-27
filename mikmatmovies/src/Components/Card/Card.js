@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CardOverlay from "./CardOverlay.js";
-import movies from "./movies.json";
 import "./Card.css";
 import "../Global.css";
 
@@ -11,17 +10,13 @@ const Card = (props) => {
     setLiked(!liked);
     //anropa databas
   };
-  //   const [hoverRef, isHovered] = useHover();
 
   return (
     <div className="card">
-      <div className="body">
+      <section className="body">
         <img src={props.movie.image} alt="Movie Poster" />
-        {/* <div className="hover">
-          <button ref={isHovered}>Click me!</button>
-         </div> */}
 
-        <div className="footer">
+        <footer>
           <div className="left">
             <p>{props.movie.title}</p>
           </div>
@@ -33,14 +28,18 @@ const Card = (props) => {
 
             {liked && <img id="heartImg" src="heart-filled.png" alt="" />}
           </div>
-        </div>
-      </div>
+        </footer>
+      </section>
 
-      <div className="overlay">
+      <section className="overlay">
         <div id="hidden-overlay">
-          <CardOverlay liked={liked} toggleLiked={toggleLiked} />
+          <CardOverlay
+            movie={props.movie}
+            liked={liked}
+            toggleLiked={toggleLiked}
+          />
         </div>
-      </div>
+      </section>
     </div>
   );
 };

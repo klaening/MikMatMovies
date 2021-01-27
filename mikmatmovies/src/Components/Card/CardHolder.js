@@ -6,7 +6,7 @@ function CardHolder() {
   return (
     <div>
       {movies.map((movie) => (
-        <div className="ch-body">
+        <div key={movie.id.toString()} className="ch-body">
           <Card movie={movie} />
         </div>
       ))}
