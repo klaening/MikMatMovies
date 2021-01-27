@@ -20,9 +20,12 @@
   overflow-y: scroll;
   scrollbar-color: dark;
 }
+.scroll article {
+  padding: 0 4px;
+}
 .scroll article p {
   font-size: 0.8em;
-  padding: 0 5px;
+  line-height: 1.2;
 }
 
 .qrIconClose {
