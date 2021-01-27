@@ -1,5 +1,4 @@
 import React from "react";
-import "./QuickRead.css";
 
 const QuickReadToggle = (props) => {
   return (

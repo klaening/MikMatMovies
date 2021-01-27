@@ -6,6 +6,7 @@
   margin: 20px;
   transition: 0.6s;
   box-shadow: 4px 5px var(--shadow-card);
+  overflow: -moz-hidden-unscrollable;
 }
 .main:hover .body {
   filter: blur(2px);

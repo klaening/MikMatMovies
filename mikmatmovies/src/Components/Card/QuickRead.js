@@ -3,18 +3,27 @@ import "./QuickRead.css";
 import QuickReadToggle from "./QuickReadToggle";
 
 const QuickRead = (props) => {
-  const qrClassName = "quickRead";
+  const qrClassName = "quickRead inactive";
   const [quickReadClass, setQuickReadClass] = useState(qrClassName);
   const [quickReadActive, setQuickReadActive] = useState(false);
+  const [className, setClassName] = useState("className");
+
+  const toggleClassName = () => {
+    if (className === "className") {
+      setClassName("className-active");
+    } else {
+      setClassName("className");
+    }
+  };
 
   const toggleQuickRead = () => {
     setQuickReadActive(!quickReadActive);
-    props.toggleClassName();
+    toggleClassName();
 
-    if (quickReadClass === "quickRead") {
-      setQuickReadClass(qrClassName + " active");
+    if (quickReadClass === "quickRead inactive") {
+      setQuickReadClass("quickRead active");
     } else {
-      setQuickReadClass(qrClassName);
+      setQuickReadClass("quickRead inactive");
     }
   };
 
@@ -22,7 +31,7 @@ const QuickRead = (props) => {
     <div className={quickReadClass}>
       <QuickReadToggle
         quickReadActive={quickReadActive}
-        toggleClassName={props.toggleClassName}
+        toggleClassName={toggleClassName}
         toggleQuickRead={toggleQuickRead}
       />
       {quickReadActive && (
