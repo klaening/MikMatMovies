@@ -53,7 +53,9 @@ const QuickRead = (props) => {
       {quickReadActive && (
         <div className="scroll">
           <article>
-            <h4>{props.movie.title}</h4>
+            <h6>
+              <b>{props.movie.title}</b>
+            </h6>
             <p>{props.movie.description}</p>
           </article>
         </div>

@@ -15,7 +15,7 @@ const Card = (props) => {
       <section className={style.body}>
         <img src={props.movie.image} alt="Movie Poster" />
 
-        <footer>
+        <footer className={style.footer}>
           <div className={style.left}>
             <p>{props.movie.title}</p>
           </div>
