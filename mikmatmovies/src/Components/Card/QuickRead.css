@@ -20,13 +20,12 @@
   overflow-y: scroll;
   scrollbar-color: #878995 #3a4255;
 }
-
-article h4 {
-  margin-bottom: 5px;
+.scroll article {
+  padding: 0 4px;
 }
-article p {
-  height: 100%;
+.scroll article p {
   font-size: 0.8em;
+  line-height: 1.2;
 }
 
 .qrIconClose {
@@ -69,6 +68,7 @@ article p {
 
 #qrText {
   opacity: 0;
+  margin-bottom: 0;
 }
 
 #qrIcon {
