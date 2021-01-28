@@ -8,19 +8,16 @@ const QuickRead = (props) => {
   const [quickReadActive, setQuickReadActive] = useState(false);
   const toggleQuickRead = () => {
     setQuickReadActive(!quickReadActive);
-    console.log(quickReadActive);
 
     if (!quickReadActive) {
       setQuickReadClass(qrClassName + " active");
     } else {
       setQuickReadClass(qrClassName);
     }
-
-    console.log(quickReadClass);
   };
 
   return (
-    <body className={quickReadClass}>
+    <div className={quickReadClass}>
       <div className="qrIconHolder">
         {!quickReadActive ? (
           <div
@@ -60,7 +57,7 @@ const QuickRead = (props) => {
           </article>
         </div>
       )}
-    </body>
+    </div>
   );
 };
 

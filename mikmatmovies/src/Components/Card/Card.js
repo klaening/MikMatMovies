@@ -19,6 +19,8 @@ const Card = (props) => {
   const getFavourites = () => {
     let likedMovies = JSON.parse(localStorage.getItem(listName));
 
+    console.log(likedMovies);
+
     if (likedMovies === null) {
       likedMovies = [];
     }
