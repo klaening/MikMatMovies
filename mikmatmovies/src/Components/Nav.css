@@ -15,12 +15,16 @@ ul {
   list-style: none;
 }
 
-a {
+nav ul li a {
   color: white;
   list-style: none;
   text-decoration: none;
 }
-
+nav ul li a:hover {
+  color: white;
+  list-style: none;
+  text-decoration: none;
+}
 .small {
   height: 30px;
   width: 30px;

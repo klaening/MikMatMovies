@@ -18,7 +18,6 @@ const QuickRead = (props) => {
 
   const toggleQuickRead = () => {
     setQuickReadActive(!quickReadActive);
-    toggleClassName();
 
     if (quickReadClass === "quickRead inactive") {
       setQuickReadClass("quickRead active");

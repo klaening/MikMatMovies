@@ -1,13 +1,48 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CardOverlay from "./CardOverlay.js";
 import style from "./Card.module.css";
 import "../Global.css";
 
 const Card = (props) => {
   const [liked, setLiked] = useState(false);
+
+  useEffect(() => {
+    getFavourites();
+  }, [liked]);
+
   const toggleLiked = () => {
     setLiked(!liked);
-    //anropa databas
+  };
+
+  const listName = "likedMovies";
+
+  const getFavourites = () => {
+    let likedMovies = JSON.parse(localStorage.getItem(listName));
+
+    console.log(likedMovies);
+
+    if (likedMovies === null) {
+      likedMovies = [];
+    }
+
+    let movie = { id: props.movie.id };
+
+    if (liked) {
+      likedMovies.push(movie);
+      localStorage.setItem(listName, JSON.stringify(likedMovies));
+    } else {
+      let id = props.movie.id;
+
+      var index = likedMovies
+        .map((x) => {
+          return x.Id;
+        })
+        .indexOf(id);
+
+      likedMovies.splice(index, id);
+
+      localStorage.setItem(listName, JSON.stringify(likedMovies));
+    }
   };
 
   return (
@@ -29,13 +64,11 @@ const Card = (props) => {
       </section>
 
       <section className={style.overlay}>
-        <div id={style.hiddenOverlay}>
-          <CardOverlay
-            movie={props.movie}
-            liked={liked}
-            toggleLiked={toggleLiked}
-          />
-        </div>
+        <CardOverlay
+          movie={props.movie}
+          liked={liked}
+          toggleLiked={toggleLiked}
+        />
       </section>
     </div>
   );
