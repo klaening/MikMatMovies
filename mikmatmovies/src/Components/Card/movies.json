@@ -22,15 +22,15 @@
   },
   {
     "id": 4,
-    "image": "moonlight-ver2-xlg.png",
-    "title": "Moonlight",
+    "image": "aquaman2.jpg",
+    "title": "AquaMan",
     "rating": 7.2,
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium nulla pariatur laborum voluptatem. Iste, soluta. Animi at ut impedit, fuga maiores enim ab iure, fugit architecto quos, tenetur voluptatibus facilis!"
   },
   {
     "id": 5,
-    "image": "moonlight-ver2-xlg.png",
-    "title": "Moonlight",
+    "image": "fences.jpg",
+    "title": "Fences",
     "rating": 7.2,
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium nulla pariatur laborum voluptatem. Iste, soluta. Animi at ut impedit, fuga maiores enim ab iure, fugit architecto quos, tenetur voluptatibus facilis!"
   },

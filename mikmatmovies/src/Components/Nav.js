@@ -29,7 +29,7 @@ function Nav() {
             className="small"
             onClick={toggleMenu}
             id="menu"
-            src="menu.png"
+            src="./icons/menu.png"
             alt=""
           />
         </li>
@@ -37,7 +37,12 @@ function Nav() {
 
       {menuVis && (
         <div className="menu">
-          <img className="small" onClick={toggleMenu} src="close.png" alt="" />
+          <img
+            className="small"
+            onClick={toggleMenu}
+            src="./icons/close.png"
+            alt=""
+          />
           <p>Ful meny</p>
         </div>
       )}

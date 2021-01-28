@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import CardOverlay from "./CardOverlay.js";
 import style from "./Card.module.css";
 import "../Global.css";
@@ -16,8 +18,10 @@ const Card = (props) => {
 
     if (newLiked) {
       storeLiked(props.movie.id);
+      toast(`${props.movie.title} was added to favourites!`);
     } else {
       removeLiked(props.movie.id);
+      toast(`${props.movie.title} was removed from favourites!`);
     }
   };
 
@@ -70,7 +74,9 @@ const Card = (props) => {
           <div className={style.right}>
             <p>Rating {props.movie.rating}</p>
 
-            {liked && <img id={style.heartImg} src="heart-filled.png" alt="" />}
+            {liked && (
+              <img id={style.heartImg} src="./icons/heart-filled.png" alt="" />
+            )}
           </div>
         </footer>
       </section>

@@ -1,20 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../Global.css";
 import style from "./CardOverlay.module.css";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import HalfRating from "../Imported/HalfRating.js";
 import QuickRead from "./QuickRead";
 
 const CardOverlay = (props) => {
-  useEffect(() => {
-    if (props.liked) {
-      toast(`${props.movie.title} was added to favourites!`);
-    } else {
-      toast(`${props.movie.title} was removed from favourites!`);
-    }
-  }, [props.liked]);
-
   const [message, setMessage] = useState(false);
   const toggleMessage = () => {
     setMessage(!message);
@@ -36,14 +26,18 @@ const CardOverlay = (props) => {
           <a href="#">
             <button id={style.messageBtn} onClick={toggleMessage}>
               <img
-                src={message ? "message-filled.png" : "message.png"}
+                src={
+                  message ? "./icons/message-filled.png" : "./icons/message.png"
+                }
                 alt="Message button"
               />
             </button>
           </a>
           <button id={style.heartBtn} onClick={props.toggleLiked}>
             <img
-              src={props.liked ? "heart-filled.png" : "heart.png"}
+              src={
+                props.liked ? "./icons/heart-filled.png" : "./icons/heart.png"
+              }
               alt="Heart button"
             />
           </button>
