@@ -8,40 +8,52 @@ const Card = (props) => {
 
   useEffect(() => {
     getFavourites();
-  }, [liked]);
+  }, []);
 
   const toggleLiked = () => {
-    setLiked(!liked);
+    const newLiked = !liked;
+    setLiked(newLiked);
+
+    if (newLiked) {
+      storeLiked(props.movie.id);
+    } else {
+      removeLiked(props.movie.id);
+    }
   };
 
-  const listName = "likedMovies";
-
-  const getFavourites = () => {
+  const storeLiked = (id) => {
     let likedMovies = JSON.parse(localStorage.getItem(listName));
 
-    console.log(likedMovies);
-
-    if (likedMovies === null) {
+    if (!likedMovies) {
       likedMovies = [];
     }
 
-    let movie = { id: props.movie.id };
+    let movie = { id: id };
+    likedMovies.push(movie);
+    localStorage.setItem(listName, JSON.stringify(likedMovies));
+  };
 
-    if (liked) {
-      likedMovies.push(movie);
-      localStorage.setItem(listName, JSON.stringify(likedMovies));
-    } else {
-      let id = props.movie.id;
+  const removeLiked = (id) => {
+    let likedMovies = JSON.parse(localStorage.getItem(listName));
 
-      var index = likedMovies
-        .map((x) => {
-          return x.Id;
-        })
-        .indexOf(id);
-
-      likedMovies.splice(index, id);
+    if (likedMovies && likedMovies.length > 0) {
+      var index = likedMovies.findIndex((x) => x.id === id);
+      likedMovies.splice(index, 1);
 
       localStorage.setItem(listName, JSON.stringify(likedMovies));
+    }
+  };
+
+  const listName = "likedMovies";
+  const getFavourites = () => {
+    let likedMovies = JSON.parse(localStorage.getItem(listName));
+
+    if (likedMovies && likedMovies.length > 0) {
+      var index = likedMovies.findIndex((x) => x.id === props.movie.id);
+
+      if (index >= 0) {
+        setLiked(true);
+      }
     }
   };
 

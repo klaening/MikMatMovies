@@ -21,17 +21,24 @@
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium nulla pariatur laborum voluptatem. Iste, soluta. Animi at ut impedit, fuga maiores enim ab iure, fugit architecto quos, tenetur voluptatibus facilis!"
   },
   {
-    "id": 3,
+    "id": 4,
     "image": "moonlight-ver2-xlg.png",
     "title": "Moonlight",
     "rating": 7.2,
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium nulla pariatur laborum voluptatem. Iste, soluta. Animi at ut impedit, fuga maiores enim ab iure, fugit architecto quos, tenetur voluptatibus facilis!"
   },
   {
-    "id": 4,
+    "id": 5,
     "image": "moonlight-ver2-xlg.png",
     "title": "Moonlight",
     "rating": 7.2,
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium nulla pariatur laborum voluptatem. Iste, soluta. Animi at ut impedit, fuga maiores enim ab iure, fugit architecto quos, tenetur voluptatibus facilis!"
+  },
+  {
+    "id": 6,
+    "image": "spiderman2.jpg",
+    "title": "SpiderMan 2",
+    "rating": 8.1,
+    "description": "SpiderMan 2 ccusantium nulla pariatur laborum voluptatem. Iste, soluta. Animi at ut impedit, fuga maiores enim ab iure, fugit architecto quos, tenetur voluptatibus facilis!"
   }
 ]
