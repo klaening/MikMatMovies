@@ -1,6 +1,7 @@
 import React from "react";
 import Rating from "@material-ui/lab/Rating";
 import { makeStyles } from "@material-ui/core/styles";
+import "./HalfRating.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {

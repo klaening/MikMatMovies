@@ -10,3 +10,7 @@
 * {
   color: var(--text-primary);
 }
+
+.Toastify__toast-body {
+  color: var(--bg-holder);
+}
