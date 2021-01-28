@@ -1,30 +1,29 @@
 import React from "react";
+import "./QuickReadToggle.css";
 
 const QuickReadToggle = (props) => {
   return (
     <div className="qrIconHolder">
       {!props.quickReadActive ? (
         <div
-          className="qrIcon"
+          className="toggleIcon"
           onClick={function () {
             props.toggleQuickRead();
+            props.toggleScrollName();
           }}
         >
-          <p className="transition600" id="qrText">
-            Quick read
-          </p>
-          <i className="fa fa-caret-up fa-2x transition600" id="qrIcon"></i>
+          <p id="textToggle">Quick read</p>
+          <i className="fa fa-caret-up fa-2x transition600" id="iconToggle"></i>
         </div>
       ) : (
         <div
           className="qrIconClose"
           onClick={function () {
             props.toggleQuickRead();
+            props.toggleScrollName();
           }}
         >
-          <p className="transition600" id="qrText">
-            Close
-          </p>
+          <p id="textToggle">Close</p>
           <i className="fa fa-times fa-lg transition600" id="qrIconClose"></i>
         </div>
       )}
