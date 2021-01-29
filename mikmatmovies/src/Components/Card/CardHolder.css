@@ -6,8 +6,13 @@
   padding: 1vw;
 }
 
-.test {
+.cards1 {
+  /* display: flex;
+  justify-content: center; */
+}
+
+.cards2 {
   display: flex;
-  justify-content: space-around;
+  justify-content: start;
   flex-wrap: wrap;
 }

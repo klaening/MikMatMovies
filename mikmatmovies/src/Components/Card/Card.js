@@ -17,11 +17,11 @@ const Card = (props) => {
     setLiked(newLiked);
 
     if (newLiked) {
-      storeLiked(props.movie.id);
-      toast(`${props.movie.title} was added to favourites!`);
+      storeLiked(props.movie.imdbID);
+      toast(`${props.movie.Title} was added to favourites!`);
     } else {
-      removeLiked(props.movie.id);
-      toast(`${props.movie.title} was removed from favourites!`);
+      removeLiked(props.movie.imdbID);
+      toast(`${props.movie.Title} was removed from favourites!`);
     }
   };
 
@@ -53,7 +53,7 @@ const Card = (props) => {
     let likedMovies = JSON.parse(localStorage.getItem(listName));
 
     if (likedMovies && likedMovies.length > 0) {
-      var index = likedMovies.findIndex((x) => x.id === props.movie.id);
+      var index = likedMovies.findIndex((x) => x.id === props.movie.imdbID);
 
       if (index >= 0) {
         setLiked(true);
@@ -64,11 +64,14 @@ const Card = (props) => {
   return (
     <div className={style.main}>
       <section className={style.body}>
-        <img src={props.movie.image} alt="Movie Poster" />
+        <div className={style.poster}>
+          <img src={props.movie.Poster} alt="Movie Poster" />
+        </div>
 
         <footer className={style.footer}>
           <div className={style.left}>
-            <p>{props.movie.title}</p>
+            <p>{props.movie.Title}</p>
+            <p>{props.movie.Year}</p>
           </div>
 
           <div className={style.right}>

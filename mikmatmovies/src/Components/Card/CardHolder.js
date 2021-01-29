@@ -10,10 +10,12 @@ export default function CardHolder() {
       <div className="ch-header">
         <h2>Recommended</h2>
       </div>
-      <div className="test">
-        {movies.map((movie) => (
-          <Card movie={movie} />
-        ))}
+      <div className="cards1">
+        <div className="cards2">
+          {movies.map((movie) => (
+            <Card movie={movie} />
+          ))}
+        </div>
       </div>
     </div>
   );

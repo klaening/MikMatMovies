@@ -12,27 +12,21 @@ function App() {
   return (
     <div className="App">
       <Nav />
-      {/* <VideoSection /> */}
-      <Grid container justify="center" alignItems="center">
-        <div xs={3}>
-          <p>Hej</p>
-        </div>
-        <CardHolder xs={6} />
-        <div xs={3}>
-          <p>Hej</p>
-        </div>
-      </Grid>
-      <ToastContainer
-        position="bottom-center"
-        autoClose={4000}
-        hideProgressBar
-        newestOnTop
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss={false}
-        draggable={false}
-        pauseOnHover
-      />
+      <div className="body">
+        {/* <VideoSection /> */}
+        <CardHolder />
+        <ToastContainer
+          position="bottom-center"
+          autoClose={4000}
+          hideProgressBar
+          newestOnTop
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss={false}
+          draggable={false}
+          pauseOnHover
+        />
+      </div>
     </div>
   );
 }
