@@ -51,7 +51,7 @@ const QuickRead = (props) => {
         <div className="scroll">
           <article>
             <h6>
-              <b>{props.movie.title}</b>
+              <b>{props.movie.Title}</b>
             </h6>
             <p>{props.movie.description}</p>
           </article>

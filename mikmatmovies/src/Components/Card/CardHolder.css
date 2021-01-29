@@ -6,12 +6,7 @@
   padding: 1vw;
 }
 
-.cards1 {
-  /* display: flex;
-  justify-content: center; */
-}
-
-.cards2 {
+.cards {
   display: flex;
   justify-content: start;
   flex-wrap: wrap;
