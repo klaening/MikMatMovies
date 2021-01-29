@@ -6,13 +6,22 @@ import Nav from "./Components/Nav";
 import VideoSection from "./Components/VideoSection";
 import CardHolder from "./Components/Card/CardHolder";
 import { ToastContainer } from "react-toastify";
+import { Grid } from "@material-ui/core";
 
 function App() {
   return (
     <div className="App">
       <Nav />
       {/* <VideoSection /> */}
-      <CardHolder />
+      <Grid container justify="center" alignItems="center">
+        <div xs={3}>
+          <p>Hej</p>
+        </div>
+        <CardHolder xs={6} />
+        <div xs={3}>
+          <p>Hej</p>
+        </div>
+      </Grid>
       <ToastContainer
         position="bottom-center"
         autoClose={4000}
