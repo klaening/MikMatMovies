@@ -24,7 +24,7 @@
   padding: 0 4px;
 }
 .scroll article p {
-  font-size: 0.8em;
+  font-size: 0.7em;
   line-height: 1.2;
 }
 
@@ -34,13 +34,13 @@
   justify-content: flex-start;
   align-items: center;
   cursor: pointer;
-  transform: translateY(-14px);
+  transform: translateY(-10px);
 }
 .qrIconClose:hover #qrIconClose {
-  transform: translateY(14px);
+  transform: translateY(10px);
 }
 .qrIconClose:hover #qrText {
-  transform: translateY(14px);
+  transform: translateY(10px);
   opacity: 1;
 }
 
@@ -56,10 +56,10 @@
   cursor: pointer;
 }
 .qrIcon:hover #qrIcon {
-  transform: translateY(-14px);
+  transform: translateY(-10px);
 }
 .qrIcon:hover #qrText {
-  transform: translateY(-14px);
+  transform: translateY(-10px);
   opacity: 1;
 }
 .qrIconHolder {
