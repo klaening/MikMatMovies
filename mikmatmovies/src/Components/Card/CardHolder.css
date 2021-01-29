@@ -1,3 +1,12 @@
 .cardHolder-body {
+  background-color: var(--bg-cardHolder);
   overflow: hidden;
+  margin: 2vw;
+  border-radius: 20px;
+  padding: 1vw;
+}
+
+.test {
+  display: flex;
+  justify-content: center;
 }
