@@ -16,12 +16,15 @@ function Nav() {
           </a>
         </li>
         <li>
+          <p className="triangle"></p>
           <a href="#">Top-Rated</a>
         </li>
         <li>
+          <p className="triangle"></p>
           <a href="#">Recommended</a>
         </li>
         <li>
+          <p className="triangle"></p>
           <a href="#">Favourites</a>
         </li>
         <li>
