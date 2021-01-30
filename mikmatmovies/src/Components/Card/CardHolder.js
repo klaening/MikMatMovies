@@ -1,22 +1,26 @@
 import React from "react";
 import Card from "./Card";
-import movies from "./movies.json";
 import "./CardHolder.css";
 import "../Global.css";
 
-export default function CardHolder() {
+export default function CardHolder({ header, movies }) {
   return (
-    <div className="cardHolder-body">
-      <div className="ch-header">
-        <h2>Recommended</h2>
-      </div>
-      <div className="cards1">
-        <div className="cards2">
-          {movies.map((movie) => (
-            <Card movie={movie} />
-          ))}
+    <div className="checkMovies">
+      {movies.length !== 0 ? (
+        <div className="cardHolder-body">
+          <div className="ch-header">
+            <h2>{header}</h2>
+            <p>{`(results: ${movies.length})`}</p>
+          </div>
+          <div className="cards1">
+            <div className="cards2">
+              {movies.map((movie) => (
+                <Card movie={movie} />
+              ))}
+            </div>
+          </div>
         </div>
-      </div>
+      ) : null}
     </div>
   );
 }

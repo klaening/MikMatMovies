@@ -53,7 +53,7 @@ const QuickRead = (props) => {
             <h6>
               <b>{props.movie.title}</b>
             </h6>
-            <p>{props.movie.description}</p>
+            <p>{props.movie.overview}</p>
           </article>
         </div>
       )}
