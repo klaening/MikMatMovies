@@ -13,6 +13,7 @@ import { Grid } from "@material-ui/core";
 function App() {
   const [result, setResult] = useState([]);
   useEffect(() => {
+    console.log("UseEffect");
     console.log(result);
   }, [result]);
 

@@ -22,11 +22,28 @@ function Nav({ setResult }) {
 
   const handleQuery = (e) => {
     e.preventDefault();
-    fetch(
-      // `https://pixabay.com/api/?key=20066434-fa8c29b3ac0db943abc40c03b&q=${query}`
-      `https://api.themoviedb.org/3/search/movie?api_key=da74000c93a2ffe65d489852f39d6ddc&language=en-US&query=${query}`
-    ).then((response) => console.log(response));
+    // fetchDATA();
+    setResult = fetchDATA();
   };
+
+  const fetchDATA = async () => {
+    await fetch(
+      `https://api.themoviedb.org/3/search/movie?api_key=da74000c93a2ffe65d489852f39d6ddc&language=en-US&query=${query}`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
+
+  // const fetchDATA = async () => {
+  //   const response = await fetch(
+  //     `https://api.themoviedb.org/3/search/movie?api_key=da74000c93a2ffe65d489852f39d6ddc&language=en-US&query=${query}`
+  //   );
+  //   const data = await response.json();
+  //   console.log(data);
+  //   return data;
+  // };
 
   return (
     <nav>
