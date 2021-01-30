@@ -4,27 +4,45 @@
   cursor: pointer;
 }
 
-ul {
-  padding: 4vw;
-  height: 14vh;
+nav {
   background-color: var(--bg-navbar);
+}
+
+ul {
+  padding: 0 4vw;
+  height: 14vh;
   display: flex;
-  align-items: center;
   flex-direction: row;
   justify-content: space-between;
   list-style: none;
 }
 
-nav ul li a {
+nav li {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav .triangle {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+}
+
+nav a {
+  color: white;
+}
+nav a:hover {
   color: white;
   list-style: none;
   text-decoration: none;
 }
-nav ul li a:hover {
-  color: white;
-  list-style: none;
-  text-decoration: none;
+nav ul li:hover .triangle {
+  opacity: 1;
 }
+
 .small {
   height: 30px;
   width: 30px;
@@ -42,7 +60,17 @@ nav ul li a:hover {
   display: flex;
   flex-direction: column;
   justify-content: right;
+  z-index: 1000;
 }
 .menu p {
   color: black;
+}
+
+.triangle {
+  margin-bottom: 0;
+  /* text-indent: -9999px; */
+  border-right: 40px solid transparent;
+  border-top: 26px solid black;
+  border-left: 40px solid transparent;
+  transition: 0.2s;
 }

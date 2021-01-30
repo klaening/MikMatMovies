@@ -1,53 +1,53 @@
 [
   {
-    "imdbID": 1,
-    "Poster": "black-panther-web.jpg",
-    "Title": "Black Panther with a seriously long name",
-    "rating": 7.6,
-    "Year": 2017,
+    "id": 1,
+    "poster_path": "/uxzzxijgPIY7slzFvMotPv8wjKA.jpg",
+    "title": "Black Panther with a seriously long name",
+    "vote_average": 7.6,
+    "release_date": 2017,
     "description": "Iste, soluta. Animi at ut impedit, fuga maiores enim ab iure, fugit architecto quos, tenetur voluptatibus facilis!"
   },
   {
-    "imdbID": 2,
-    "Poster": "antman.jpg",
-    "Title": "Ant Man",
-    "rating": 6.9,
-    "Year": 2017,
+    "id": 2,
+    "poster_path": "/tTTF5Uf20NFk5EaZUycIpSy3ONn.jpg",
+    "title": "Ant Man",
+    "vote_average": 6.9,
+    "release_date": 2017,
     "description": "Nu skriver jag lite text här för att se om det lägger sig på nästa rad. Gör det det? Snälla gör det då! Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium nulla pariatur laborum voluptatem. Iste, soluta. Animi at ut impedit, fuga maiores enim ab iure, fugit architecto quos, tenetur voluptatibus facilis! Nu skriver jag lite text här för att se om det lägger sig på nästa rad. Gör det det? Snälla gör det då! Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium nulla pariatur laborum voluptatem. Iste, soluta. Animi at ut impedit, fuga maiores enim ab iure, fugit architecto quos, tenetur voluptatibus facilis!"
   },
   {
-    "imdbID": 3,
-    "Poster": "moonlight-ver2-xlg.png",
-    "Title": "Moonlight",
-    "rating": 7.2,
+    "id": 3,
+    "poster_path": "/93NN95a71MsQ4tR2zSLv8BNK2qh.jpg",
+    "title": "Moonlight",
+    "vote_average": 7.2,
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium nulla pariatur laborum voluptatem. Iste, soluta. Animi at ut impedit, fuga maiores enim ab iure, fugit architecto quos, tenetur voluptatibus facilis!"
   },
   {
-    "imdbID": 4,
-    "Poster": "aquaman2.jpg",
-    "Title": "AquaMan",
-    "rating": 7.2,
+    "id": 4,
+    "poster_path": "/5Kg76ldv7VxeX9YlcQXiowHgdX6.jpg",
+    "title": "AquaMan",
+    "vote_average": 7.2,
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium nulla pariatur laborum voluptatem. Iste, soluta. Animi at ut impedit, fuga maiores enim ab iure, fugit architecto quos, tenetur voluptatibus facilis!"
   },
   {
-    "imdbID": 5,
-    "Poster": "fences.jpg",
-    "Title": "Fences",
-    "rating": 7.2,
+    "id": 5,
+    "poster_path": "/yZFBqealET1TunuVvu4YzcM1orT.jpg",
+    "title": "Fences",
+    "vote_average": 7.2,
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium nulla pariatur laborum voluptatem. Iste, soluta. Animi at ut impedit, fuga maiores enim ab iure, fugit architecto quos, tenetur voluptatibus facilis!"
   },
   {
-    "imdbID": 6,
-    "Poster": "spiderman2.jpg",
-    "Title": "SpiderMan 2",
-    "rating": 8.1,
+    "id": 6,
+    "poster_path": "/olxpyq9kJAZ2NU1siLshhhXEPR7.jpg",
+    "title": "SpiderMan 2",
+    "vote_average": 8.1,
     "description": "SpiderMan 2 ccusantium nulla pariatur laborum voluptatem. Iste, soluta. Animi at ut impedit, fuga maiores enim ab iure, fugit architecto quos, tenetur voluptatibus facilis!"
   },
   {
-    "imdbID": 7,
-    "Poster": "aladdin.jpg",
-    "Title": "Aladdin",
-    "rating": 7.7,
+    "id": 7,
+    "poster_path": "/ykUEbfpkf8d0w49pHh0AD2KrT52.jpg",
+    "title": "Aladdin",
+    "vote_average": 7.7,
     "description": "laborum voluptatem. Iste, soluta. Animi at ut impedit, fuga maiores enim ab iure, fugit architecto quos, tenetur voluptatibus facilis!"
   }
 ]
