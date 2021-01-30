@@ -1,3 +1,5 @@
+import React, { useState, useEffect } from "react";
+
 import "./App.css";
 import "./Components/Global.css";
 
@@ -9,9 +11,14 @@ import { ToastContainer } from "react-toastify";
 import { Grid } from "@material-ui/core";
 
 function App() {
+  const [result, setResult] = useState([]);
+  useEffect(() => {
+    console.log(result);
+  }, [result]);
+
   return (
     <div className="App">
-      <Nav />
+      <Nav setResult={setResult} />
       <div className="body">
         {/* <VideoSection /> */}
         <CardHolder />
