@@ -10,7 +10,7 @@ export default function CardHolder({ header, movies }) {
         <div className="cardHolder-body">
           <div className="ch-header">
             <h2>{header}</h2>
-            <p>{`(results: ${movies.length})`}</p>
+            <p>{`Results: ${movies.length}`}</p>
           </div>
           <div className="cards1">
             <div className="cards2">
