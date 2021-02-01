@@ -70,7 +70,7 @@ nav ul li:hover .triangle {
   margin-bottom: 0;
   /* text-indent: -9999px; */
   border-right: 40px solid transparent;
-  border-top: 26px solid black;
+  border-top: 26px solid #40454d;
   border-left: 40px solid transparent;
   transition: 0.2s;
 }
