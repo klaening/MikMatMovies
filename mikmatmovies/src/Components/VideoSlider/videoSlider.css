@@ -1,0 +1,58 @@
+.videoframe-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  float: center;
+  width: 90%;
+  height: 100%;
+  min-height: 500px;
+  background-color: var(--bg-navbar);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.slide {
+  align-items: center;
+}
+.slide.active {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-primary);
+}
+
+.title-desc-image {
+  width: 30%;
+  padding: 5px 40px;
+}
+
+.video-container {
+  width: 65%;
+  padding: 5px 0px;
+}
+
+.left-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.right-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+#arrow {
+  width: 100px;
+  height: 100px;
+}

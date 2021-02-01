@@ -7,8 +7,9 @@ import "./Components/Global.css";
 import Nav from "./Components/Nav";
 import CardHolder from "./Components/Card/CardHolder";
 import { ToastContainer } from "react-toastify";
-import Search from "./Components/Search/Search";
 import movies from "./Components/Card/movies.json";
+import VideoSlider from "./Components/VideoSlider/ImageSlider";
+import { SliderData } from "./Components/VideoSlider/SliderData";
 
 function App() {
   const [result, setResult] = useState([]);
@@ -21,8 +22,7 @@ function App() {
     <div className="App">
       <Nav setResult={setResult} />
       <div className="body">
-        {/* <VideoSection /> */}
-
+        <VideoSlider slides={SliderData} />
         <CardHolder header="Recommended" movies={movies} />
         <CardHolder header="Search" movies={result} />
 
