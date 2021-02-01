@@ -75,7 +75,14 @@ const Card = ({ movie }) => {
     <div className={style.main}>
       <section className={style.body}>
         <div className={style.poster}>
-          <img src={path + movie.poster_path} alt="Movie Poster" />
+          {movie.poster_path ? (
+            <img src={path + movie.poster_path} alt="Movie Poster" />
+          ) : (
+            <img
+              src="./images/poster-not-found.png"
+              alt="Movie Poster missing"
+            />
+          )}
         </div>
 
         <footer className={style.footer}>
