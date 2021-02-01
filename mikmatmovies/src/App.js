@@ -10,10 +10,7 @@ import StartSite from "./Components/StartSite";
 
 function App() {
   const [result, setResult] = useState([]);
-  useEffect(() => {
-    console.log("UseEffect");
-    console.log(result);
-  }, [result]);
+  useEffect(() => {}, [result]);
 
   return (
     <Router>
@@ -21,7 +18,12 @@ function App() {
         <Nav setResult={setResult} />
         <Switch>
           <div className="body">
-            <Route path="/" exact component={StartSite} />
+            {/* <Route path="/"  exact component={() => <StartSite movies={result}> /> } /> */}
+            <Route
+              path="/"
+              exact
+              component={() => <StartSite movie={result} />}
+            />
           </div>
         </Switch>
       </div>
