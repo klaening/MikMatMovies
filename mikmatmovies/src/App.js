@@ -16,15 +16,15 @@ function App() {
     <Router>
       <div className="App">
         <Nav setResult={setResult} />
-        <Switch>
-          <div className="body">
+        <div className="body">
+          <Switch>
             <Route
               path="/"
               exact
               component={() => <StartSite movie={result} />}
             />
-          </div>
-        </Switch>
+          </Switch>
+        </div>
       </div>
     </Router>
   );
