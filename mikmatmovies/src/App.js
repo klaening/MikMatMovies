@@ -21,7 +21,7 @@ function App() {
         <Nav setResult={setResult} />
         <Switch>
           <div className="body">
-            <Route result={result} path="/" exact component={StartSite} />
+            <Route path="/" exact component={StartSite} />
           </div>
         </Switch>
       </div>

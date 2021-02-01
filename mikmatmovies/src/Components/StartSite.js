@@ -7,13 +7,14 @@ import movies from "./Card/movies.json";
 import VideoSlider from "./VideoSlider/ImageSlider";
 import { SliderData } from "./VideoSlider/SliderData";
 import CardHolder from "./Card/CardHolder";
+import Nav from "../Components/Nav";
 
-function Start(props) {
+function Start(movies) {
   return (
     <div>
       <VideoSlider slides={SliderData} />
       <CardHolder header="test" movies={movies} />
-      <CardHolder header="Search" movies={movies} />
+      <CardHolder header="search" movies={movies.result} />
       <ToastContainer
         position="bottom-center"
         autoClose={4000}
