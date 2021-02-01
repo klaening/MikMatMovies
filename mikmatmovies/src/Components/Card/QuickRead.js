@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./QuickRead.css";
 
-const QuickRead = (props) => {
+const QuickRead = ({ toggleClassName, movie }) => {
   const qrClassName = "quickRead";
   const [quickReadClass, setQuickReadClass] = useState(qrClassName);
 
@@ -24,7 +24,7 @@ const QuickRead = (props) => {
             className="qrIcon"
             onClick={function () {
               toggleQuickRead();
-              props.toggleClassName();
+              toggleClassName();
             }}
           >
             <p className="transition600" id="qrText">
@@ -37,7 +37,7 @@ const QuickRead = (props) => {
             className="qrIconClose"
             onClick={function () {
               toggleQuickRead();
-              props.toggleClassName();
+              toggleClassName();
             }}
           >
             <p className="transition600" id="qrText">
@@ -51,9 +51,9 @@ const QuickRead = (props) => {
         <div className="scroll">
           <article>
             <h6>
-              <b>{props.movie.Title}</b>
+              <b>{movie.title}</b>
             </h6>
-            <p>{props.movie.overview}</p>
+            <p>{movie.overview}</p>
           </article>
         </div>
       )}

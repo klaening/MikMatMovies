@@ -5,7 +5,7 @@ import CardOverlay from "./CardOverlay.js";
 import style from "./Card.module.css";
 import "../Global.css";
 
-const Card = (props) => {
+const Card = ({ movie }) => {
   const [liked, setLiked] = useState(false);
 
   const path = "https://image.tmdb.org/t/p/original";
@@ -19,11 +19,11 @@ const Card = (props) => {
     setLiked(newLiked);
 
     if (newLiked) {
-      storeLiked(props.movie.id);
-      toast(`${props.movie.title} was added to favourites!`);
+      storeLiked(movie.id);
+      toast(`${movie.title} was added to favourites!`);
     } else {
-      removeLiked(props.movie.id);
-      toast(`${props.movie.title} was removed from favourites!`);
+      removeLiked(movie.id);
+      toast(`${movie.title} was removed from favourites!`);
     }
   };
 
@@ -55,7 +55,7 @@ const Card = (props) => {
     let likedMovies = JSON.parse(localStorage.getItem(listName));
 
     if (likedMovies && likedMovies.length > 0) {
-      var index = likedMovies.findIndex((x) => x.id === props.movie.id);
+      var index = likedMovies.findIndex((x) => x.id === movie.id);
 
       if (index >= 0) {
         setLiked(true);
@@ -84,18 +84,18 @@ const Card = (props) => {
     <div className={style.main}>
       <section className={style.body}>
         <div className={style.poster}>
-          <img src={path + props.movie.poster_path} alt="Movie Poster" />
+          <img src={path + movie.poster_path} alt="Movie Poster" />
         </div>
 
         <footer className={style.footer}>
           <div className={style.left}>
-            <p>{props.movie.title}</p>
+            <p>{movie.title}</p>
             {/* <p>{props.movie.release_date.toString().substring(1, 4)}</p> */}
-            <p>{props.movie.release_date}</p>
+            <p>{movie.release_date}</p>
           </div>
 
           <div className={style.right}>
-            <p>Rating {props.movie.vote_average}</p>
+            <p>Rating {movie.vote_average}</p>
 
             {liked && (
               <img id={style.heartImg} src="./icons/heart-filled.png" alt="" />
@@ -105,11 +105,7 @@ const Card = (props) => {
       </section>
 
       <section className={style.overlay}>
-        <CardOverlay
-          movie={props.movie}
-          liked={liked}
-          toggleLiked={toggleLiked}
-        />
+        <CardOverlay movie={movie} liked={liked} toggleLiked={toggleLiked} />
       </section>
     </div>
   );
