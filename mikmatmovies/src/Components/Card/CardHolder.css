@@ -4,12 +4,11 @@
   margin: 2vw;
   border-radius: 20px;
   padding: 1vw;
-  width: 70vw;
+  /* width: 70vw; */
 }
 
 .cards2 {
   display: grid;
-
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
 }
 
