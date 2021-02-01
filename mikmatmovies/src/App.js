@@ -18,7 +18,6 @@ function App() {
         <Nav setResult={setResult} />
         <Switch>
           <div className="body">
-            {/* <Route path="/"  exact component={() => <StartSite movies={result}> /> } /> */}
             <Route
               path="/"
               exact
