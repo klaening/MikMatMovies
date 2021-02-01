@@ -7,12 +7,11 @@ import "../Global.css";
 
 const Card = ({ movie }) => {
   const [liked, setLiked] = useState(false);
-
   const path = "https://image.tmdb.org/t/p/original";
 
   useEffect(() => {
     getFavourites();
-  }, []);
+  }, [liked]);
 
   const toggleLiked = () => {
     const newLiked = !liked;
@@ -63,22 +62,14 @@ const Card = ({ movie }) => {
     }
   };
 
-  //   const year = () => {
-  //     let yearVar = props.movie.release_date.toString();
+  const year = () => {
+    if (movie.release_date) {
+      let yearVar = movie.release_date;
+      let getYear = yearVar.split("-");
 
-  //     //  var toType = function (test) {
-  //     //    return {}.toString
-  //     //      .call(test)
-  //     //      .match(/\s([a-zA-Z]+)/)[1]
-  //     //      .toLowerCase();
-  //     //  };
-
-  //     //  console.log(toType);
-  //     //  let res = yearVar.toString();
-  //     //  console.log(res);
-  //     //  alert(year.split("-").pop());
-  //     return yearVar.substring(1, 4);
-  //   };
+      return getYear[0];
+    }
+  };
 
   return (
     <div className={style.main}>
@@ -90,8 +81,7 @@ const Card = ({ movie }) => {
         <footer className={style.footer}>
           <div className={style.left}>
             <p>{movie.title}</p>
-            {/* <p>{props.movie.release_date.toString().substring(1, 4)}</p> */}
-            <p>{movie.release_date}</p>
+            <p>{year()}</p>
           </div>
 
           <div className={style.right}>
