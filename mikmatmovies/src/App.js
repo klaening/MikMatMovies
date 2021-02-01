@@ -2,43 +2,31 @@ import React, { useState, useEffect } from "react";
 
 import "./App.css";
 import "./Components/Global.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 //Imported components
 import Nav from "./Components/Nav";
-import CardHolder from "./Components/Card/CardHolder";
-import { ToastContainer } from "react-toastify";
-import movies from "./Components/Card/movies.json";
-import VideoSlider from "./Components/VideoSlider/ImageSlider";
-import { SliderData } from "./Components/VideoSlider/SliderData";
+import StartSite from "./Components/StartSite";
 
 function App() {
   const [result, setResult] = useState([]);
-  useEffect(() => {
-    console.log("UseEffect");
-    console.log(result);
-  }, [result]);
+  useEffect(() => {}, [result]);
 
   return (
-    <div className="App">
-      <Nav setResult={setResult} />
-      <div className="body">
-        <VideoSlider slides={SliderData} />
-        <CardHolder header="Recommended" movies={movies} />
-        <CardHolder header="Search" movies={result} />
-
-        <ToastContainer
-          position="bottom-center"
-          autoClose={4000}
-          hideProgressBar
-          newestOnTop
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss={false}
-          draggable={false}
-          pauseOnHover
-        />
+    <Router>
+      <div className="App">
+        <Nav setResult={setResult} />
+        <div className="body">
+          <Switch>
+            <Route
+              path="/"
+              exact
+              component={() => <StartSite SearchResult={result} />}
+            />
+          </Switch>
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
 
