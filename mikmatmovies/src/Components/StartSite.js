@@ -9,16 +9,16 @@ import { SliderData } from "./VideoSlider/SliderData";
 import CardHolder from "./Card/CardHolder";
 
 function Start(props) {
-  let MovieArray = [];
-  if (props.movie) {
-    MovieArray = props.movie;
-  }
+  // let MovieArray = [];
+  // if (props.movie) {
+  //   MovieArray = props.movie;
+  // }
 
   return (
     <div>
       <VideoSlider slides={SliderData} />
       <CardHolder header="test" movies={movies} />
-      <CardHolder header="search" movies={MovieArray} />
+      <CardHolder header="search" movies={props.SearchResult} />
       <ToastContainer
         position="bottom-center"
         autoClose={4000}

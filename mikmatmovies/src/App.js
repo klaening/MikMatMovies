@@ -21,7 +21,7 @@ function App() {
             <Route
               path="/"
               exact
-              component={() => <StartSite movie={result} />}
+              component={() => <StartSite SearchResult={result} />}
             />
           </Switch>
         </div>
