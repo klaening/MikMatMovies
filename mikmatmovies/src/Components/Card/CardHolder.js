@@ -3,7 +3,7 @@ import Card from "./Card";
 import "./CardHolder.css";
 import "../Global.css";
 
-export default function CardHolder({ header, movies }) {
+function CardHolder({ header, movies }) {
   return (
     <div>
       {movies.length !== 0 ? (
@@ -22,3 +22,5 @@ export default function CardHolder({ header, movies }) {
     </div>
   );
 }
+
+export default CardHolder;
