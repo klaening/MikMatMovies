@@ -14,7 +14,7 @@ function CardHolder({ header, movies }) {
           </div>
           <div className="cards2">
             {movies.map((movie) => (
-              <Card movie={movie} />
+              <Card key={movie.id} movie={movie} movies={movies} />
             ))}
           </div>
         </div>
