@@ -15,13 +15,16 @@ function Nav({ setResult }) {
   };
 
   const fetchDATA = async () => {
-    await fetch(
-      `https://api.themoviedb.org/3/search/movie?api_key=da74000c93a2ffe65d489852f39d6ddc&language=en-US&query=${query}`
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setResult(data.results);
-      });
+    if (query || query !== "undefined") {
+      await fetch(
+        `https://api.themoviedb.org/3/search/movie?api_key=da74000c93a2ffe65d489852f39d6ddc&language=en-US&query=${query}`
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data.results);
+          setResult(data.results);
+        });
+    }
   };
 
   return (
