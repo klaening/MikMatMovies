@@ -4,8 +4,8 @@ import "./QuickRead.css";
 const QuickRead = ({ toggleClassName, movie }) => {
   const qrClassName = "quickRead";
   const [quickReadClass, setQuickReadClass] = useState(qrClassName);
-
   const [quickReadActive, setQuickReadActive] = useState(false);
+
   const toggleQuickRead = () => {
     setQuickReadActive(!quickReadActive);
 
@@ -53,7 +53,11 @@ const QuickRead = ({ toggleClassName, movie }) => {
             <h6>
               <b>{movie.title}</b>
             </h6>
-            <p>{movie.overview}</p>
+            {movie.overview ? (
+              <p>{movie.overview}</p>
+            ) : (
+              <p>No information available</p>
+            )}
           </article>
         </div>
       )}

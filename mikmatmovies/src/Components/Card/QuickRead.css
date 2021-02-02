@@ -1,14 +1,12 @@
 .quickRead {
   border-radius: 10px;
   height: 0;
-  width: 100%;
   display: flex;
   align-items: flex-end;
 }
 
 .active {
   background-color: var(--bg-card);
-  width: 100%;
   height: 100%;
   transition: height 1s;
   align-items: flex-start;
@@ -18,6 +16,7 @@
 .scroll {
   margin: 1px;
   height: 100%;
+  width: 100%;
   overflow-y: scroll;
   scrollbar-color: dark;
 }
@@ -64,9 +63,9 @@
   opacity: 1;
 }
 .qrIconHolder {
-  width: 100%;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 #qrText {
