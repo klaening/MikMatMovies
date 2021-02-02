@@ -20,11 +20,16 @@ function ItemDetails({ match }) {
   };
 
   return (
-    <div>
-      <h1>{item.title}</h1>
-      <h5>{item.overview}</h5>
-      <h6>Rating: {item.vote_average}</h6>
-      <h6>{item.tagline}</h6>
+    <div className="detailContainer">
+      <div className="title-overview-container">
+        <h1>{item.title}</h1>
+        <p>{item.overview}</p>
+      </div>
+      <div>
+        <h6>Rating: {item.vote_average}</h6>
+        <h6>{item.tagline}</h6>
+      </div>
+
       <h6>
         WEBSITE:{" "}
         {item.homepage ? (

@@ -1,0 +1,14 @@
+.detailContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-overview-container {
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  z-index: 63;
+}
