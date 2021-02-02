@@ -6,9 +6,9 @@ import QuickRead from "./QuickRead";
 import { Link } from "react-router-dom";
 
 const CardOverlay = (props) => {
-  const [message, setMessage] = useState(false);
+  const [messageClicked, setMessageClicked] = useState(false);
   const toggleMessage = () => {
-    setMessage(!message);
+    setMessageClicked(!messageClicked);
   };
 
   const [className, setClassName] = useState("quickRead-inactive");
@@ -24,11 +24,14 @@ const CardOverlay = (props) => {
     <div className={style.main}>
       <div className={style.overlayBody}>
         <div className={style.buttons}>
+          {/* använd Link */}
           <a href="#">
             <button id={style.messageBtn} onClick={toggleMessage}>
               <img
                 src={
-                  message ? "./icons/message-filled.png" : "./icons/message.png"
+                  messageClicked
+                    ? "./icons/message-filled.png"
+                    : "./icons/message.png"
                 }
                 alt="Message button"
               />
