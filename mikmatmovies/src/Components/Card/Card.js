@@ -5,7 +5,7 @@ import CardOverlay from "./CardOverlay.js";
 import style from "./Card.module.css";
 import "../Global.css";
 
-const Card = ({ movie }) => {
+const Card = ({ movie, movies }) => {
   const [liked, setLiked] = useState(false);
   const path = "https://image.tmdb.org/t/p/original";
 
@@ -102,7 +102,12 @@ const Card = ({ movie }) => {
       </section>
 
       <section className={style.overlay}>
-        <CardOverlay movie={movie} liked={liked} toggleLiked={toggleLiked} />
+        <CardOverlay
+          movie={movie}
+          liked={liked}
+          toggleLiked={toggleLiked}
+          movies={movies}
+        />
       </section>
     </div>
   );
