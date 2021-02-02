@@ -19,8 +19,8 @@
 
   border-bottom-left-radius: 20px;
   border-top-left-radius: 20px;
-  border-bottom-right-radius: 0px;
-  border-top-right-radius: 0px;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
   background-color: var(--bg-video);
 }
 
