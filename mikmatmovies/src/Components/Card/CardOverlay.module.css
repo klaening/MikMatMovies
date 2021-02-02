@@ -58,13 +58,10 @@
 .readmore a {
   display: flex;
   color: #edecec;
-  transition: 0.4s;
 }
 
 .readmore a:hover {
   color: #edecec;
-  text-decoration: none;
-  transform: translateY(-4px);
 }
 
 #heartBtn img {
