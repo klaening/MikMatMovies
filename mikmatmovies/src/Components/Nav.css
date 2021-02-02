@@ -74,3 +74,34 @@ nav ul li:hover .triangle {
   border-left: 40px solid transparent;
   transition: 0.2s;
 }
+
+.query-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 10px;
+  padding-left: 40vw;
+}
+
+.query-container input {
+  color: black;
+  background-color: rgb(255, 255, 255);
+}
+
+.animated-search {
+  width: 20vw;
+  position: relative;
+  border-radius: 4px;
+  transition: background 0.3s ease-in-out;
+}
+
+.animated-search:focus {
+  background-color: rgb(90, 40, 40);
+  color: white;
+}
+
+.search-btn {
+  border-radius: 4px;
+  margin-left: 5px;
+}

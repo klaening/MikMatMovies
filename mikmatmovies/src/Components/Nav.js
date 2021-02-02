@@ -28,7 +28,7 @@ function Nav({ setResult }) {
     <nav>
       <ul>
         <li>
-          <a href="https://www.google.com">
+          <a href="/">
             <img className="logo" src="logo3.png" alt="" />
           </a>
         </li>
@@ -42,7 +42,7 @@ function Nav({ setResult }) {
         </li>
         <li>
           <p className="triangle"></p>
-          <a href="#">Favourites</a>
+          <a href="/favourites">Favourites</a>
         </li>
         <li>
           <img
@@ -66,9 +66,14 @@ function Nav({ setResult }) {
           <p>Ful meny</p>
         </div>
       )}
-      <div>
+      <div className="query-box">
         <form onSubmit={handleQuery} className="query-container">
-          <input type="text" onChange={(e) => setQuery(e.target.value)} />
+          <input
+            className="animated-search"
+            type="text"
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search movie.."
+          />
           <input type="submit" value="Search" className="search-btn" />
         </form>
       </div>

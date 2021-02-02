@@ -5,7 +5,11 @@
     "title": "Black Panther with a seriously long name",
     "vote_average": 7.6,
     "release_date": "2018-12-01",
+<<<<<<< HEAD
     "overview": "Black Panther being all badass and shit"
+=======
+    "description": "Black Panther being all badass and shit"
+>>>>>>> component/Nav
   },
   {
     "id": 102899,
