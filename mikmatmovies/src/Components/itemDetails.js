@@ -11,6 +11,7 @@ function ItemDetails({ match }) {
 
   const path = `https://image.tmdb.org/t/p/w185`;
   const backdroppath = `https://image.tmdb.org/t/p/w1280`;
+  let newMovie;
 
   const fetchItem = async () => {
     const fetchItem = await fetch(
@@ -18,6 +19,8 @@ function ItemDetails({ match }) {
     );
     const item = await fetchItem.json();
     console.log(item);
+    newMovie = item;
+    console.log(newMovie);
     if (item !== null || item !== "undefined") setItem(item);
   };
 
@@ -39,13 +42,17 @@ function ItemDetails({ match }) {
               {item.homepage ? (
                 <a href={item.homepage}>{item.homepage}</a>
               ) : (
-                "no homepage"
+                "no homepage available"
               )}
             </h6>
           </div>
         </div>
-        <div>
-          <img src={path + item.poster_path} alt="image" />
+        <div className={style.test}>
+          <img
+            className={style.imagePoster}
+            src={path + item.poster_path}
+            alt="image"
+          />
         </div>
       </div>
     </div>
