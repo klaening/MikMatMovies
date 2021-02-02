@@ -47,8 +47,8 @@ const CardOverlay = (props) => {
           <p>Your rating:</p>
           <HalfRating />
         </div>
-        <div>
-          <Link to={`/details/${props.movie.id}`}>READ</Link>
+        <div className={style.readmore}>
+          <Link to={`/details/${props.movie.id}`}>Read more</Link>
         </div>
       </div>
 

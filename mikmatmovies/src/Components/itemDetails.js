@@ -34,12 +34,7 @@ function ItemDetails({ match }) {
         )}
       </h6>
 
-      <img
-        src={path + item.poster_path}
-        height="300"
-        width="auto"
-        alt="image"
-      />
+      <img src={path + item.poster_path} alt="image" />
     </div>
   );
 }
