@@ -33,7 +33,9 @@ const ImageSlider = ({ slides }) => {
                 <div className="title-desc-image">
                   <h3>{slide.text}</h3>
                   <h6>{slide.desc}</h6>
-                  <img src={slide.image} width="200px" alt="something" />
+                  <div className="image-box">
+                    <img src={slide.image} width="200px" alt="something" />
+                  </div>
                 </div>
                 <div className="left-arrow">
                   <FaArrowAltCircleLeft id="arrow" onClick={prevSlide} />
