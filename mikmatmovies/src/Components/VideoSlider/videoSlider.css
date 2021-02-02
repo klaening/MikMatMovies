@@ -1,5 +1,7 @@
 .videoframe-container {
   display: flex;
+  margin-top: 2vh;
+  border-radius: 20px;
   justify-content: center;
   flex-direction: row;
   float: center;
@@ -54,4 +56,35 @@
 #arrow {
   width: 100px;
   height: 100px;
+}
+
+@media only screen and (max-width: 1024px) {
+  /* For Tablet 1024 px phones: */
+
+  .videoframe-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    float: center;
+    width: 95%;
+    min-height: 30vh;
+    background-color: var(--bg-navbar);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+
+  .image-box {
+    display: none;
+  }
+
+  #arrow {
+    display: none;
+  }
+
+  .title-desc-image {
+    width: 80%;
+    padding: 5px 40px;
+  }
 }

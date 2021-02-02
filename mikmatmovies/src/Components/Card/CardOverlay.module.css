@@ -54,3 +54,7 @@
 #heartBtn img {
   transition: 1s;
 }
+
+.readmore a {
+  color: white;
+}

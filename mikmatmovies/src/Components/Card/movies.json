@@ -4,15 +4,24 @@
     "poster_path": "/uxzzxijgPIY7slzFvMotPv8wjKA.jpg",
     "title": "Black Panther with a seriously long name",
     "vote_average": 7.6,
+<<<<<<< HEAD
     "release_date": "2018-12-01",
     "description": "Black Panther being all badass and shit"
+=======
+    "release_date": "2017",
+    "description": "Iste, soluta. Animi at ut impedit, fuga maiores enim ab iure, fugit architecto quos, tenetur voluptatibus facilis!"
+>>>>>>> structure/main
   },
   {
     "id": 102899,
     "poster_path": "/rQRnQfUl3kfp78nCWq8Ks04vnq1.jpg",
     "title": "Ant-Man",
     "vote_average": 7.1,
+<<<<<<< HEAD
     "release_date": "2015-12-01",
+=======
+    "release_date": "2015",
+>>>>>>> structure/main
     "description": "Armed with the astonishing ability to shrink in scale but increase in strength, master thief Scott Lang must embrace his inner-hero and help his mentor, Doctor Hank Pym, protect the secret behind his spectacular Ant-Man suit from a new generation of towering threats. Against seemingly insurmountable obstacles, Pym and Lang must plan and pull off a heist that will save the world"
   },
   {

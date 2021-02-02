@@ -17,7 +17,7 @@ function Start(props) {
   return (
     <div>
       <VideoSlider slides={SliderData} />
-      <CardHolder header="test" movies={movies} />
+      <CardHolder header="Recommended" movies={movies} />
       <CardHolder header="search" movies={props.SearchResult} />
       <ToastContainer
         position="bottom-center"
