@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import style from "./ItemDetails.module.css";
 import "../../src/Components/Global.css";
-import { Backdrop } from "@material-ui/core";
+
 function ItemDetails({ match }) {
   useEffect(() => {
     fetchItem();
@@ -19,9 +19,7 @@ function ItemDetails({ match }) {
     );
     const item = await fetchItem.json();
     console.log(item);
-    newMovie = item;
-    console.log(newMovie);
-    if (item !== null || item !== "undefined") setItem(item);
+    setItem(item);
   };
 
   return (
