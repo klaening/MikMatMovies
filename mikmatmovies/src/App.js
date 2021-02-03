@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import "./Components/Global.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import itemDetails from "./Components/ItemDetails";
+import ItemDetails from "./Components/ItemDetails";
 
 //Imported components
 import Nav from "./Components/Nav";
@@ -24,7 +24,7 @@ function App() {
               exact
               component={() => <StartSite SearchResult={result} />}
             />
-            <Route path="/details/:id" component={itemDetails} />
+            <Route path="/details/:id" component={ItemDetails} />
           </Switch>
         </div>
       </div>
