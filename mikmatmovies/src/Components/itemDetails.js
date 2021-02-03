@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
 import style from "./ItemDetails.module.css";
-import "../../src/Components/Global.css";
 import CardHolder from "./Card/CardHolder";
-import movies from "./Card/movies.json";
 
 function ItemDetails({ match }) {
   useEffect(() => {
     fetchItem();
     fetchRec();
-  }, []);
+  }, [match]);
 
   const [item, setItem] = useState({});
   const [Recommendations, setRecommendations] = useState([]);
