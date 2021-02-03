@@ -18,31 +18,30 @@ const Card = ({ movie, movies }) => {
     setLiked(newLiked);
 
     if (newLiked) {
-      storeLiked(movie.id);
+      storeLiked(movie);
       toast(`${movie.title} was added to favourites!`);
     } else {
-      removeLiked(movie.id);
+      removeLiked(movie);
       toast(`${movie.title} was removed from favourites!`);
     }
   };
 
-  const storeLiked = (id) => {
+  const storeLiked = (objectToStore) => {
     let likedMovies = JSON.parse(localStorage.getItem(listName));
 
     if (!likedMovies) {
       likedMovies = [];
     }
 
-    let movie = { id: id };
-    likedMovies.push(movie);
+    likedMovies.push(objectToStore);
     localStorage.setItem(listName, JSON.stringify(likedMovies));
   };
 
-  const removeLiked = (id) => {
+  const removeLiked = (objectToStore) => {
     let likedMovies = JSON.parse(localStorage.getItem(listName));
 
     if (likedMovies && likedMovies.length > 0) {
-      var index = likedMovies.findIndex((x) => x.id === id);
+      var index = likedMovies.findIndex((x) => x.id === objectToStore.id);
       likedMovies.splice(index, 1);
 
       localStorage.setItem(listName, JSON.stringify(likedMovies));
