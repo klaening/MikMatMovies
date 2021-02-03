@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import style from "./ItemDetails.module.css";
-import CardHolder from "./Card/CardHolder";
+import CardHolder from "../Card/CardHolder";
 
 function ItemDetails({ match }) {
   useEffect(() => {
@@ -76,7 +76,7 @@ function ItemDetails({ match }) {
           </div>
         </div>
       </div>
-      <CardHolder header={"Recommended Movies"} movies={Recommendations} />
+      <CardHolder header="Recommended Movies" movies={Recommendations} />
     </div>
   );
 }

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import "./Components/Global.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import ItemDetails from "./Components/ItemDetails";
+import ItemDetails from "./Components/ItemDetails/ItemDetails";
 
 //Imported components
 import Nav from "./Components/Nav";
