@@ -30,23 +30,29 @@ function Nav({ setResult }) {
   return (
     <nav>
       <ul>
-        <li>
-          <a href="/">
+        <a href="/">
+          <li>
             <img className="logo" src="logo3.png" alt="" />
-          </a>
-        </li>
-        <li>
-          <p className="triangle"></p>
-          <a href="#">Top-Rated</a>
-        </li>
-        <li>
-          <p className="triangle"></p>
-          <a href="#">Recommended</a>
-        </li>
-        <li>
-          <p className="triangle"></p>
-          <a href="/favourites">Favourites</a>
-        </li>
+          </li>
+        </a>
+        <a href="#">
+          <li>
+            <p className="triangle"></p>
+            Top-Rated
+          </li>
+        </a>
+        <a href="#">
+          <li>
+            <p className="triangle"></p>
+            Recommended
+          </li>
+        </a>
+        <a href="/favourites">
+          <li>
+            <p className="triangle"></p>
+            Favourites
+          </li>
+        </a>
         <li>
           <img
             className="small"
