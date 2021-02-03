@@ -10,6 +10,7 @@ function CardHolder({ header, movies }) {
         <div className="cardHolder-body">
           <div className="ch-header">
             <h2>{header}</h2>
+            {/* {subtitle ? <p>{`Results: ${movies.length}`}</p> : null} */}
             <p>{`Results: ${movies.length}`}</p>
           </div>
           <div className="cards2">

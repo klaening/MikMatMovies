@@ -7,6 +7,7 @@ import itemDetails from "./Components/itemDetails";
 
 //Imported components
 import Nav from "./Components/Nav";
+import Favourites from "./Components/Favourites/Favourites";
 import StartSite from "./Components/StartSite";
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
               component={() => <StartSite SearchResult={result} />}
             />
             <Route path="/details/:id" component={itemDetails} />
+            <Route path="/favourites" component={Favourites} />
           </Switch>
         </div>
       </div>
