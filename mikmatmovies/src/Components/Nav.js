@@ -32,7 +32,7 @@ function Nav({ setResult }) {
       <ul>
         <a href="/">
           <li>
-            <img className="logo" src="logo3.png" alt="" />
+            <img className="logo" src="/logo3.png" alt="" />
           </li>
         </a>
 
@@ -69,7 +69,7 @@ function Nav({ setResult }) {
             className="small"
             onClick={toggleMenu}
             id="menu"
-            src="./icons/menu.png"
+            src="/icons/menu.png"
             alt=""
           />
         </li>
@@ -80,7 +80,7 @@ function Nav({ setResult }) {
           <img
             className="small"
             onClick={toggleMenu}
-            src="./icons/close.png"
+            src="/icons/close.png"
             alt=""
           />
           <p>Ful meny</p>
