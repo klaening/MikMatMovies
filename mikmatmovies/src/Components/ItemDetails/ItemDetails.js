@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import style from "./ItemDetails.module.css";
 import CardHolder from "../Card/CardHolder";
+import { ToastContainer } from "react-toastify";
 
 function ItemDetails({ match }) {
   useEffect(() => {
@@ -45,6 +46,17 @@ function ItemDetails({ match }) {
 
   return (
     <div>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={4000}
+        hideProgressBar
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss={false}
+        draggable={false}
+        pauseOnHover
+      />
       <div
         className={style.detailContainer}
         style={{ backgroundImage: `url(${backdroppath + item.backdrop_path})` }}

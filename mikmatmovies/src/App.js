@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { ToastContainer } from "react-toastify";
 
 import "./App.css";
 import "./Components/Global.css";
@@ -17,6 +18,17 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <ToastContainer
+          position="bottom-center"
+          autoClose={4000}
+          hideProgressBar
+          newestOnTop
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss={false}
+          draggable={false}
+          pauseOnHover
+        />
         <Nav setResult={setResult} />
         <div className="body">
           <Switch>
