@@ -7,10 +7,21 @@
   /* width: 70vw; */
 }
 
-.cards2 {
+.cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   justify-items: center;
+}
+
+.seeMore {
+  display: flex;
+  justify-content: end;
+  margin-right: 20px;
+}
+
+.seeMore p:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 /* @media screen and (max-width: 1200px) {
