@@ -35,24 +35,35 @@ function Nav({ setResult }) {
             <img className="logo" src="logo3.png" alt="" />
           </li>
         </a>
+
+        <a href="#">
+          <li>
+            <p className="triangle"></p>
+            Upcoming
+          </li>
+        </a>
+
+        <a href="#">
+          <li>
+            <p className="triangle"></p>
+            Popular
+          </li>
+        </a>
+
         <a href="#">
           <li>
             <p className="triangle"></p>
             Top-Rated
           </li>
         </a>
-        <a href="#">
-          <li>
-            <p className="triangle"></p>
-            Recommended
-          </li>
-        </a>
+
         <a href="/favourites">
           <li>
             <p className="triangle"></p>
             Favourites
           </li>
         </a>
+
         <li>
           <img
             className="small"
