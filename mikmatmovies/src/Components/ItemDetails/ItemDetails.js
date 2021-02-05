@@ -78,6 +78,7 @@ function ItemDetails({ match }) {
                   <TextContainer>No homepage available</TextContainer>
                 )}
               </h6>
+              <TextContainer>HEJSAN</TextContainer>
             </div>
           </div>
           <div className={style.test}>

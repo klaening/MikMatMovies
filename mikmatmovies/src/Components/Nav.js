@@ -6,6 +6,7 @@ import "./Nav.css";
 function Nav({ setResult }) {
   const [menuVis, setMenuVis] = useState(false);
   const [query, setQuery] = useState("");
+
   const history = useHistory();
 
   const toggleMenu = () => {
