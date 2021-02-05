@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import style from "./ItemDetails.module.css";
 import CardHolder from "../Card/CardHolder";
 import { ToastContainer } from "react-toastify";
+import { TextContainer } from "../../styles/style";
 
 function ItemDetails({ match }) {
   useEffect(() => {
@@ -74,7 +75,7 @@ function ItemDetails({ match }) {
                 {item.homepage ? (
                   <a href={item.homepage}>{item.homepage}</a>
                 ) : (
-                  "no homepage available"
+                  <TextContainer>No homepage available</TextContainer>
                 )}
               </h6>
             </div>
