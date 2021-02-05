@@ -51,11 +51,11 @@ function Start(props) {
 
   return (
     <div>
+      {/* <CardHolder header="search" movies={props.SearchResult} /> */}
       <VideoSlider slides={SliderData} />
       <CardHolder header="Upcoming movies" movies={upcomingMovies} />
       <CardHolder header="Popular movies" movies={popularMovies} />
       <CardHolder header="Top Rated movies" movies={topRatedMovies} />
-      <CardHolder header="search" movies={props.SearchResult} />
     </div>
   );
 }

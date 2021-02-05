@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 import "./Nav.css";
 
 function Nav({ setResult }) {
   const [menuVis, setMenuVis] = useState(false);
   const [query, setQuery] = useState("");
+  const history = useHistory();
 
   const toggleMenu = () => {
     setMenuVis(!menuVis);
@@ -13,6 +15,7 @@ function Nav({ setResult }) {
   const handleQuery = (e) => {
     e.preventDefault();
     fetchDATA();
+    history.push("/search");
   };
 
   const fetchDATA = async () => {
@@ -95,6 +98,7 @@ function Nav({ setResult }) {
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search movie.."
           />
+
           <input type="submit" value="Search" className="search-btn" />
         </form>
       </div>

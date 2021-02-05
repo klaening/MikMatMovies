@@ -1,12 +1,10 @@
-import { Divider } from "@material-ui/core";
 import React from "react";
 import CardHolder from "../Card/CardHolder";
 
-const SearchResult = (props) => {
-  console.log(props.SearchResult);
+const SearchResult = ({ SearchResult }) => {
   return (
     <div>
-      <CardHolder header="search" movies={props.SearchResult} />
+      <CardHolder header="search" movies={SearchResult} />
     </div>
   );
 };
