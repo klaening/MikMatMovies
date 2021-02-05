@@ -78,7 +78,7 @@ const Card = ({ movie, movies }) => {
             <img src={path + movie.poster_path} alt="Movie Poster" />
           ) : (
             <img
-              src="./images/poster-not-found.png"
+              src="/images/poster-not-found.png"
               alt="Movie Poster missing"
             />
           )}
@@ -94,7 +94,7 @@ const Card = ({ movie, movies }) => {
             <p>Rating {movie.vote_average}</p>
 
             {liked && (
-              <img id={style.heartImg} src="./icons/heart-filled.png" alt="" />
+              <img id={style.heartImg} src="/icons/heart-filled.png" alt="" />
             )}
           </div>
         </footer>

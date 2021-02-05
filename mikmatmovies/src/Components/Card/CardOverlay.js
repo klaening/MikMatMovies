@@ -30,8 +30,8 @@ const CardOverlay = (props) => {
               <img
                 src={
                   messageClicked
-                    ? "./icons/message-filled.png"
-                    : "./icons/message.png"
+                    ? "/icons/message-filled.png"
+                    : "/icons/message.png"
                 }
                 alt="Message button"
               />
@@ -39,9 +39,7 @@ const CardOverlay = (props) => {
           </a>
           <button id={style.heartBtn} onClick={props.toggleLiked}>
             <img
-              src={
-                props.liked ? "./icons/heart-filled.png" : "./icons/heart.png"
-              }
+              src={props.liked ? "/icons/heart-filled.png" : "/icons/heart.png"}
               alt="Heart button"
             />
           </button>

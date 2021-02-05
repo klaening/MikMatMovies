@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import style from "./ItemDetails.module.css";
-import "../../src/Components/Global.css";
-import CardHolder from "./Card/CardHolder";
-import movies from "./Card/movies.json";
+import CardHolder from "../Card/CardHolder";
+import { ToastContainer } from "react-toastify";
 
 function ItemDetails({ match }) {
   useEffect(() => {
     fetchItem();
     fetchRec();
-  }, []);
+  }, [match]);
 
   const [item, setItem] = useState({});
   const [Recommendations, setRecommendations] = useState([]);
@@ -47,6 +46,17 @@ function ItemDetails({ match }) {
 
   return (
     <div>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={4000}
+        hideProgressBar
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss={false}
+        draggable={false}
+        pauseOnHover
+      />
       <div
         className={style.detailContainer}
         style={{ backgroundImage: `url(${backdroppath + item.backdrop_path})` }}
@@ -78,7 +88,7 @@ function ItemDetails({ match }) {
           </div>
         </div>
       </div>
-      <CardHolder header={"Recommended Movies"} movies={Recommendations} />
+      <CardHolder header="Recommended Movies" movies={Recommendations} />
     </div>
   );
 }

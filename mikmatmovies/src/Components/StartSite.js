@@ -56,17 +56,6 @@ function Start(props) {
       <CardHolder header="Popular movies" movies={popularMovies} />
       <CardHolder header="Top Rated movies" movies={topRatedMovies} />
       <CardHolder header="search" movies={props.SearchResult} />
-      <ToastContainer
-        position="bottom-center"
-        autoClose={4000}
-        hideProgressBar
-        newestOnTop
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss={false}
-        draggable={false}
-        pauseOnHover
-      />
     </div>
   );
 }
