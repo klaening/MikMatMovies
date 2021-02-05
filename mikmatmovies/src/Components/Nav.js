@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import "./Nav.css";
 
 function Nav({ setResult }) {
