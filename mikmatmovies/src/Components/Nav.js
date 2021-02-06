@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
 
 import "./Nav.css";
 
@@ -35,39 +36,39 @@ function Nav({ setResult }) {
   return (
     <nav>
       <ul>
-        <a href="/">
-          <li>
+        <li>
+          <Link smooth to="/#" id="top">
             <img className="logo" src="/logo3.png" alt="" />
-          </li>
-        </a>
+          </Link>
+        </li>
 
-        <a href="#">
-          <li>
+        <li>
+          <Link smooth to="/#upcoming">
             <p className="triangle"></p>
             Upcoming
-          </li>
-        </a>
+          </Link>
+        </li>
 
-        <a href="#">
-          <li>
+        <li>
+          <Link smooth to="/#popular">
             <p className="triangle"></p>
             Popular
-          </li>
-        </a>
+          </Link>
+        </li>
 
-        <a href="#">
-          <li>
+        <li>
+          <Link smooth to="/#toprated">
             <p className="triangle"></p>
             Top-Rated
-          </li>
-        </a>
+          </Link>
+        </li>
 
-        <a href="/favourites">
-          <li>
+        <li>
+          <Link to="/favourites">
             <p className="triangle"></p>
             Favourites
-          </li>
-        </a>
+          </Link>
+        </li>
 
         <li>
           <img
