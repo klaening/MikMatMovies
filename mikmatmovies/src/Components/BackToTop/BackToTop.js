@@ -17,7 +17,7 @@ const BackToTop = () => {
     <Link smooth to="/#top">
       <div className="backTop_main">
         {showScroll && (
-          <div className="test">
+          <div className="backTop_container">
             <p id="backTop_text">Back to top</p>
             <button className="backTop_button">
               <i class="fas fa-arrow-up fa-2x"></i>

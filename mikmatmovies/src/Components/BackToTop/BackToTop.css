@@ -7,8 +7,15 @@
   transition: 0.6s;
   z-index: 100;
 }
+.backTop_main:hover {
+  transform: translateY(-14px);
+  opacity: 1;
+}
+.backTop_main:hover #backTop_text {
+  opacity: 1;
+}
 
-.test {
+.backTop_container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,18 +31,12 @@
   align-items: center;
   border: none;
 }
-/* .backTop_container img {
+/* .backTop_button img {
   max-width: 100%;
   max-height: 100%;
 } */
-.backTop_main:hover {
-  transform: translateY(-14px);
-  opacity: 1;
-}
+
 #backTop_text {
   opacity: 0;
   transition: 0.6s;
-}
-.backTop_main:hover #backTop_text {
-  opacity: 1;
 }
