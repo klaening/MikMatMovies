@@ -25,16 +25,6 @@ function ItemDetails({ match }) {
     setItem(item);
   };
 
-  // const fetchRecommended = async () => {
-  //   const fetchRecommended = await fetch(
-  //     `https://api.themoviedb.org/3/movie/${match.params.id}/recommendations?api_key=da74000c93a2ffe65d489852f39d6ddc&language=en-US&page=1`
-  //   );
-
-  //   const Recommendations = await fetchRecommended.json();
-  //   console.log(Recommendations);
-  //   setRecommendations(Recommendations);
-  // };
-
   const fetchRec = async () => {
     await fetch(
       `https://api.themoviedb.org/3/movie/${match.params.id}/recommendations?api_key=da74000c93a2ffe65d489852f39d6ddc&language=en-US&page=1`

@@ -1,9 +1,14 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
+
 import "./Nav.css";
 
 function Nav({ setResult }) {
   const [menuVis, setMenuVis] = useState(false);
   const [query, setQuery] = useState("");
+
+  const history = useHistory();
 
   const toggleMenu = () => {
     setMenuVis(!menuVis);
@@ -12,6 +17,7 @@ function Nav({ setResult }) {
   const handleQuery = (e) => {
     e.preventDefault();
     fetchDATA();
+    history.push("/search");
   };
 
   const fetchDATA = async () => {
@@ -30,39 +36,39 @@ function Nav({ setResult }) {
   return (
     <nav>
       <ul>
-        <a href="/">
-          <li>
+        <li>
+          <Link smooth to="/#" id="top">
             <img className="logo" src="/logo3.png" alt="" />
-          </li>
-        </a>
+          </Link>
+        </li>
 
-        <a href="#">
-          <li>
+        <li>
+          <Link smooth to="/#upcoming">
             <p className="triangle"></p>
             Upcoming
-          </li>
-        </a>
+          </Link>
+        </li>
 
-        <a href="#">
-          <li>
+        <li>
+          <Link smooth to="/#popular">
             <p className="triangle"></p>
             Popular
-          </li>
-        </a>
+          </Link>
+        </li>
 
-        <a href="#">
-          <li>
+        <li>
+          <Link smooth to="/#toprated">
             <p className="triangle"></p>
             Top-Rated
-          </li>
-        </a>
+          </Link>
+        </li>
 
-        <a href="/favourites">
-          <li>
+        <li>
+          <Link to="/favourites">
             <p className="triangle"></p>
             Favourites
-          </li>
-        </a>
+          </Link>
+        </li>
 
         <li>
           <img
@@ -94,6 +100,7 @@ function Nav({ setResult }) {
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search movie.."
           />
+
           <input type="submit" value="Search" className="search-btn" />
         </form>
       </div>

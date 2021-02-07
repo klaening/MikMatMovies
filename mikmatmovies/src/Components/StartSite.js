@@ -8,6 +8,7 @@ import jsonMovies from "./Card/movies.json";
 import VideoSlider from "./VideoSlider/ImageSlider";
 import { SliderData } from "./VideoSlider/SliderData";
 import CardHolder from "./Card/CardHolder";
+import { HashLink as Link } from "react-router-hash-link";
 
 function Start(props) {
   useEffect(() => {
@@ -53,11 +54,15 @@ function Start(props) {
   return (
     <div>
       <VideoSlider slides={SliderData} />
-      <CardHolder header="Upcoming movies" movies={upcomingMovies} />
-      <CardHolder header="Popular movies" movies={popularMovies} />
-      <CardHolder header="Top Rated movies" movies={topRatedMovies} />
-      <CardHolder header="search" movies={props.SearchResult} />
-      <BackToTop />
+      <div id="upcoming">
+        <CardHolder header="Upcoming movies" movies={upcomingMovies} />
+      </div>
+      <div id="popular">
+        <CardHolder header="Popular movies" movies={popularMovies} />
+      </div>
+      <div id="toprated">
+        <CardHolder header="Top Rated movies" movies={topRatedMovies} />
+      </div>
     </div>
   );
 }

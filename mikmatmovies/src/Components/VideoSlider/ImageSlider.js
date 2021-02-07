@@ -34,7 +34,7 @@ const ImageSlider = ({ slides }) => {
                   <h3>{slide.text}</h3>
                   <h6>{slide.desc}</h6>
                   <div className="image-box">
-                    <img src={slide.image} width="200px" alt="something" />
+                    <img src={slide.image} width="100px" alt="something" />
                   </div>
                 </div>
                 <div className="left-arrow">

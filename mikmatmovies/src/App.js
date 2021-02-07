@@ -11,6 +11,7 @@ import Nav from "./Components/Nav";
 import Favourites from "./Components/Favourites/Favourites";
 import StartSite from "./Components/StartSite";
 import ItemDetails from "./Components/ItemDetails/ItemDetails";
+import SearchResult from "./Components/Search/SearchResult";
 
 function App() {
   const [result, setResult] = useState([]);
@@ -39,6 +40,12 @@ function App() {
               component={() => <StartSite SearchResult={result} />}
             />
             <Route path="/favourites" component={Favourites} />
+            <Route
+              path="/search"
+              component={() => (
+                <SearchResult header="search results" SearchResult={result} />
+              )}
+            />
             <Route path="/details/:id" component={ItemDetails} />
           </Switch>
         </div>
