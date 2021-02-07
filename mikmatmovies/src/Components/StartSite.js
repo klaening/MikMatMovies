@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import BackToTop from "./BackToTop/BackToTop";
 
 //Imported Components
 
@@ -56,6 +57,7 @@ function Start(props) {
       <CardHolder header="Popular movies" movies={popularMovies} />
       <CardHolder header="Top Rated movies" movies={topRatedMovies} />
       <CardHolder header="search" movies={props.SearchResult} />
+      <BackToTop />
     </div>
   );
 }
