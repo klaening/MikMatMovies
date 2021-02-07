@@ -63,6 +63,7 @@ function Start(props) {
       <div id="toprated">
         <CardHolder header="Top Rated movies" movies={topRatedMovies} />
       </div>
+      <BackToTop />
     </div>
   );
 }
