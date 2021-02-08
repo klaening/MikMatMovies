@@ -4,7 +4,11 @@ import CardHolder from "../Card/CardHolder";
 const SearchResult = ({ SearchResult }) => {
   return (
     <div>
-      <CardHolder header="search" movies={SearchResult} />
+      <CardHolder
+        header="Search results"
+        subTitle={`Results: ${SearchResult.length}`}
+        movies={SearchResult}
+      />
     </div>
   );
 };

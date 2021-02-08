@@ -3,7 +3,7 @@ import Card from "./Card";
 import "./CardHolder.css";
 import "../Global.css";
 
-function CardHolder({ header, movies, subtitle = null }) {
+function CardHolder({ header, movies, subTitle = null }) {
   return (
     <div>
       {movies.length !== 0 ? (
@@ -11,7 +11,7 @@ function CardHolder({ header, movies, subtitle = null }) {
           <div className="ch-header">
             <h2>{header}</h2>
             {/* {subtitle ? <p>{`Results: ${movies.length}`}</p> : null} */}
-            {subtitle && <p>{`Results: ${movies.length}`}</p>}
+            {subTitle && <p>{subTitle}</p>}
           </div>
           <div className="cards">
             {movies.map((movie) => (
