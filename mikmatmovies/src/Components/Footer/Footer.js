@@ -6,13 +6,13 @@ const Footer = () => {
   return (
     <div className="footer_main">
       <ul>
-        <Link>
+        <Link to="#">
           <li>About</li>
         </Link>
-        <Link>
+        <Link to="#">
           <li>Job offers</li>
         </Link>
-        <Link>
+        <Link to="#">
           <li>Contact us</li>
         </Link>
         <li>Est. 2021</li>
