@@ -7,14 +7,14 @@
   /* width: 70vw; */
 }
 
-.cards2 {
+.cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   justify-items: center;
 }
 
-/* @media screen and (max-width: 1200px) {
-  .cards2 {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+@media only screen and (max-width: 500px) {
+  .cards {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   }
-} */
+}

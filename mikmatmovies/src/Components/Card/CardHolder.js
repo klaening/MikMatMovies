@@ -2,7 +2,6 @@ import React from "react";
 import Card from "./Card";
 import "./CardHolder.css";
 import "../Global.css";
-import { HashLink as Link } from "react-router-hash-link";
 
 function CardHolder({ header, movies, subtitle = null }) {
   return (
@@ -14,7 +13,7 @@ function CardHolder({ header, movies, subtitle = null }) {
             {/* {subtitle ? <p>{`Results: ${movies.length}`}</p> : null} */}
             {subtitle && <p>{`Results: ${movies.length}`}</p>}
           </div>
-          <div className="cards2">
+          <div className="cards">
             {movies.map((movie) => (
               <Card key={movie.id} movie={movie} movies={movies} />
             ))}
