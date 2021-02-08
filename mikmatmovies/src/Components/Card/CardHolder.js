@@ -12,7 +12,7 @@ function CardHolder({ header, movies, subtitle = null }) {
           <div className="ch-header">
             <h2>{header}</h2>
             <Link smooth to="/#top">
-              Go top top
+              Go Back
             </Link>
             {/* {subtitle ? <p>{`Results: ${movies.length}`}</p> : null} */}
             {subtitle && <p>{`Results: ${movies.length}`}</p>}
