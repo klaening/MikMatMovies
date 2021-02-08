@@ -1,7 +1,11 @@
-.logo {
-  height: 4vw;
-  min-height: 40px;
-  cursor: pointer;
+.logoHolder {
+  display: flex;
+  align-items: center;
+}
+
+.navList {
+  display: flex;
+  justify-content: space-between;
 }
 
 nav {
@@ -10,6 +14,7 @@ nav {
 
 ul {
   padding: 0 4vw;
+  width: 100%;
   height: 14vh;
   display: flex;
   flex-direction: row;
@@ -50,20 +55,23 @@ nav ul li:hover .triangle {
 }
 
 .menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu p {
+  color: black;
+}
+
+.menu.active {
   height: 50vh;
   width: 30vw;
-  border-radius: 10px;
   position: absolute;
   top: 0;
   right: 0;
   background-color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: right;
+  border-radius: 10px;
   z-index: 1000;
-}
-.menu p {
-  color: black;
 }
 
 .triangle {
@@ -106,6 +114,13 @@ nav ul li:hover .triangle {
   margin-left: 5px;
 }
 
+#logo {
+  height: 4vw;
+  min-height: 40px;
+  cursor: pointer;
+  padding: 0 4vw;
+}
+
 @media screen and (max-width: 800px) {
   .triangle {
     border-right: 30px solid transparent;
@@ -114,7 +129,7 @@ nav ul li:hover .triangle {
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .triangle {
     border-right: 20px solid transparent;
     border-top: 14px solid #40454d;
@@ -127,5 +142,13 @@ nav ul li:hover .triangle {
 
   #menu {
     transform: scale(0.6);
+  }
+
+  .navList {
+    flex-direction: column;
+  }
+
+  #logo {
+    margin-top: 2vw;
   }
 }

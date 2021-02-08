@@ -35,63 +35,65 @@ function Nav({ setResult }) {
 
   return (
     <nav>
-      <ul>
-        <Link smooth to="/#" id="top">
-          <li>
-            <img className="logo" src="/logo3.png" alt="" />
-          </li>
-        </Link>
-
-        <Link smooth to="/#upcoming">
-          <li>
-            <p className="triangle"></p>
-            Upcoming
-          </li>
-        </Link>
-
-        <Link smooth to="/#popular">
-          <li>
-            <p className="triangle"></p>
-            Popular
-          </li>
-        </Link>
-
-        <Link smooth to="/#toprated">
-          <li>
-            <p className="triangle"></p>
-            Top-Rated
-          </li>
-        </Link>
-
-        <Link to="/favourites">
-          <li>
-            <p className="triangle"></p>
-            Favourites
-          </li>
-        </Link>
-
-        <li>
-          <img
-            className="small"
-            onClick={toggleMenu}
-            id="menu"
-            src="/icons/menu.png"
-            alt=""
-          />
-        </li>
-      </ul>
-
-      {menuVis && (
-        <div className="menu">
-          <img
-            className="small"
-            onClick={toggleMenu}
-            src="/icons/close.png"
-            alt=""
-          />
-          <p>Ful meny</p>
+      <div className="navList">
+        <div className="logoHolder">
+          <Link smooth to="/#" id="top">
+            <img id="logo" src="/logo3.png" alt="" />
+          </Link>
         </div>
-      )}
+        <ul>
+          <Link smooth to="/#upcoming">
+            <li>
+              <p className="triangle"></p>
+              Upcoming
+            </li>
+          </Link>
+
+          <Link smooth to="/#popular">
+            <li>
+              <p className="triangle"></p>
+              Popular
+            </li>
+          </Link>
+
+          <Link smooth to="/#toprated">
+            <li>
+              <p className="triangle"></p>
+              Top-Rated
+            </li>
+          </Link>
+
+          <Link to="/favourites">
+            <li>
+              <p className="triangle"></p>
+              Favourites
+            </li>
+          </Link>
+          <li>
+            <div className="menu">
+              <img
+                className="small"
+                onClick={toggleMenu}
+                id="menu"
+                src="/icons/menu.png"
+                alt=""
+              />
+            </div>
+          </li>
+        </ul>
+
+        {menuVis && (
+          <div className="menu active">
+            <img
+              className="small"
+              onClick={toggleMenu}
+              src="/icons/close.png"
+              alt=""
+            />
+            <p>Ful meny</p>
+          </div>
+        )}
+      </div>
       <div className="query-box">
         <form onSubmit={handleQuery} className="query-container">
           <input
