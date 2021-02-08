@@ -32,6 +32,7 @@
 .title-desc-image {
   width: 30%;
   padding: 5px 40px;
+  overflow-y: auto;
 }
 
 .video-container {
@@ -62,7 +63,7 @@
   height: 100px;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1280px) {
   /* For Tablet 1024 px phones: */
 
   .videoframe-container {
