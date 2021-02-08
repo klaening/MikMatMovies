@@ -12,6 +12,7 @@ import Favourites from "./Components/Favourites/Favourites";
 import StartSite from "./Components/StartSite";
 import ItemDetails from "./Components/ItemDetails/ItemDetails";
 import SearchResult from "./Components/Search/SearchResult";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   const [result, setResult] = useState([]);
@@ -49,6 +50,7 @@ function App() {
             pauseOnHover
           />
         </div>
+        <Footer />
       </div>
     </Router>
   );
