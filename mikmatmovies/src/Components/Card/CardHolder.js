@@ -14,7 +14,7 @@ function CardHolder({ header, movies, subTitle = null }) {
             {subTitle && <p>{subTitle}</p>}
           </div>
           <div className="cards">
-            {movies.slice(0, 10).map((movie) => (
+            {movies.map((movie) => (
               <Card key={movie.id} movie={movie} movies={movies} />
             ))}
           </div>

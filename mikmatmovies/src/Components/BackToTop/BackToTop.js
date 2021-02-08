@@ -22,7 +22,7 @@ const BackToTop = ({ target }) => {
           <div className="backTop_container">
             <p id="backTop_text">Back to top</p>
             <button className="backTop_button">
-              <i class="fas fa-arrow-up fa-2x"></i>
+              <i className="fas fa-arrow-up fa-2x"></i>
             </button>
           </div>
         )}
