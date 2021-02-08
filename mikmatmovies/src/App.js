@@ -13,6 +13,7 @@ import StartSite from "./Components/StartSite";
 import ItemDetails from "./Components/ItemDetails/ItemDetails";
 import SearchResult from "./Components/Search/SearchResult";
 import Footer from "./Components/Footer/Footer";
+import About from "./Components/Pages/About/About";
 
 function App() {
   const [result, setResult] = useState([]);
@@ -22,7 +23,7 @@ function App() {
     <Router>
       <div className="App">
         <Nav setResult={setResult} />
-        <div className="body">
+        <div className="main_content">
           <Switch>
             <Route
               path="/"
@@ -37,6 +38,7 @@ function App() {
               )}
             />
             <Route path="/details/:id" component={ItemDetails} />
+            <Route path="/about" component={() => <About />}></Route>
           </Switch>
           <ToastContainer
             position="bottom-center"

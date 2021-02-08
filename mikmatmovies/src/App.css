@@ -4,16 +4,19 @@
   box-sizing: border-box;
 }
 
-.body {
+body {
+  min-height: 100%;
+}
+
+.main_content {
   padding: 0 10vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .App {
-  height: 100%;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: var(--bg-primary);
 }
 

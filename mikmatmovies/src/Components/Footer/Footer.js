@@ -4,9 +4,9 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <div className="footer_main">
+    <footer className="footer_main">
       <ul>
-        <Link>
+        <Link to="/about">
           <li>About</li>
         </Link>
         <Link>
@@ -17,7 +17,7 @@ const Footer = () => {
         </Link>
         <li>Est. 2021</li>
       </ul>
-    </div>
+    </footer>
   );
 };
 

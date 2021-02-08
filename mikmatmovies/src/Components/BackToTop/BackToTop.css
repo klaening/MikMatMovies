@@ -1,7 +1,7 @@
 .backTop_main {
   position: fixed;
   right: 16vw;
-  bottom: 12vw;
+  bottom: 20vh;
   opacity: 0.8;
   cursor: pointer;
   transition: 0.6s;
