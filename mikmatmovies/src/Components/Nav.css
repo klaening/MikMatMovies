@@ -105,3 +105,27 @@ nav ul li:hover .triangle {
   border-radius: 4px;
   margin-left: 5px;
 }
+
+@media screen and (max-width: 800px) {
+  .triangle {
+    border-right: 30px solid transparent;
+    border-top: 21px solid #40454d;
+    border-left: 30px solid transparent;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .triangle {
+    border-right: 20px solid transparent;
+    border-top: 14px solid #40454d;
+    border-left: 20px solid transparent;
+  }
+
+  li {
+    font-size: 0.8em;
+  }
+
+  #menu {
+    transform: scale(0.6);
+  }
+}

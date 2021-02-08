@@ -36,11 +36,11 @@ function Nav({ setResult }) {
   return (
     <nav>
       <ul>
-        <li>
-          <Link smooth to="/#" id="top">
+        <Link smooth to="/#" id="top">
+          <li>
             <img className="logo" src="/logo3.png" alt="" />
-          </Link>
-        </li>
+          </li>
+        </Link>
 
         <Link smooth to="/#upcoming">
           <li>
