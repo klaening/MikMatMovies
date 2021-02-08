@@ -103,7 +103,6 @@ nav ul li:hover .triangle {
   border-radius: 4px;
   transition: background 0.3s ease-in-out;
 }
-
 .animated-search:focus {
   background-color: rgb(90, 40, 40);
   color: white;
@@ -150,5 +149,9 @@ nav ul li:hover .triangle {
 
   #logo {
     margin-top: 2vw;
+  }
+
+  .animated-search {
+    width: 40vw;
   }
 }
