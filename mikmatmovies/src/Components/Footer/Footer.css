@@ -5,7 +5,6 @@
   background-color: var(--bg-navbar);
   margin-top: 5vh;
 }
-
 .footer_main ul {
   height: 100%;
   display: flex;
@@ -13,7 +12,6 @@
   align-items: center;
   margin-bottom: 0;
 }
-
-.footer_main a {
-  color: var(--text-primary);
+.footer_main a:hover {
+  text-decoration-color: var(--text-primary);
 }
