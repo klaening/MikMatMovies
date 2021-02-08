@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import style from "./ItemDetails.module.css";
 import CardHolder from "../Card/CardHolder";
-import { ToastContainer } from "react-toastify";
+import BackToTop from "../BackToTop/BackToTop";
 import { TextContainer } from "../../styles/style";
 
 function ItemDetails({ match }) {
@@ -37,17 +37,6 @@ function ItemDetails({ match }) {
 
   return (
     <div>
-      <ToastContainer
-        position="bottom-center"
-        autoClose={4000}
-        hideProgressBar
-        newestOnTop
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss={false}
-        draggable={false}
-        pauseOnHover
-      />
       <div
         className={style.detailContainer}
         style={{ backgroundImage: `url(${backdroppath + item.backdrop_path})` }}
@@ -74,12 +63,13 @@ function ItemDetails({ match }) {
             <img
               className={style.imagePoster}
               src={path + item.poster_path}
-              alt="image"
+              alt="Movie poster"
             />
           </div>
         </div>
       </div>
       <CardHolder header="Recommended Movies" movies={Recommendations} />
+      <BackToTop target={`/details/${match.params.id}/#top`} />
     </div>
   );
 }

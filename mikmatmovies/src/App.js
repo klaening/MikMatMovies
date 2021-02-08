@@ -20,17 +20,6 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <ToastContainer
-          position="bottom-center"
-          autoClose={4000}
-          hideProgressBar
-          newestOnTop
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss={false}
-          draggable={false}
-          pauseOnHover
-        />
         <Nav setResult={setResult} />
         <div className="body">
           <Switch>
@@ -48,6 +37,17 @@ function App() {
             />
             <Route path="/details/:id" component={ItemDetails} />
           </Switch>
+          <ToastContainer
+            position="bottom-center"
+            autoClose={4000}
+            hideProgressBar
+            newestOnTop
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss={false}
+            draggable={false}
+            pauseOnHover
+          />
         </div>
       </div>
     </Router>

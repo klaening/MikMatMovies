@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { HashLink as Link } from "react-router-hash-link";
 import "./BackToTop.css";
 
-const BackToTop = () => {
+const BackToTop = ({ target }) => {
   const [showScroll, setShowScroll] = useState(false);
+
   const checkScrollTop = () => {
     if (!showScroll && window.pageYOffset > 300) {
       setShowScroll(true);
@@ -11,10 +12,11 @@ const BackToTop = () => {
       setShowScroll(false);
     }
   };
+
   window.addEventListener("scroll", checkScrollTop);
 
   return (
-    <Link smooth to="/#top">
+    <Link smooth to={target}>
       <div className="backTop_main">
         {showScroll && (
           <div className="backTop_container">

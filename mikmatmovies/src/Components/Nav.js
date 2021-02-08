@@ -42,33 +42,33 @@ function Nav({ setResult }) {
           </Link>
         </li>
 
-        <li>
-          <Link smooth to="/#upcoming">
+        <Link smooth to="/#upcoming">
+          <li>
             <p className="triangle"></p>
             Upcoming
-          </Link>
-        </li>
+          </li>
+        </Link>
 
-        <li>
-          <Link smooth to="/#popular">
+        <Link smooth to="/#popular">
+          <li>
             <p className="triangle"></p>
             Popular
-          </Link>
-        </li>
+          </li>
+        </Link>
 
-        <li>
-          <Link smooth to="/#toprated">
+        <Link smooth to="/#toprated">
+          <li>
             <p className="triangle"></p>
             Top-Rated
-          </Link>
-        </li>
+          </li>
+        </Link>
 
-        <li>
-          <Link to="/favourites">
+        <Link to="/favourites">
+          <li>
             <p className="triangle"></p>
             Favourites
-          </Link>
-        </li>
+          </li>
+        </Link>
 
         <li>
           <img

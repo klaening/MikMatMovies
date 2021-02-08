@@ -3,14 +3,11 @@ import BackToTop from "./BackToTop/BackToTop";
 
 //Imported Components
 
-import { ToastContainer } from "react-toastify";
-import jsonMovies from "./Card/movies.json";
 import VideoSlider from "./VideoSlider/ImageSlider";
 import { SliderData } from "./VideoSlider/SliderData";
 import CardHolder from "./Card/CardHolder";
-import { HashLink as Link } from "react-router-hash-link";
 
-function Start(props) {
+function Start() {
   useEffect(() => {
     fetchPopular();
     fetchTopRated();
@@ -63,7 +60,7 @@ function Start(props) {
       <div id="toprated">
         <CardHolder header="Top Rated movies" movies={topRatedMovies} />
       </div>
-      <BackToTop />
+      <BackToTop target="/#top" />
     </div>
   );
 }
