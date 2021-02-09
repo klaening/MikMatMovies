@@ -18,30 +18,41 @@
 }
 
 .inputField {
-  color: black;
+  color: rgb(255, 255, 255);
   width: 60vw;
+  background-color: rgb(58, 58, 58);
 }
 
 .submit {
   margin-left: 1vw;
   color: rgb(255, 255, 255);
   border-radius: 5px;
-  background-color: rgb(19, 84, 95);
+  width: 10%;
+  background-color: rgb(28, 83, 90);
 }
 
 .commentsContainer {
   margin-top: 2vh;
-  width: 60vw;
+  width: 95%;
   height: 90%;
   min-height: 30vh;
-  background-color: var(--bg-navbar);
+  /* background-color: var(--bg-navbar); */
+  background: linear-gradient(#434343, var(--bg-primary));
   border: 1px solid white;
   border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .commentsContainer h6 {
-  color: lightseagreen;
-  border-bottom: 1px solid rgb(97, 97, 97);
+  color: rgb(142, 153, 111);
   padding: 2px;
-  background-color: rgba(0, 51, 51, 0.123);
+}
+
+@media only screen and (max-width: 500px) {
+  .submit {
+    width: 80%;
+    align-items: center;
+  }
 }

@@ -45,7 +45,7 @@ const Comments = (props) => {
 
   return (
     <div className={style.container}>
-      <h4>Comments about {props.movie.title}</h4>
+      <h5>Comments:</h5>
       <div className={style.formsContainer}>
         <form onSubmit={saveComments} className={style.form}>
           <input
