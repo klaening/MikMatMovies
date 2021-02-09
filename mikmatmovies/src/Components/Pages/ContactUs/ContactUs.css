@@ -1,0 +1,15 @@
+.contact_us_main {
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+}
+
+.staff_main {
+  display: flex;
+}
+.staff {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}

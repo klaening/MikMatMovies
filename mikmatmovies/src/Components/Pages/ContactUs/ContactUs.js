@@ -4,12 +4,12 @@ import staffJson from "./staff.json";
 
 const ContactUs = () => {
   return (
-    <div>
+    <div className="contact_us_main">
       <h1>Contact us</h1>
 
-      <div className="staff">
+      <div className="staff_main">
         {staffJson.map((staff) => (
-          <div>
+          <div className="staff">
             <h2>{staff.name}</h2>
             <div className="description">
               {staff.img ? (
