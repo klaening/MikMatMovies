@@ -3,6 +3,7 @@ import style from "./ItemDetails.module.css";
 import CardHolder from "../Card/CardHolder";
 import BackToTop from "../BackToTop/BackToTop";
 import { TextContainer } from "../../styles/style";
+import Comments from "../Comments/Comments";
 
 function ItemDetails({ match }) {
   useEffect(() => {
@@ -68,6 +69,7 @@ function ItemDetails({ match }) {
           </div>
         </div>
       </div>
+      <Comments movie={item} />
       <CardHolder header="Recommended Movies" movies={Recommendations} />
       <BackToTop target={`/details/${match.params.id}/#top`} />
     </div>
