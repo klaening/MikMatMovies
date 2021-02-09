@@ -24,7 +24,12 @@ const Comments = (props) => {
       listLocalStorage = [];
     }
 
-    listLocalStorage.push(comment);
+    const commentObject = {
+      movieId: props.movie.id,
+      comment: comment,
+    };
+
+    listLocalStorage.push(commentObject);
     setCommentList(listLocalStorage);
 
     localStorage.setItem("movieComments", JSON.stringify(listLocalStorage));
@@ -51,7 +56,7 @@ const Comments = (props) => {
       </div>
       <div className={style.commentsContainer}>
         {commentList.map((comment) => {
-          return <h6>- {comment}</h6>;
+          return <h6>- {comment.comment}</h6>;
         })}
       </div>
     </div>
