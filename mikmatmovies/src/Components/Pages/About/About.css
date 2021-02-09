@@ -15,7 +15,7 @@
   display: flex;
 }
 .map_holder p {
-  margin: 0 8vw;
+  margin-left: 8vw;
 }
 
 .map {
@@ -33,4 +33,17 @@ iframe {
 .address_text {
   height: 30vw;
   overflow-y: scroll;
+}
+
+@media screen and (max-width: 800px) {
+  .map_holder {
+    flex-direction: column;
+  }
+  .map_holder p {
+    margin: 0;
+  }
+
+  .address_text {
+    margin-top: 2vw;
+  }
 }
