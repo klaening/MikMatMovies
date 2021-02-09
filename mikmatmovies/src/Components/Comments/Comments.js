@@ -60,7 +60,7 @@ const Comments = (props) => {
       </div>
       <div className={style.commentsContainer}>
         {commentList.map((comment) => {
-          return <h6>- {comment.comment}</h6>;
+          return <h6 key={comment.id}>- {comment.comment}</h6>;
         })}
       </div>
     </div>

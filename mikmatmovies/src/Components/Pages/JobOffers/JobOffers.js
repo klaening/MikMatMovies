@@ -9,7 +9,7 @@ const JobOffers = () => {
       <h1>Job Offers</h1>
 
       {json.map((job) => (
-        <div>
+        <div key={job.id}>
           <ul className="job_list">
             <li>
               <h2>{job.jobTitle}</h2>

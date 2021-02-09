@@ -9,7 +9,7 @@ const ContactUs = () => {
 
       <div className="staff_main">
         {staffJson.map((staff) => (
-          <div className="staff">
+          <div className="staff" key={staff.id}>
             <h2>{staff.name}</h2>
             <div className="description">
               {staff.img ? (
