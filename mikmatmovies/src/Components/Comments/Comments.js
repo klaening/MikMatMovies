@@ -3,24 +3,42 @@ import style from "./Comments.module.css";
 
 const Comments = (props) => {
   const [comment, setComment] = useState("");
-  let listOfComments = [
-    "Hate this movie! Makes no sence at all!",
-    "Awesome video",
-    "Cute actor!",
-  ];
+  const [commentList, setCommentList] = useState([]);
 
-  const handleComments = () => {
-    listOfComments.push(comment);
+  const getComments = () => {
+    // Hämta listan från ls
+    let listLocalStorage = JSON.parse(localStorage.getItem("movieComments"));
+
+    if (!listLocalStorage) {
+      listLocalStorage = [];
+    }
+
+    setCommentList(listLocalStorage);
+    // Sortera efter movie id
+  };
+
+  const saveComments = () => {
+    let listLocalStorage = JSON.parse(localStorage.getItem("movieComments"));
+
+    if (!listLocalStorage) {
+      listLocalStorage = [];
+    }
+
+    listLocalStorage.push(comment);
+    setCommentList(listLocalStorage);
+
+    localStorage.setItem("movieComments", JSON.stringify(listLocalStorage));
   };
 
   useEffect(() => {
-    handleComments();
+    //  handleComments();
+    getComments();
   }, []);
   return (
     <div className={style.container}>
       <h4>Comments about {props.movie.title}</h4>
       <div className={style.formsContainer}>
-        <form onSubmit={handleComments} className={style.form}>
+        <form onSubmit={saveComments} className={style.form}>
           <input
             className={style.inputField}
             type="text"
@@ -32,7 +50,7 @@ const Comments = (props) => {
         </form>
       </div>
       <div className={style.commentsContainer}>
-        {listOfComments.map((comment) => {
+        {commentList.map((comment) => {
           return <h6>- {comment}</h6>;
         })}
       </div>
