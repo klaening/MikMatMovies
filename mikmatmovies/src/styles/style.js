@@ -12,7 +12,6 @@ export const TextContainer = styled.div`
   margin: 0;
   padding: 0;
   @media (max-width: 480px) {
-    background: yellow;
     margin: 0;
     padding: 0;
   }
