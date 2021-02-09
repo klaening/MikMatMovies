@@ -5,12 +5,21 @@ const Comments = (props) => {
   const [comment, setComment] = useState("");
   const [commentList, setCommentList] = useState([]);
 
+  useEffect(() => {
+    //  handleComments();
+    getComments();
+  }, []);
+
   const getComments = () => {
     // Hämta listan från ls
     let listLocalStorage = JSON.parse(localStorage.getItem("movieComments"));
 
     if (!listLocalStorage) {
       listLocalStorage = [];
+    } else {
+      listLocalStorage = listLocalStorage.filter(
+        (comment) => comment.movieId === props.movie.id
+      );
     }
 
     setCommentList(listLocalStorage);
@@ -35,10 +44,6 @@ const Comments = (props) => {
     localStorage.setItem("movieComments", JSON.stringify(listLocalStorage));
   };
 
-  useEffect(() => {
-    //  handleComments();
-    getComments();
-  }, []);
   return (
     <div className={style.container}>
       <h4>Comments about {props.movie.title}</h4>
