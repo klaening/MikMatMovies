@@ -2,13 +2,13 @@
   {
     "id": 1,
     "name": "Mattis Vainikainen",
-    "img": "",
+    "img": "/images/mattis.jpg",
     "description": "This is Mattis"
   },
   {
     "id": 2,
     "name": "Mikael Klaening",
-    "img": "",
+    "img": "/images/mike.jpg",
     "description": "This is Mikael"
   }
 ]

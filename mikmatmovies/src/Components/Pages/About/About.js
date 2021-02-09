@@ -25,6 +25,16 @@ const About = () => {
         qui non, nisi modi eaque quaerat voluptatibus! Odio minus deserunt
         ullam, numquam corrupti illum deleniti!
       </p>
+      <iframe
+        title="map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8466.599685621235!2d11.834047945440922!3d57.959886849211195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464565ad81c00563%3A0x7d53b1e2ad79254f!2s442%2096%20Sk%C3%A4ggstorp!5e0!3m2!1ssv!2sse!4v1612862379736!5m2!1ssv!2sse"
+        width="600"
+        height="450"
+        frameborder="0"
+        allowfullscreen=""
+        aria-hidden="false"
+        tabindex="0"
+      ></iframe>
     </div>
   );
 };
