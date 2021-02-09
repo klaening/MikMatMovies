@@ -4,6 +4,9 @@ import "./CardHolder.css";
 import "../Global.css";
 
 function CardHolder({ header, movies, subTitle = null }) {
+  if (!movies) {
+    return null;
+  }
   return (
     <div>
       {movies.length !== 0 ? (

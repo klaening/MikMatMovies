@@ -97,6 +97,7 @@ function Nav({ setResult }) {
       <div className="query-box">
         <form onSubmit={handleQuery} className="query-container">
           <input
+            required
             className="animated-search"
             type="text"
             onChange={(e) => setQuery(e.target.value)}

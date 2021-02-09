@@ -49,6 +49,7 @@ const Comments = (props) => {
       <div className={style.formsContainer}>
         <form onSubmit={saveComments} className={style.form}>
           <input
+            required
             className={style.inputField}
             type="text"
             onChange={(e) => setComment(e.target.value)}
