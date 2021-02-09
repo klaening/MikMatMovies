@@ -6,9 +6,8 @@ const Comments = (props) => {
   const [commentList, setCommentList] = useState([]);
 
   useEffect(() => {
-    //  handleComments();
     getComments();
-  }, []);
+  }, [props.movie]);
 
   const getComments = () => {
     // Hämta listan från ls
