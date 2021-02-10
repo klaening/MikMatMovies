@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Rating from "@material-ui/lab/Rating";
 import Box from "@material-ui/core/Box";
@@ -24,41 +24,47 @@ const useStyles = makeStyles({
   },
 });
 
-export default function HoverRating(props) {
-  const [movieRating, setMovieRating] = useState(null);
-  const [value, setValue] = React.useState(null);
-  const [hover, setHover] = React.useState(-1);
+export default function HoverRating({ movie }) {
+  const [hover, setHover] = useState(-1);
+  const [value, setValue] = useState(null);
+  const name = `${movie.id}-rating`;
+  const movieRatings = "movieRatings";
 
-  useEffect(() => {}, [movieRating]);
+  //Kolla rating vid start
+  useEffect(() => {
+    getRatings();
+  }, []);
 
-  //   const getRatings = () => {
-  //     let ratedMovies = JSON.parse(localStorage.getItem("movieRatings"));
+  const getRatings = () => {
+    let response = JSON.parse(localStorage.getItem(movieRatings));
 
-  //     if (ratedMovies && ratedMovies.length > 0) {
-  //       var index = ratedMovies.findIndex((x) => x.id === props.movie.id);
+    if (response) {
+      var index = response.findIndex((x) => x.movieId === movie.id);
 
-  //       if (index >= 0) {
-  //         setMovieRating();
-  //       }
-  //     }
-  //   };
+      if (index > -1) {
+        setValue(response[index].rating);
+      }
+    }
+  };
 
-  const storeRating = () => {
-    let ratingList = JSON.parse(localStorage.getItem("movieRatings"));
+  const storeRating = (newValue) => {
+    let response = JSON.parse(localStorage.getItem(movieRatings));
 
-    if (!ratingList) {
-      ratingList = [];
+    if (!response) {
+      response = [];
     }
 
-    if (!movieRating) {
-      console.log("Something went wrong");
-      return null;
+    var index = response.findIndex((x) => x.movieId === movie.id);
+
+    if (index === -1) {
+      const newRating = { movieId: movie.id, rating: newValue };
+      response.push(newRating);
+    } else {
+      response[index].rating = newValue;
     }
 
-    ratingList.push(movieRating);
-
-    localStorage.setItem("movieRatings", JSON.stringify(ratingList));
-    console.log("stored!");
+    localStorage.setItem(movieRatings, JSON.stringify(response));
+    console.log("stored!", movie.id);
   };
 
   const classes = useStyles();
@@ -66,13 +72,12 @@ export default function HoverRating(props) {
   return (
     <div className={classes.root}>
       <Rating
-        name="hover-feedback"
+        name={name}
         value={value}
         precision={0.5}
         onChange={(event, newValue) => {
           setValue(newValue);
-          setMovieRating({ id: props.movie.id, rating: newValue });
-          storeRating();
+          storeRating(newValue);
         }}
         onChangeActive={(event, newHover) => {
           setHover(newHover);
