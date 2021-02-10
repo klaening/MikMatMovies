@@ -43,9 +43,15 @@ export default function HoverRating2({ movie }) {
     }
 
     if (value) {
-      const test = { movieId: movie.id, rating: value };
+      var index = response.findIndex((x) => x.movieId === movie.id);
 
-      response.push(test);
+      if (index === -1) {
+        const newRating = { movieId: movie.id, rating: value };
+        response.push(newRating);
+      } else {
+        console.log("Found", response[index]);
+        response[index].rating = value;
+      }
 
       localStorage.setItem("movieRatings", JSON.stringify(response));
       console.log("stored!", movie.id);
