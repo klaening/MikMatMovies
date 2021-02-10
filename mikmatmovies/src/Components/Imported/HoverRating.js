@@ -1,31 +1,29 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Rating from "@material-ui/lab/Rating";
-import Box from "@material-ui/core/Box";
+// import Box from "@material-ui/core/Box";
 
-const labels = {
-  0.5: "Useless",
-  1: "Useless+",
-  1.5: "Poor",
-  2: "Poor+",
-  2.5: "Ok",
-  3: "Ok+",
-  3.5: "Good",
-  4: "Good+",
-  4.5: "Excellent",
-  5: "Excellent+",
-};
+// const labels = {
+//   0.5: "Useless",
+//   1: "Useless+",
+//   1.5: "Poor",
+//   2: "Poor+",
+//   2.5: "Ok",
+//   3: "Ok+",
+//   3.5: "Good",
+//   4: "Good+",
+//   4.5: "Excellent",
+//   5: "Excellent+",
+// };
 
 const useStyles = makeStyles({
   root: {
-    width: 200,
-    display: "flex",
-    alignItems: "center",
+    lineHeight: 0,
   },
 });
 
 export default function HoverRating({ movie }) {
-  const [hover, setHover] = useState(-1);
+  //   const [hover, setHover] = useState(-1);
   const [value, setValue] = useState(null);
   const name = `${movie.id}-rating`;
   const movieRatings = "movieRatings";
@@ -63,6 +61,10 @@ export default function HoverRating({ movie }) {
       response[index].rating = newValue;
     }
 
+    if (!newValue) {
+      response.splice(index, 1);
+    }
+
     localStorage.setItem(movieRatings, JSON.stringify(response));
     console.log("stored!", movie.id);
   };
@@ -79,13 +81,13 @@ export default function HoverRating({ movie }) {
           setValue(newValue);
           storeRating(newValue);
         }}
-        onChangeActive={(event, newHover) => {
-          setHover(newHover);
-        }}
+        //   onChangeActive={(event, newHover) => {
+        //     setHover(newHover);
+        //   }}
       />
-      {value !== null && (
+      {/* {value !== null && (
         <Box ml={2}>{labels[hover !== -1 ? hover : value]}</Box>
-      )}
+      )} */}
     </div>
   );
 }
