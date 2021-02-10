@@ -4,6 +4,7 @@ import CardHolder from "../Card/CardHolder";
 import BackToTop from "../BackToTop/BackToTop";
 import { TextContainer } from "../../styles/style";
 import Comments from "../Comments/Comments";
+import HoverRating from "../Imported/HoverRating";
 
 function ItemDetails({ match }) {
   useEffect(() => {
@@ -53,7 +54,9 @@ function ItemDetails({ match }) {
             <p>{item.overview}</p>
 
             <div>
-              <h6>Rating: {item.vote_average}</h6>
+              <h6>Global rating: {item.vote_average}</h6>
+              <h6>Your rating:</h6>
+              <HoverRating movie={item} />
               <h6>{item.tagline}</h6>
               <h6>
                 WEBSITE:{" "}
