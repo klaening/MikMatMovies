@@ -14,7 +14,7 @@ const Card = ({ movie, movies }) => {
   const listName = "likedMovies";
 
   useEffect(() => {
-    storage.getFavourites(listName, movie, setLiked);
+    storage.getLiked(listName, movie, setLiked);
   }, [liked]);
 
   const toggleLiked = () => {
@@ -60,7 +60,11 @@ const Card = ({ movie, movies }) => {
           </div>
 
           <div className={style.right}>
-            <p>Rating {movie.vote_average}</p>
+            {movie.vote_count > 0 ? (
+              <p>Rating {movie.vote_average}</p>
+            ) : (
+              <p>No rating</p>
+            )}
 
             {liked && (
               <img id={style.heartImg} src="/icons/heart-filled.png" alt="" />

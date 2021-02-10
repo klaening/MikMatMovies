@@ -37,6 +37,15 @@ function ItemDetails({ match }) {
       });
   };
 
+  const year = () => {
+    if (item.release_date) {
+      let yearVar = item.release_date;
+      let getYear = yearVar.split("-");
+
+      return getYear[0];
+    }
+  };
+
   if (!item) {
     return null;
   }
@@ -50,11 +59,22 @@ function ItemDetails({ match }) {
       >
         <div className={style.contentContainer}>
           <div className={style.titleOverviewContainer}>
-            <h3>{item.title}</h3>
+            <h3>
+              {item.title} &#40;{year()}&#41;
+            </h3>
             <p>{item.overview}</p>
 
             <div>
-              <h6>Global rating: {item.vote_average}</h6>
+              {item.vote_count > 0 ? (
+                <div className={style.rating}>
+                  <h6>
+                    Global rating: {item.vote_average} &#40;{item.vote_count}{" "}
+                    votes&#41;
+                  </h6>
+                </div>
+              ) : (
+                <h6>No rating available</h6>
+              )}
               <h6>Your rating:</h6>
               <HoverRating movie={item} />
               <h6>{item.tagline}</h6>
