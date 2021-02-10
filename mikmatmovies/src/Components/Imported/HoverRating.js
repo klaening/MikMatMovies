@@ -1,20 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Rating from "@material-ui/lab/Rating";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 // import Box from "@material-ui/core/Box";
 
-// const labels = {
-//   0.5: "Useless",
-//   1: "Useless+",
-//   1.5: "Poor",
-//   2: "Poor+",
-//   2.5: "Ok",
-//   3: "Ok+",
-//   3.5: "Good",
-//   4: "Good+",
-//   4.5: "Excellent",
-//   5: "Excellent+",
-// };
+const labels = {
+  0.5: "Useless",
+  1: "Useless+",
+  1.5: "Poor",
+  2: "Poor+",
+  2.5: "Ok",
+  3: "Ok+",
+  3.5: "Good",
+  4: "Good+",
+  4.5: "Excellent",
+  5: "Excellent+",
+};
 
 const useStyles = makeStyles({
   root: {
@@ -63,10 +65,12 @@ export default function HoverRating({ movie }) {
 
     if (!newValue) {
       response.splice(index, 1);
+      toast(`You removed rating for "${movie.title}"`);
+    } else {
+      toast(`You gave "${movie.title}" ${newValue} stars!`);
     }
 
     localStorage.setItem(movieRatings, JSON.stringify(response));
-    console.log("stored!", movie.id);
   };
 
   const classes = useStyles();
