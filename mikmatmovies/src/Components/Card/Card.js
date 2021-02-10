@@ -1,16 +1,20 @@
 import React, { useState, useEffect } from "react";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import CardOverlay from "./CardOverlay.js";
 import style from "./Card.module.css";
 import "../Global.css";
 
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+import storage from "../../Services/storageService";
+
 const Card = ({ movie, movies }) => {
   const [liked, setLiked] = useState(false);
   const path = "https://image.tmdb.org/t/p/original";
+  const listName = "likedMovies";
 
   useEffect(() => {
-    getFavourites();
+    storage.getFavourites(listName, movie, setLiked);
   }, [liked]);
 
   const toggleLiked = () => {
@@ -18,46 +22,11 @@ const Card = ({ movie, movies }) => {
     setLiked(newLiked);
 
     if (newLiked) {
-      storeLiked(movie);
+      storage.storeLiked(listName, movie);
       toast(`${movie.title} was added to favourites!`);
     } else {
-      removeLiked(movie);
+      storage.removeLiked(listName, movie);
       toast(`${movie.title} was removed from favourites!`);
-    }
-  };
-
-  const storeLiked = (objectToStore) => {
-    let likedMovies = JSON.parse(localStorage.getItem(listName));
-
-    if (!likedMovies) {
-      likedMovies = [];
-    }
-
-    likedMovies.push(objectToStore);
-    localStorage.setItem(listName, JSON.stringify(likedMovies));
-  };
-
-  const removeLiked = (objectToStore) => {
-    let likedMovies = JSON.parse(localStorage.getItem(listName));
-
-    if (likedMovies && likedMovies.length > 0) {
-      var index = likedMovies.findIndex((x) => x.id === objectToStore.id);
-      likedMovies.splice(index, 1);
-
-      localStorage.setItem(listName, JSON.stringify(likedMovies));
-    }
-  };
-
-  const listName = "likedMovies";
-  const getFavourites = () => {
-    let likedMovies = JSON.parse(localStorage.getItem(listName));
-
-    if (likedMovies && likedMovies.length > 0) {
-      var index = likedMovies.findIndex((x) => x.id === movie.id);
-
-      if (index >= 0) {
-        setLiked(true);
-      }
     }
   };
 
