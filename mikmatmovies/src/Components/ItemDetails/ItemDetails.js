@@ -6,6 +6,11 @@ import { TextContainer } from "../../styles/style";
 import Comments from "../Comments/Comments";
 import HoverRating from "../Imported/HoverRating";
 
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+import storage from "../../Services/storageService";
+
 function ItemDetails({ match }) {
   useEffect(() => {
     fetchItem();
@@ -14,6 +19,7 @@ function ItemDetails({ match }) {
 
   const [item, setItem] = useState(null);
   const [Recommendations, setRecommendations] = useState([]);
+  const [liked, setLiked] = useState(false);
 
   const path = `https://image.tmdb.org/t/p/w185`;
   const backdroppath = `https://image.tmdb.org/t/p/w1280`;
@@ -25,6 +31,7 @@ function ItemDetails({ match }) {
     );
     const item = await fetchItem.json();
     setItem(item);
+    storage.getLiked("likedMovies", item, setLiked);
   };
 
   const fetchRec = async () => {
@@ -35,6 +42,19 @@ function ItemDetails({ match }) {
       .then((data) => {
         setRecommendations(data.results);
       });
+  };
+
+  const toggleLiked = () => {
+    const newLiked = !liked;
+    setLiked(newLiked);
+
+    if (newLiked) {
+      storage.storeLiked("likedMovies", item);
+      toast(`${item.title} was added to favourites!`);
+    } else {
+      storage.removeLiked("likedMovies", item);
+      toast(`${item.title} was removed from favourites!`);
+    }
   };
 
   const year = () => {
@@ -96,6 +116,12 @@ function ItemDetails({ match }) {
             />
           </div>
         </div>
+        <button id={style.heartBtn} onClick={toggleLiked}>
+          <img
+            src={liked ? "/icons/heart-filled.png" : "/icons/heart.png"}
+            alt="Heart button"
+          />
+        </button>
       </div>
       <Comments movie={item} />
       <CardHolder header="Recommended Movies" movies={Recommendations} />
