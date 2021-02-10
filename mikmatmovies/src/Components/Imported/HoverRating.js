@@ -26,12 +26,40 @@ const useStyles = makeStyles({
 
 export default function HoverRating(props) {
   const [movieRating, setMovieRating] = useState(null);
-  const [value, setValue] = React.useState(2);
+  const [value, setValue] = React.useState(null);
   const [hover, setHover] = React.useState(-1);
 
-  useEffect(() => {
-    console.log(movieRating);
-  }, [movieRating]);
+  useEffect(() => {}, [movieRating]);
+
+  //   const getRatings = () => {
+  //     let ratedMovies = JSON.parse(localStorage.getItem("movieRatings"));
+
+  //     if (ratedMovies && ratedMovies.length > 0) {
+  //       var index = ratedMovies.findIndex((x) => x.id === props.movie.id);
+
+  //       if (index >= 0) {
+  //         setMovieRating();
+  //       }
+  //     }
+  //   };
+
+  const storeRating = () => {
+    let ratingList = JSON.parse(localStorage.getItem("movieRatings"));
+
+    if (!ratingList) {
+      ratingList = [];
+    }
+
+    if (!movieRating) {
+      console.log("Something went wrong");
+      return null;
+    }
+
+    ratingList.push(movieRating);
+
+    localStorage.setItem("movieRatings", JSON.stringify(ratingList));
+    console.log("stored!");
+  };
 
   const classes = useStyles();
 
@@ -44,6 +72,7 @@ export default function HoverRating(props) {
         onChange={(event, newValue) => {
           setValue(newValue);
           setMovieRating({ id: props.movie.id, rating: newValue });
+          storeRating();
         }}
         onChangeActive={(event, newHover) => {
           setHover(newHover);
