@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../Global.css";
 import style from "./CardOverlay.module.css";
 import HalfRating from "../Imported/HalfRating.js";
+import HoverRating from "../Imported/HalfRating.js";
 import QuickRead from "./QuickRead";
 import { Link } from "react-router-dom";
 
@@ -46,7 +47,8 @@ const CardOverlay = (props) => {
         </div>
         <div className={style.rating}>
           <p>Your rating:</p>
-          <HalfRating />
+          {/* <HalfRating /> */}
+          <HoverRating movie={props.movie} />
         </div>
         <div className={style.readmore}>
           <Link to={`/details/${props.movie.id}`}>Read more</Link>
