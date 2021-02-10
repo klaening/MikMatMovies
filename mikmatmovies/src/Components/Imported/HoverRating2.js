@@ -31,26 +31,22 @@ export default function HoverRating2({ movie }) {
 
   //Kolla rating vid start
 
-  useEffect(() => {
-    storeRating();
-  }, [value]);
-
-  const storeRating = () => {
+  const storeRating = (newValue) => {
     let response = JSON.parse(localStorage.getItem("movieRatings"));
 
     if (!response) {
       response = [];
     }
 
-    if (value) {
+    if (newValue) {
       var index = response.findIndex((x) => x.movieId === movie.id);
 
       if (index === -1) {
-        const newRating = { movieId: movie.id, rating: value };
+        const newRating = { movieId: movie.id, rating: newValue };
         response.push(newRating);
       } else {
         console.log("Found", response[index]);
-        response[index].rating = value;
+        response[index].rating = newValue;
       }
 
       localStorage.setItem("movieRatings", JSON.stringify(response));
@@ -70,6 +66,7 @@ export default function HoverRating2({ movie }) {
         precision={0.5}
         onChange={(event, newValue) => {
           setValue(newValue);
+          storeRating(newValue);
         }}
         onChangeActive={(event, newHover) => {
           setHover(newHover);
