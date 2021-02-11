@@ -65,6 +65,10 @@ h3 {
   display: flex;
 }
 
+.trailerDiv {
+  display: flex;
+}
+
 #heartBtn {
   position: absolute;
   top: 14px;

@@ -15,10 +15,12 @@ function ItemDetails({ match }) {
   useEffect(() => {
     fetchItem();
     fetchRec();
+    fetchTrailer();
   }, [match]);
 
   const [item, setItem] = useState(null);
   const [Recommendations, setRecommendations] = useState([]);
+  const [trailer, setTrailer] = useState(null);
   const [liked, setLiked] = useState(false);
 
   const path = `https://image.tmdb.org/t/p/w185`;
@@ -41,6 +43,16 @@ function ItemDetails({ match }) {
       .then((response) => response.json())
       .then((data) => {
         setRecommendations(data.results);
+      });
+  };
+
+  const fetchTrailer = async () => {
+    await fetch(
+      `https://api.themoviedb.org/3/movie/${match.params.id}/videos?api_key=da74000c93a2ffe65d489852f39d6ddc&language=en-US&page=1`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setTrailer(data.results);
       });
   };
 
@@ -87,8 +99,8 @@ function ItemDetails({ match }) {
             <h3>
               {item.title} &#40;{year()}&#41;
             </h3>
+            <h6>{item.tagline}</h6>
             <p>{item.overview}</p>
-
             <div>
               {item.vote_count > 0 ? (
                 <div className={style.rating}>
@@ -102,7 +114,6 @@ function ItemDetails({ match }) {
               )}
               <h6>Your rating:</h6>
               <HoverRating movie={item} />
-              <h6>{item.tagline}</h6>
               <h6>
                 WEBSITE:{" "}
                 {item.homepage ? (
@@ -111,6 +122,28 @@ function ItemDetails({ match }) {
                   <TextContainer>No homepage available</TextContainer>
                 )}
               </h6>
+              <div>
+                {trailer ? (
+                  <div className={style.trailerDiv}>
+                    <h6>
+                      TRAILER:{" "}
+                      <a
+                        href={`https://www.youtube.com/watch?v=${trailer[0].key}`}
+                      >
+                        {`https://www.youtube.com/watch?v=${trailer[0].key}`}
+                      </a>
+                      {/* 
+                    <iframe
+                    title={item.tagline}
+                    src={`https://www.youtube.com/embed/${trailer[0].key}?autoplay=1&mute=1`}
+                    frameborder="0"
+                  ></iframe> */}
+                    </h6>
+                  </div>
+                ) : (
+                  <p>No trailer available</p>
+                )}
+              </div>
             </div>
           </div>
           <div className={style.test}>
