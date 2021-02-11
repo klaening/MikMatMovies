@@ -2,6 +2,12 @@
   display: flex;
   flex-direction: column;
   min-height: 50vh;
+
+  background-color: var(--bg-cardHolder);
+  overflow: hidden;
+  margin: 2vw;
+  border-radius: 20px;
+  padding: 1vw;
 }
 
 .staff_main {
@@ -12,6 +18,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  margin: 4vw 0;
   width: 100%;
 }
 
@@ -19,7 +26,23 @@
   height: 40vh;
   border-radius: 14px;
   cursor: pointer;
+  box-shadow: 4px 5px var(--shadow-card);
+  transition: 0.2s;
 }
 .description img:hover {
   opacity: 0.8;
+  transform: scale(1.02);
+}
+
+@media screen and (max-width: 800px) {
+  .staff_main {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .description img {
+    height: 20vh;
+    border-radius: 10vh;
+  }
 }
