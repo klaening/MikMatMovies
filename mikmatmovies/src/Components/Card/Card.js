@@ -39,6 +39,11 @@ const Card = ({ movie, movies }) => {
     }
   };
 
+  const voteAverage = () => {
+    let num = movie.vote_average;
+    return num.toFixed(1);
+  };
+
   return (
     <div className={style.main}>
       <section className={style.body}>
@@ -61,7 +66,7 @@ const Card = ({ movie, movies }) => {
 
           <div className={style.right}>
             {movie.vote_count > 0 ? (
-              <p>Rating {movie.vote_average}</p>
+              <p>Rating {voteAverage()}</p>
             ) : (
               <p>No rating</p>
             )}

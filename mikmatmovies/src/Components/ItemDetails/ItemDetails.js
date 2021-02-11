@@ -66,6 +66,11 @@ function ItemDetails({ match }) {
     }
   };
 
+  const voteAverage = () => {
+    let num = item.vote_average;
+    return num.toFixed(1);
+  };
+
   if (!item) {
     return null;
   }
@@ -88,7 +93,7 @@ function ItemDetails({ match }) {
               {item.vote_count > 0 ? (
                 <div className={style.rating}>
                   <h6>
-                    Global rating: {item.vote_average} &#40;{item.vote_count}{" "}
+                    Global rating: {voteAverage()} &#40;{item.vote_count}{" "}
                     votes&#41;
                   </h6>
                 </div>
