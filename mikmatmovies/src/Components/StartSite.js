@@ -7,6 +7,9 @@ import VideoSlider from "./VideoSlider/ImageSlider";
 import { SliderData } from "./VideoSlider/SliderData";
 import CardHolder from "./Card/CardHolder";
 
+//Context
+import { MovieProvider } from "../Context/MovieContext";
+
 function Start() {
   useEffect(() => {
     fetchPopular();
@@ -50,16 +53,21 @@ function Start() {
 
   return (
     <div>
-      <VideoSlider slides={SliderData} />
-      <div id="upcoming">
-        <CardHolder header="Upcoming movies" movies={upcomingMovies} />
-      </div>
+      <MovieProvider>
+        <VideoSlider slides={SliderData} />
+        <div id="upcoming">
+          <CardHolder header="Upcoming movies" movies={upcomingMovies} />
+        </div>
+      </MovieProvider>
+
       <div id="popular">
         <CardHolder header="Popular movies" movies={popularMovies} />
       </div>
+      {/* <TopRatedMovies> */}
       <div id="toprated">
         <CardHolder header="Top Rated movies" movies={topRatedMovies} />
       </div>
+      {/* </TopRatedMovies> */}
       <BackToTop target="/#top" />
     </div>
   );

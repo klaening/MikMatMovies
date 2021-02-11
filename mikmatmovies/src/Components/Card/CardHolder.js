@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import Card from "./Card";
 import "./CardHolder.css";
 import "../Global.css";
 
-function CardHolder({ header, movies, subTitle = null }) {
+//Context
+import { MovieContext } from "../../Context/MovieContext";
+
+function CardHolder({ header, subTitle = null }) {
+  const movies = useContext(MovieContext);
+
   if (!movies) {
     return null;
   }
