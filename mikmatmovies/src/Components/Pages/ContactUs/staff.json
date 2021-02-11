@@ -3,12 +3,14 @@
     "id": 1,
     "name": "Mattis Vainikainen",
     "img": "/images/mattis.jpg",
-    "description": "This is Mattis"
+    "description": "This is Mattis",
+    "email": "mattis.real@email.com"
   },
   {
     "id": 2,
     "name": "Mikael Klaening",
     "img": "/images/mike.jpg",
-    "description": "This is Mikael"
+    "description": "This is Mikael",
+    "email": "mikael.totally.real@email.com  "
   }
 ]

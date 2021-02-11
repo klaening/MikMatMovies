@@ -13,7 +13,9 @@ const ContactUs = () => {
             <h2>{staff.name}</h2>
             <div className="description">
               {staff.img ? (
-                <img src={staff.img} alt="Staff Image" />
+                <a href={`mailto:${staff.email}?subject=Hi ${staff.name}!`}>
+                  <img src={staff.img} alt={staff.name} />
+                </a>
               ) : (
                 <p>No image available</p>
               )}
