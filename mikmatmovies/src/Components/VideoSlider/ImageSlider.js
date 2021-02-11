@@ -15,7 +15,7 @@ const ImageSlider = ({ slides }) => {
   }, []);
 
   const path = "https://image.tmdb.org/t/p/original";
-  const length = slides.length;
+  const length = upcomingMovies.length;
 
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
@@ -58,17 +58,14 @@ const ImageSlider = ({ slides }) => {
           } else {
             console.log("No trailer");
           }
+          setTrailerList(list);
         });
     });
-
-    setTrailerList(list);
   };
 
   const key = (movie) => {
     if (trailerList.length > 0) {
       return trailerList.find((x) => x.movieId === movie.id).trailer.key;
-    } else {
-      return "dQw4w9WgXcQ";
     }
   };
 
