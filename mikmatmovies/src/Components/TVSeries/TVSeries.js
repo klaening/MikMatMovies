@@ -48,7 +48,7 @@ const TVSeries = () => {
   return (
     <div>
       {console.log("series", popularSeries)}
-      <VideoSlider />
+      <VideoSlider series />
       <div id="onTheAir">
         {onTheAirSeries && (
           <CardHolder header="On the air" movies={onTheAirSeries} />

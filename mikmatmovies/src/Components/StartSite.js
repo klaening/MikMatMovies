@@ -49,7 +49,7 @@ function Start() {
 
   return (
     <div>
-      <VideoSlider />
+      <VideoSlider movies />
       <div id="upcoming">
         <CardHolder header="Upcoming movies" movies={upcomingMovies} />
       </div>

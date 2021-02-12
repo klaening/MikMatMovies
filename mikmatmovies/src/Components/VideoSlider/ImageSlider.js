@@ -3,18 +3,26 @@ import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
 import "./videoSlider.css";
 import "../Global.css";
 
-const ImageSlider = () => {
+const ImageSlider = ({
+  movies: moviesBool = false,
+  series: seriesBool = false,
+}) => {
   const [current, setCurrent] = useState(0);
-  const [upcomingMovies, setUpcomingMovies] = useState([]);
+  const [slides, setSlides] = useState([]);
   const [trailerList, setTrailerList] = useState([]);
 
   useEffect(async () => {
-    const movies = await fetchUpcoming();
-    fetchTrailer(movies);
+    if (moviesBool) {
+      const fetchedMovies = await fetchUpcoming();
+      fetchTrailer(fetchedMovies);
+    } else if (seriesBool) {
+      const fetchedSeries = await fetchSeries();
+      fetchTrailerSeries(fetchedSeries);
+    }
   }, []);
 
   const path = "https://image.tmdb.org/t/p/original";
-  const length = upcomingMovies.length;
+  const length = slides.length;
 
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
@@ -28,6 +36,21 @@ const ImageSlider = () => {
   //     return null;
   //   }
 
+  const fetchSeries = async () => {
+    let series = [];
+
+    await fetch(
+      `https://api.themoviedb.org/3/tv/on_the_air?api_key=da74000c93a2ffe65d489852f39d6ddc&language=en-US&page=1`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setSlides(data.results);
+        series = data.results;
+      });
+
+    return series;
+  };
+
   const fetchUpcoming = async () => {
     let movies = [];
 
@@ -36,11 +59,30 @@ const ImageSlider = () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        setUpcomingMovies(data.results);
+        setSlides(data.results);
         movies = data.results;
       });
 
     return movies;
+  };
+
+  const fetchTrailerSeries = (movies) => {
+    let list = [];
+
+    movies.map((movie) => {
+      fetch(
+        `https://api.themoviedb.org/3/tv/${movie.id}/videos?api_key=da74000c93a2ffe65d489852f39d6ddc&language=en-US&page=1`
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.results) {
+            list.push({ movieId: movie.id, trailer: data.results[0] });
+          } else {
+            console.log("No trailer");
+          }
+          setTrailerList(list);
+        });
+    });
   };
 
   const fetchTrailer = (movies) => {
@@ -70,8 +112,7 @@ const ImageSlider = () => {
 
   return (
     <div>
-      {console.log(upcomingMovies)}
-      {upcomingMovies.map((slide, index) => {
+      {slides.map((slide, index) => {
         return (
           <div
             className={index === current ? "slide active" : "slide"}
