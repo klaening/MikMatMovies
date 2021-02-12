@@ -3,9 +3,23 @@ import Card from "./Card";
 import "./CardHolder.css";
 import "../Global.css";
 
-function CardHolder({ header, movies, subTitle = null }) {
+function CardHolder({ header, movies, subTitle = null, errorMessage = null }) {
   if (!movies) {
-    return null;
+    return (
+      <div className="cardHolder-body">
+        <div className="ch-header">
+          <h2>{header}</h2>
+          {subTitle && <p>{subTitle}</p>}
+        </div>
+        <div className="error">
+          {errorMessage ? (
+            <h3>{errorMessage}</h3>
+          ) : (
+            <h3>Nothing here, sorry :&#40;</h3>
+          )}
+        </div>
+      </div>
+    );
   }
   return (
     <div>
@@ -13,7 +27,6 @@ function CardHolder({ header, movies, subTitle = null }) {
         <div className="cardHolder-body">
           <div className="ch-header">
             <h2>{header}</h2>
-            {/* {subtitle ? <p>{`Results: ${movies.length}`}</p> : null} */}
             {subTitle && <p>{subTitle}</p>}
           </div>
           <div className="cards">

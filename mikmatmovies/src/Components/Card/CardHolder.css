@@ -13,6 +13,14 @@
   justify-items: center;
 }
 
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: cadetblue !important;
+  min-height: 20vw;
+}
+
 @media only screen and (max-width: 500px) {
   .cards {
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));

@@ -1,27 +1,27 @@
 import React, { useEffect, useState } from "react";
-import BackToTop from "./BackToTop/BackToTop";
+import BackToTop from "../BackToTop/BackToTop";
 
-import VideoSlider from "./VideoSlider/ImageSlider";
-import CardHolder from "./Card/CardHolder";
+import VideoSlider from "../VideoSlider/ImageSlider";
+import CardHolder from "../Card/CardHolder";
 
-function TVSeries() {
+const TVSeries = () => {
   useEffect(() => {
+    fetchOnTheAir();
     fetchPopular();
     fetchTopRated();
-    fetchOnTheAir();
   }, []);
 
-  const [topRatedSeries, setTopRatedSeries] = useState([]);
-  const [popularSeries, setPopularSeries] = useState([]);
   const [onTheAirSeries, setOnTheAirSeries] = useState([]);
+  const [popularSeries, setPopularSeries] = useState([]);
+  const [topRatedSeries, setTopRatedSeries] = useState([]);
 
-  const fetchTopRated = async () => {
+  const fetchOnTheAir = async () => {
     await fetch(
-      `https://api.themoviedb.org/3/tv/top_rated?api_key=da74000c93a2ffe65d489852f39d6ddc&language=en-US&page=1`
+      `https://api.themoviedb.org/3/tv/on_the_air?api_key=da74000c93a2ffe65d489852f39d6ddc&language=en-US&page=1`
     )
       .then((response) => response.json())
       .then((data) => {
-        setTopRatedSeries(data.results);
+        setOnTheAirSeries(data.results);
       });
   };
 
@@ -35,31 +35,34 @@ function TVSeries() {
       });
   };
 
-  const fetchOnTheAir = async () => {
+  const fetchTopRated = async () => {
     await fetch(
-      `https://api.themoviedb.org/3/tv/on_the_air?api_key=da74000c93a2ffe65d489852f39d6ddc&language=en-US&page=1`
+      `https://api.themoviedb.org/3/tv/top_rated?api_key=da74000c93a2ffe65d489852f39d6ddc&language=en-US&page=1`
     )
       .then((response) => response.json())
       .then((data) => {
-        setOnTheAirSeries(data.results);
+        setTopRatedSeries(data.results);
       });
   };
 
   return (
     <div>
+      {console.log("series", popularSeries)}
       <VideoSlider />
       <div id="onTheAir">
-        <CardHolder header="On the air" series={onTheAirSeries} />
+        {onTheAirSeries && (
+          <CardHolder header="On the air" movies={onTheAirSeries} />
+        )}
       </div>
       <div id="popular">
-        <CardHolder header="Popular series" series={popularSeries} />
+        <CardHolder header="Popular series" movies={popularSeries} />
       </div>
       <div id="toprated">
-        <CardHolder header="Top Rated series" series={topRatedSeries} />
+        <CardHolder header="Top Rated series" movies={topRatedSeries} />
       </div>
       <BackToTop target="/#top" />
     </div>
   );
-}
+};
 
 export default TVSeries;

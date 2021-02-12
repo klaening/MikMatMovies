@@ -68,6 +68,13 @@ function Nav({ setResult }) {
                 Favourites
               </li>
             </Link>
+
+            <Link to="/tv-series">
+              <li>
+                <p className="triangle"></p>
+                TV-Series
+              </li>
+            </Link>
             <li>
               <div className="menu">
                 <img

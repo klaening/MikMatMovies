@@ -18,6 +18,7 @@ import Footer from "./Components/Footer/Footer";
 import About from "./Components/Pages/About/About";
 import ContactUs from "./Components/Pages/ContactUs/ContactUs";
 import JobOffers from "./Components/Pages/JobOffers/JobOffers";
+import TVSeries from "./Components/TVSeries/TVSeries";
 
 function App() {
   const [result, setResult] = useState([]);
@@ -45,6 +46,7 @@ function App() {
             <Route path="/about" component={About}></Route>
             <Route path="/contact-us" component={ContactUs}></Route>
             <Route path="/job-offers" component={JobOffers}></Route>
+            <Route path="/tv-series" component={TVSeries}></Route>
           </Switch>
           <ToastContainer
             position="bottom-center"

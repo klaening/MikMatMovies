@@ -37,6 +37,13 @@ const Card = ({ movie, movies }) => {
 
       return getYear[0];
     }
+
+    if (movie.first_air_date) {
+      let yearVar = movie.first_air_date;
+      let getYear = yearVar.split("-");
+
+      return getYear[0];
+    }
   };
 
   const voteAverage = () => {
@@ -60,7 +67,7 @@ const Card = ({ movie, movies }) => {
 
         <footer className={style.footer}>
           <div className={style.left}>
-            <p>{movie.title}</p>
+            {movie.title ? <p>{movie.title}</p> : <p>{movie.name}</p>}
             <p>{year()}</p>
           </div>
 
