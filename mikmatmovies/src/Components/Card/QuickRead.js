@@ -50,9 +50,7 @@ const QuickRead = ({ toggleClassName, movie }) => {
       {quickReadActive && (
         <div className="scroll">
           <article>
-            <h6>
-              <b>{movie.title}</b>
-            </h6>
+            <h6>{movie.title ? <b>{movie.title}</b> : <b>{movie.name}</b>}</h6>
             {movie.overview ? (
               <p>{movie.overview}</p>
             ) : (

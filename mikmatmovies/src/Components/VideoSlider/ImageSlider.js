@@ -12,16 +12,11 @@ const ImageSlider = ({
   const [trailerList, setTrailerList] = useState([]);
 
   useEffect(async () => {
-    if (moviesBool) {
-      const fetchedMovies = await fetchUpcoming();
-      fetchTrailer(fetchedMovies);
-    } else if (seriesBool) {
-      const fetchedSeries = await fetchSeries();
-      fetchTrailerSeries(fetchedSeries);
-    }
+    const fetchedSlides = await fetchSlides();
+    fetchTrailers(fetchedSlides);
   }, []);
 
-  const path = "https://image.tmdb.org/t/p/original";
+  const imagePath = "https://image.tmdb.org/t/p/original";
   const length = slides.length;
 
   const nextSlide = () => {
@@ -36,66 +31,44 @@ const ImageSlider = ({
   //     return null;
   //   }
 
-  const fetchSeries = async () => {
-    let series = [];
+  const fetchSlides = async () => {
+    let slides = [];
+    let path = "";
 
-    await fetch(
-      `https://api.themoviedb.org/3/tv/on_the_air?api_key=da74000c93a2ffe65d489852f39d6ddc&language=en-US&page=1`
-    )
+    if (moviesBool) {
+      path = `https://api.themoviedb.org/3/movie/upcoming?api_key=da74000c93a2ffe65d489852f39d6ddc&language=en-US&page=1`;
+    } else if (seriesBool) {
+      path = `https://api.themoviedb.org/3/tv/on_the_air?api_key=da74000c93a2ffe65d489852f39d6ddc&language=en-US&page=1`;
+    }
+
+    await fetch(path)
       .then((response) => response.json())
       .then((data) => {
         setSlides(data.results);
-        series = data.results;
+        slides = data.results;
       });
 
-    return series;
+    return slides;
   };
 
-  const fetchUpcoming = async () => {
-    let movies = [];
-
-    await fetch(
-      `https://api.themoviedb.org/3/movie/upcoming?api_key=da74000c93a2ffe65d489852f39d6ddc&language=en-US&page=1`
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setSlides(data.results);
-        movies = data.results;
-      });
-
-    return movies;
-  };
-
-  const fetchTrailerSeries = (movies) => {
+  const fetchTrailers = (items) => {
     let list = [];
+    let path = "";
 
-    movies.map((movie) => {
+    if (moviesBool) {
+      path = "https://api.themoviedb.org/3/movie/";
+    } else if (seriesBool) {
+      path = "https://api.themoviedb.org/3/tv/";
+    }
+
+    items.map((item) => {
       fetch(
-        `https://api.themoviedb.org/3/tv/${movie.id}/videos?api_key=da74000c93a2ffe65d489852f39d6ddc&language=en-US&page=1`
+        `${path}${item.id}/videos?api_key=da74000c93a2ffe65d489852f39d6ddc&language=en-US&page=1`
       )
         .then((response) => response.json())
         .then((data) => {
           if (data.results) {
-            list.push({ movieId: movie.id, trailer: data.results[0] });
-          } else {
-            console.log("No trailer");
-          }
-          setTrailerList(list);
-        });
-    });
-  };
-
-  const fetchTrailer = (movies) => {
-    let list = [];
-
-    movies.map((movie) => {
-      fetch(
-        `https://api.themoviedb.org/3/movie/${movie.id}/videos?api_key=da74000c93a2ffe65d489852f39d6ddc&language=en-US&page=1`
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          if (data.results) {
-            list.push({ movieId: movie.id, trailer: data.results[0] });
+            list.push({ movieId: item.id, trailer: data.results[0] });
           } else {
             console.log("No trailer");
           }
@@ -121,12 +94,12 @@ const ImageSlider = ({
             {index === current && (
               <div className="videoframe-container">
                 <div className="title-desc-image">
-                  <h3>{slide.title}</h3>
+                  {moviesBool ? <h3>{slide.title}</h3> : <h3>{slide.name}</h3>}
                   <h6>{slide.overview}</h6>
                   <div className="image-box">
                     {slide.poster_path ? (
                       <img
-                        src={path + slide.poster_path}
+                        src={imagePath + slide.poster_path}
                         width="100px"
                         alt={slide.title}
                       />
