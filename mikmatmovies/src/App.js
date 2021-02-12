@@ -35,6 +35,11 @@ function App() {
               exact
               component={() => <StartSite SearchResult={result} />}
             />
+            <Route
+              path="/movies"
+              exact
+              component={() => <StartSite SearchResult={result} />}
+            />
             <Route path="/favourites" component={Favourites} />
             <Route
               path="/search"

@@ -34,31 +34,47 @@ function Nav({ setResult }) {
   };
 
   return (
-    <Link smooth to="/#" id="top">
+    <div id="top">
       <nav>
         <div className="navList">
-          <div className="logoHolder">
-            <img id="logo" src="/logo3.png" alt="" />
-          </div>
+          <Link smooth to="/#">
+            <div className="logoHolder">
+              <img id="logo" src="/logo3.png" alt="" />
+            </div>
+          </Link>
           <ul>
-            <Link smooth to="/#upcoming">
+            {/* <Link smooth to="/#upcoming">
+              <li>
+              <p className="triangle"></p>
+              Upcoming
+              </li>
+              </Link>
+              
+              <Link smooth to="/#popular">
+              <li>
+              <p className="triangle"></p>
+              Popular
+              </li>
+              </Link>
+              
+              <Link smooth to="/#toprated">
+              <li>
+              <p className="triangle"></p>
+              Top-Rated
+              </li>
+            </Link> */}
+
+            <Link to="/movies">
               <li>
                 <p className="triangle"></p>
-                Upcoming
+                Movies
               </li>
             </Link>
 
-            <Link smooth to="/#popular">
+            <Link to="/tv-series">
               <li>
                 <p className="triangle"></p>
-                Popular
-              </li>
-            </Link>
-
-            <Link smooth to="/#toprated">
-              <li>
-                <p className="triangle"></p>
-                Top-Rated
+                TV-Series
               </li>
             </Link>
 
@@ -69,12 +85,6 @@ function Nav({ setResult }) {
               </li>
             </Link>
 
-            <Link to="/tv-series">
-              <li>
-                <p className="triangle"></p>
-                TV-Series
-              </li>
-            </Link>
             <li>
               <div className="menu">
                 <img
@@ -114,7 +124,7 @@ function Nav({ setResult }) {
           </form>
         </div>
       </nav>
-    </Link>
+    </div>
   );
 }
 
