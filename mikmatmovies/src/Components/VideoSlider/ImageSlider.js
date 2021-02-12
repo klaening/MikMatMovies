@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { SliderData } from "./SliderData";
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
 import "./videoSlider.css";
 import "../Global.css";
 
-const ImageSlider = ({ slides }) => {
+const ImageSlider = () => {
   const [current, setCurrent] = useState(0);
   const [upcomingMovies, setUpcomingMovies] = useState([]);
   const [trailerList, setTrailerList] = useState([]);
@@ -25,9 +24,9 @@ const ImageSlider = ({ slides }) => {
     setCurrent(current === 0 ? length - 1 : current - 1);
   };
 
-  if (!Array.isArray(slides) || slides.length <= 0) {
-    return null;
-  }
+  //   if (!Array.isArray(slides) || slides.length <= 0) {
+  //     return null;
+  //   }
 
   const fetchUpcoming = async () => {
     let movies = [];
