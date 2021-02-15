@@ -17,13 +17,14 @@ const ImageSlider = ({
   }, []);
 
   const imagePath = "https://image.tmdb.org/t/p/original";
-  const length = slides.length;
+  let length = slides.length;
 
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
   };
 
   const prevSlide = () => {
+    length = slides.length;
     setCurrent(current === 0 ? length - 1 : current - 1);
   };
 
@@ -92,7 +93,14 @@ const ImageSlider = ({
   };
 
   if (!trailerList || trailerList <= 0) {
-    return null;
+    return (
+      <div className="videoframe-container">
+        <div class="fa-3x">
+          <i class="fas fa-circle-notch fa-spin"></i>
+          Loading
+        </div>
+      </div>
+    );
   } else {
     return (
       <div id="imageSlider">
