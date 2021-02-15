@@ -36,10 +36,15 @@ function ItemDetails({ match }) {
   const fetchItem = async () => {
     //SetisLoading true
 
-    const fetchItem = await fetch(
+    const fetchedItem = await fetch(
       `${itemPath}/${match.params.id}?api_key=da74000c93a2ffe65d489852f39d6ddc&language=en-US`
     );
-    const item = await fetchItem.json();
+    const item = await fetchedItem.json();
+    if (match.params.type === "movie") {
+      item["type"] = "movie";
+    } else if (match.params.type === "series") {
+      item["type"] = "series";
+    }
     setItem(item);
     storage.getLiked("likedMovies", item, setLiked);
   };
@@ -50,6 +55,9 @@ function ItemDetails({ match }) {
     )
       .then((response) => response.json())
       .then((data) => {
+        data.results.forEach((element) => {
+          element["type"] = "movie";
+        });
         setRecommendations(data.results);
       });
   };
@@ -78,8 +86,14 @@ function ItemDetails({ match }) {
   };
 
   const year = () => {
-    if (item.release_date) {
+    console.log(item);
+    if (item.type === "movie" && item.release_date) {
       let yearVar = item.release_date;
+      let getYear = yearVar.split("-");
+
+      return getYear[0];
+    } else if (item.type === "series") {
+      let yearVar = item.first_air_date;
       let getYear = yearVar.split("-");
 
       return getYear[0];
@@ -105,7 +119,8 @@ function ItemDetails({ match }) {
         <div className={style.contentContainer}>
           <div className={style.titleOverviewContainer}>
             <h3>
-              {item.title} &#40;{year()}&#41;
+              {item.type === "movie" ? item.title : item.name} &#40;{year()}
+              &#41;
             </h3>
             <h6>{item.tagline}</h6>
             <p>{item.overview}</p>
@@ -131,26 +146,18 @@ function ItemDetails({ match }) {
                 )}
               </h6>
               <div>
-                {trailer ? (
-                  <div className={style.trailerDiv}>
-                    <h6>
-                      TRAILER:{" "}
-                      <a
-                        href={`https://www.youtube.com/watch?v=${trailer[0].key}`}
-                      >
-                        {`https://www.youtube.com/watch?v=${trailer[0].key}`}
-                      </a>
-                      {/* 
-                    <iframe
-                    title={item.tagline}
-                    src={`https://www.youtube.com/embed/${trailer[0].key}?autoplay=1&mute=1`}
-                    frameborder="0"
-                  ></iframe> */}
-                    </h6>
-                  </div>
-                ) : (
-                  <p>No trailer available</p>
-                )}
+                <h6>
+                  TRAILER:{" "}
+                  {trailer && trailer.length > 0 ? (
+                    <a
+                      href={`https://www.youtube.com/watch?v=${trailer[0].key}`}
+                    >
+                      {`https://www.youtube.com/watch?v=${trailer[0].key}`}
+                    </a>
+                  ) : (
+                    <h6> No trailer available</h6>
+                  )}
+                </h6>
               </div>
             </div>
           </div>
@@ -170,7 +177,12 @@ function ItemDetails({ match }) {
         </button>
       </div>
       <Comments movie={item} />
-      <CardHolder header="Recommended Movies" movies={Recommendations} />
+      <CardHolder
+        header={
+          item.type === "movie" ? "Recommended Movies" : "Recommended Series"
+        }
+        movies={Recommendations}
+      />
       <BackToTop
         target={`/details/${match.params.type}/${match.params.id}/#top`}
       />

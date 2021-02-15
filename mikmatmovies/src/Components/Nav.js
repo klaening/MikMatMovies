@@ -27,6 +27,9 @@ function Nav({ setResult }) {
       )
         .then((response) => response.json())
         .then((data) => {
+          data.results.forEach((element) => {
+            element["type"] = "movie";
+          });
           console.log(data.results);
           setResult(data.results);
         });
