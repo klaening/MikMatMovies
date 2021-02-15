@@ -24,7 +24,6 @@ const Favourites = () => {
 
   return (
     <div>
-      <h1>Here are your favourites</h1>
       <CardHolder
         header="Favourites"
         movies={listToSend}
