@@ -19,6 +19,7 @@
   transition: 1s ease-in-out;
 }
 .slide.active {
+  color: white;
   opacity: 1;
   display: flex;
   flex-wrap: wrap;
