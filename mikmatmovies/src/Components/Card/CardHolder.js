@@ -3,6 +3,8 @@ import Card from "./Card";
 import "./CardHolder.css";
 import "../Global.css";
 
+import Spinner from "../Spinners/Spinner";
+
 //Context
 import { MovieContext } from "../../Context/MovieContext";
 
@@ -29,7 +31,8 @@ function CardHolder({
           {errorMessage ? (
             <h3>{errorMessage}</h3>
           ) : (
-            <h3>Nothing here, sorry :&#40;</h3>
+            <Spinner />
+            // <h3>Nothing here, sorry :&#40;</h3>
           )}
         </div>
       </div>
