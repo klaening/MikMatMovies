@@ -6,10 +6,19 @@ import "../Global.css";
 //Context
 import { MovieContext } from "../../Context/MovieContext";
 
-function CardHolder({ header, subTitle = null, errorMessage = null }) {
-  const movies = useContext(MovieContext);
+function CardHolder({
+  header,
+  subTitle = null,
+  movies: favourites = null,
+  errorMessage = null,
+}) {
+  let movies = useContext(MovieContext);
 
-  if (!movies) {
+  if (favourites) {
+    movies = favourites;
+  }
+
+  if (!movies || movies.length <= 0) {
     return (
       <div className="cardHolder-body">
         <div className="ch-header">
