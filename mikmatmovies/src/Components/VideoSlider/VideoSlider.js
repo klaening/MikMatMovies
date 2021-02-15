@@ -86,7 +86,8 @@ const VideoSlider = ({
   }
 
   const key = (movie) => {
-    if (movie && trailerList && trailerList.length > 0) {
+    //Kraschar ibland, I don't fucking know why
+    if (movie && movie.id && trailerList && trailerList.length > 0) {
       let thing = trailerList.find((x) => x.movieId === movie.id).trailer.key;
       if (thing) {
         return thing;
