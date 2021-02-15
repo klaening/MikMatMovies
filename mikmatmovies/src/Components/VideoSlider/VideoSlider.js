@@ -66,8 +66,14 @@ const VideoSlider = ({
       )
         .then((response) => response.json())
         .then((data) => {
-          if (data.results[0]) {
-            list.push({ movieId: item.id, trailer: data.results[0] });
+          console.log(data.results);
+          let trailer = data.results.find((x) => x.type === "Trailer");
+          if (!trailer) {
+            trailer = data.results[0];
+          }
+
+          if (trailer) {
+            list.push({ movieId: item.id, trailer: trailer });
           } else {
             const index = items.findIndex((x) => x.id === item.id);
             if (index > -1) {
@@ -88,10 +94,19 @@ const VideoSlider = ({
   const key = (movie) => {
     //Kraschar ibland, I don't fucking know why
     if (movie && movie.id && trailerList && trailerList.length > 0) {
-      let thing = trailerList.find((x) => x.movieId === movie.id).trailer.key;
-      if (thing) {
-        return thing;
+      const index = trailerList.findIndex((x) => x.movieId === movie.id);
+      if (index > -1) {
+        let thing = trailerList[index].trailer.key;
+
+        if (thing) {
+          return thing;
+        }
       }
+
+      // let thing = trailerList.find((x) => x.movieId === movie.id).trailer.key;
+      // if (thing) {
+      //   return thing;
+      // }
     }
   };
 
