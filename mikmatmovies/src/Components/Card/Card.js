@@ -17,16 +17,23 @@ const Card = ({ movie, movies }) => {
     storage.getLiked(listName, movie, setLiked);
   }, [liked]);
 
+  let movieName = "";
+  if (movie.type === "movie") {
+    movieName = movie.title;
+  } else if (movie.type === "series") {
+    movieName = movie.name;
+  }
+
   const toggleLiked = () => {
     const newLiked = !liked;
     setLiked(newLiked);
 
     if (newLiked) {
       storage.storeLiked(listName, movie);
-      toast(`${movie.title} was added to favourites!`);
+      toast(`${movieName} was added to favourites!`);
     } else {
       storage.removeLiked(listName, movie);
-      toast(`${movie.title} was removed from favourites!`);
+      toast(`${movieName} was removed from favourites!`);
     }
   };
 
@@ -67,7 +74,7 @@ const Card = ({ movie, movies }) => {
 
         <footer className={style.footer}>
           <div className={style.left}>
-            {movie.title ? <p>{movie.title}</p> : <p>{movie.name}</p>}
+            <p>{movieName}</p>
             <p>{year()}</p>
           </div>
 

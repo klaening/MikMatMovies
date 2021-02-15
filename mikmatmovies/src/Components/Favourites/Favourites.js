@@ -6,8 +6,10 @@ const Favourites = () => {
     getFavourites();
   }, []);
 
-  const [listToSend, setListToSend] = useState([]);
-  let listOfFavourites = [];
+  const [listMovies, setListMovies] = useState([]);
+  const [listSeries, setListSeries] = useState([]);
+  let listOfMovies = [];
+  let listOfSeries = [];
 
   const listName = "likedMovies";
   const getFavourites = () => {
@@ -15,19 +17,30 @@ const Favourites = () => {
 
     if (likedMovies && likedMovies.length > 0) {
       likedMovies.map((movie) => {
-        listOfFavourites.push(movie);
+        if (movie.type === "movie") {
+          listOfMovies.push(movie);
+        } else if (movie.type === "series") {
+          listOfSeries.push(movie);
+        }
       });
 
-      setListToSend(listOfFavourites);
+      setListMovies(listOfMovies);
+      setListSeries(listOfSeries);
     }
   };
 
   return (
     <div>
       <CardHolder
-        header="Favourites"
-        movies={listToSend}
-        errorMessage="You currently have no favourites"
+        header="Movies"
+        movies={listMovies}
+        errorMessage="You currently have no favourite movies"
+      />
+
+      <CardHolder
+        header="Series"
+        movies={listSeries}
+        errorMessage="You currently have no favourite TV-shows"
       />
     </div>
   );
