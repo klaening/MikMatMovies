@@ -3,7 +3,7 @@ import BackToTop from "./BackToTop/BackToTop";
 
 //Imported Components
 
-import VideoSlider from "./VideoSlider/ImageSlider";
+import VideoSlider from "./VideoSlider/VideoSlider";
 import CardHolder from "./Card/CardHolder";
 
 function Start() {

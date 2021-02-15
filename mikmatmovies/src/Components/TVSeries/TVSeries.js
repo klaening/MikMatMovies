@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import BackToTop from "../BackToTop/BackToTop";
 
-import VideoSlider from "../VideoSlider/ImageSlider";
+import VideoSlider from "../VideoSlider/VideoSlider";
 import CardHolder from "../Card/CardHolder";
 
 const TVSeries = () => {

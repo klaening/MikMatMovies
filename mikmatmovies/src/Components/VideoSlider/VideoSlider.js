@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
-import "./videoSlider.css";
+import "./VideoSlider.css";
 import "../Global.css";
 
 import Spinner from "../Spinners/Spinner";
 
-const ImageSlider = ({
+const VideoSlider = ({
   movies: moviesBool = false,
   series: seriesBool = false,
 }) => {
@@ -102,7 +102,7 @@ const ImageSlider = ({
     );
   } else {
     return (
-      <div id="imageSlider">
+      <div>
         {console.log(trailerList)}
         {slides.map((slide, index) => (
           <div
@@ -191,4 +191,4 @@ const ImageSlider = ({
   }
 };
 
-export default ImageSlider;
+export default VideoSlider;
