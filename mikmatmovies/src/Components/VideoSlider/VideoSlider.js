@@ -86,7 +86,7 @@ const VideoSlider = ({
   }
 
   const key = (movie) => {
-    if (trailerList && trailerList.length > 0) {
+    if (movie && trailerList && trailerList.length > 0) {
       let thing = trailerList.find((x) => x.movieId === movie.id).trailer.key;
       if (thing) {
         return thing;
@@ -103,7 +103,6 @@ const VideoSlider = ({
   } else {
     return (
       <div>
-        {console.log(trailerList)}
         {slides.map((slide, index) => (
           <div
             className={index === current ? "slide active" : "slide"}
@@ -149,44 +148,6 @@ const VideoSlider = ({
           </div>
         ))}
       </div>
-      //  <div>
-      //    {SliderData.map((slide, index) => {
-      //      return (
-      //        <div
-      //          className={index === current ? "slide active" : "slide"}
-      //          key={index}
-      //        >
-      //          {index === current && (
-      //            <div className="videoframe-container">
-      //              <div className="title-desc-image">
-      //                <h3>{slide.text}</h3>
-      //                <h6>{slide.desc}</h6>
-      //                <div className="image-box">
-      //                  <img src={slide.image} width="100px" alt="something" />
-      //                </div>
-      //              </div>
-      //              <div className="left-arrow">
-      //                <FaArrowAltCircleLeft id="arrow" onClick={prevSlide} />
-      //              </div>
-      //              <div className="video-container">
-      //                <iframe
-      //                  title="Video-frame"
-      //                  width="100%"
-      //                  height="100%"
-      //                  src={slide.URL}
-      //                  frameBorder="0"
-      //                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      //                ></iframe>
-      //              </div>
-      //              <div className="right-arrow">
-      //                <FaArrowAltCircleRight id="arrow" onClick={nextSlide} />
-      //              </div>
-      //            </div>
-      //          )}
-      //        </div>
-      //      );
-      //    })}
-      //  </div>
     );
   }
 };
