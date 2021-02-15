@@ -3,6 +3,8 @@ import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
 import "./videoSlider.css";
 import "../Global.css";
 
+import Spinner from "../Spinners/Spinner";
+
 const ImageSlider = ({
   movies: moviesBool = false,
   series: seriesBool = false,
@@ -95,10 +97,7 @@ const ImageSlider = ({
   if (!trailerList || trailerList <= 0) {
     return (
       <div className="videoframe-container">
-        <div class="fa-3x">
-          <i class="fas fa-circle-notch fa-spin"></i>
-          Loading
-        </div>
+        <Spinner />
       </div>
     );
   } else {
