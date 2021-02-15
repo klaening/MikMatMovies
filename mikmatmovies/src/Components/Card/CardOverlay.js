@@ -50,7 +50,9 @@ const CardOverlay = (props) => {
           <HoverRating movie={props.movie} />
         </div>
         <div className={style.readmore}>
-          <Link to={`/details/${props.movie.id}`}>Read more</Link>
+          <Link to={`/details/${props.movie.type}/${props.movie.id}`}>
+            Read more
+          </Link>
         </div>
       </div>
 

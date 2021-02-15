@@ -40,7 +40,7 @@ function App() {
                 <SearchResult header="search results" SearchResult={result} />
               )}
             />
-            <Route path="/details/:id" component={ItemDetails} />
+            <Route path="/details/:type/:id" component={ItemDetails} />
             <Route path="/about" component={About}></Route>
             <Route path="/contact-us" component={ContactUs}></Route>
             <Route path="/job-offers" component={JobOffers}></Route>

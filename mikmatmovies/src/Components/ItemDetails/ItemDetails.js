@@ -26,12 +26,18 @@ function ItemDetails({ match }) {
   const path = `https://image.tmdb.org/t/p/w185`;
   const backdroppath = `https://image.tmdb.org/t/p/w1280`;
 
+  let itemPath = "";
+  if (match.params.type === "movie") {
+    itemPath = "https://api.themoviedb.org/3/movie";
+  } else if (match.params.type === "series") {
+    itemPath = "https://api.themoviedb.org/3/tv";
+  }
+
   const fetchItem = async () => {
     //SetisLoading true
-    let itemPath = "";
 
     const fetchItem = await fetch(
-      `https://api.themoviedb.org/3/movie/${match.params.id}?api_key=da74000c93a2ffe65d489852f39d6ddc&language=en-US`
+      `${itemPath}/${match.params.id}?api_key=da74000c93a2ffe65d489852f39d6ddc&language=en-US`
     );
     const item = await fetchItem.json();
     setItem(item);
@@ -40,7 +46,7 @@ function ItemDetails({ match }) {
 
   const fetchRec = async () => {
     await fetch(
-      `https://api.themoviedb.org/3/movie/${match.params.id}/recommendations?api_key=da74000c93a2ffe65d489852f39d6ddc&language=en-US&page=1`
+      `${itemPath}/${match.params.id}/recommendations?api_key=da74000c93a2ffe65d489852f39d6ddc&language=en-US&page=1`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -50,7 +56,7 @@ function ItemDetails({ match }) {
 
   const fetchTrailer = async () => {
     await fetch(
-      `https://api.themoviedb.org/3/movie/${match.params.id}/videos?api_key=da74000c93a2ffe65d489852f39d6ddc&language=en-US&page=1`
+      `${itemPath}/${match.params.id}/videos?api_key=da74000c93a2ffe65d489852f39d6ddc&language=en-US&page=1`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -165,7 +171,9 @@ function ItemDetails({ match }) {
       </div>
       <Comments movie={item} />
       <CardHolder header="Recommended Movies" movies={Recommendations} />
-      <BackToTop target={`/details/${match.params.id}/#top`} />
+      <BackToTop
+        target={`/details/${match.params.type}/${match.params.id}/#top`}
+      />
     </div>
   );
 }
