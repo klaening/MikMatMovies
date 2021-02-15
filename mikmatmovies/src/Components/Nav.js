@@ -4,7 +4,7 @@ import { HashLink as Link } from "react-router-hash-link";
 
 import "./Nav.css";
 
-function Nav({ setResult }) {
+function Nav({ setMovieResult, setSeriesResult }) {
   const [menuVis, setMenuVis] = useState(false);
   const [query, setQuery] = useState("");
 
@@ -16,11 +16,12 @@ function Nav({ setResult }) {
 
   const handleQuery = (e) => {
     e.preventDefault();
-    fetchDATA();
+    fetchMovieData();
+    fetchSeriesData();
     history.push("/search");
   };
 
-  const fetchDATA = async () => {
+  const fetchMovieData = async () => {
     if (query || query !== "undefined") {
       await fetch(
         `https://api.themoviedb.org/3/search/movie?api_key=da74000c93a2ffe65d489852f39d6ddc&language=en-US&query=${query}`
@@ -31,7 +32,23 @@ function Nav({ setResult }) {
             element["type"] = "movie";
           });
           console.log(data.results);
-          setResult(data.results);
+          setMovieResult(data.results);
+        });
+    }
+  };
+
+  const fetchSeriesData = async () => {
+    if (query || query !== "undefined") {
+      await fetch(
+        `https://api.themoviedb.org/3/search/tv?api_key=da74000c93a2ffe65d489852f39d6ddc&language=en-US&query=${query}`
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          data.results.forEach((element) => {
+            element["type"] = "series";
+          });
+          console.log(data.results);
+          setSeriesResult(data.results);
         });
     }
   };

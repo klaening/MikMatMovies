@@ -15,19 +15,23 @@ import SearchResult from "./Components/Search/SearchResult";
 
 //Footer
 import Footer from "./Components/Footer/Footer";
-import About from "./Components/Pages/About/About";
-import ContactUs from "./Components/Pages/ContactUs/ContactUs";
-import JobOffers from "./Components/Pages/JobOffers/JobOffers";
+import About from "./Components/FooterPages/About/About";
+import ContactUs from "./Components/FooterPages/ContactUs/ContactUs";
+import JobOffers from "./Components/FooterPages/JobOffers/JobOffers";
 import TVSeries from "./Components/TVSeries/TVSeries";
 
 function App() {
-  const [result, setResult] = useState([]);
-  useEffect(() => {}, [result]);
+  const [movieResult, setMovieResult] = useState([]);
+  const [seriesResult, setSeriesResult] = useState([]);
+  //   useEffect(() => {}, [movieResult]);
 
   return (
     <Router>
       <div className="App">
-        <Nav setResult={setResult} />
+        <Nav
+          setMovieResult={setMovieResult}
+          setSeriesResult={setSeriesResult}
+        />
         <div className="main_content">
           <Switch>
             <Route path="/" exact component={StartSite} />
@@ -37,7 +41,11 @@ function App() {
             <Route
               path="/search"
               component={() => (
-                <SearchResult header="search results" SearchResult={result} />
+                <SearchResult
+                  header="search results"
+                  SearchResult={movieResult}
+                  seriesSearchResult={seriesResult}
+                />
               )}
             />
             <Route path="/details/:type/:id" component={ItemDetails} />
