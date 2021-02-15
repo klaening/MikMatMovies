@@ -43,7 +43,7 @@ nav ul li:hover .triangle {
 .logoHolder {
   display: flex;
   align-items: center;
-  margin-top: 1vw;
+  margin-top: 16px;
 }
 
 .navList {

@@ -117,7 +117,7 @@ function Nav({ setResult }) {
               className="animated-search"
               type="text"
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search movie.."
+              placeholder="Search movie..."
             />
 
             <input type="submit" value="Search" className="search-btn" />

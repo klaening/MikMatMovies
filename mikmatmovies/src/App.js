@@ -30,17 +30,10 @@ function App() {
         <Nav setResult={setResult} />
         <div className="main_content">
           <Switch>
-            <Route
-              path="/"
-              exact
-              component={() => <StartSite SearchResult={result} />}
-            />
-            <Route
-              path="/movies"
-              exact
-              component={() => <StartSite SearchResult={result} />}
-            />
-            <Route path="/favourites" component={Favourites} />
+            <Route path="/" exact component={StartSite} />
+            <Route path="/movies" exact component={StartSite} />
+            <Route path="/tv-series" exact component={TVSeries} />
+            <Route path="/favourites" exact component={Favourites} />
             <Route
               path="/search"
               component={() => (
@@ -51,7 +44,6 @@ function App() {
             <Route path="/about" component={About}></Route>
             <Route path="/contact-us" component={ContactUs}></Route>
             <Route path="/job-offers" component={JobOffers}></Route>
-            <Route path="/tv-series" component={TVSeries}></Route>
           </Switch>
           <ToastContainer
             position="bottom-center"

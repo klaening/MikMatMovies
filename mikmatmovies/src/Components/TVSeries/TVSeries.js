@@ -47,7 +47,6 @@ const TVSeries = () => {
 
   return (
     <div>
-      {console.log("series", popularSeries)}
       <VideoSlider series />
       <div id="onTheAir">
         {onTheAirSeries && (

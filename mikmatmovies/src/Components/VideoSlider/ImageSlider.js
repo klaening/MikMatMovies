@@ -67,9 +67,14 @@ const ImageSlider = ({
       )
         .then((response) => response.json())
         .then((data) => {
-          if (data.results) {
+          if (data.results[0]) {
             list.push({ movieId: item.id, trailer: data.results[0] });
           } else {
+            const index = items.findIndex((x) => x.id === item.id);
+            if (index > -1) {
+              items.splice(index, 1);
+              setSlides(items);
+            }
             console.log("No trailer");
           }
           setTrailerList(list);
@@ -79,14 +84,20 @@ const ImageSlider = ({
 
   const key = (movie) => {
     if (trailerList.length > 0) {
-      return trailerList.find((x) => x.movieId === movie.id).trailer.key;
+      let thing = trailerList.find((x) => x.movieId === movie.id).trailer.key;
+      if (thing) {
+        return thing;
+      }
     }
   };
 
-  return (
-    <div>
-      {slides.map((slide, index) => {
-        return (
+  if (!trailerList || trailerList <= 0) {
+    return null;
+  } else {
+    return (
+      <div id="imageSlider">
+        {console.log(trailerList)}
+        {slides.map((slide, index) => (
           <div
             className={index === current ? "slide active" : "slide"}
             key={index}
@@ -129,48 +140,48 @@ const ImageSlider = ({
               </div>
             )}
           </div>
-        );
-      })}
-    </div>
-    //  <div>
-    //    {SliderData.map((slide, index) => {
-    //      return (
-    //        <div
-    //          className={index === current ? "slide active" : "slide"}
-    //          key={index}
-    //        >
-    //          {index === current && (
-    //            <div className="videoframe-container">
-    //              <div className="title-desc-image">
-    //                <h3>{slide.text}</h3>
-    //                <h6>{slide.desc}</h6>
-    //                <div className="image-box">
-    //                  <img src={slide.image} width="100px" alt="something" />
-    //                </div>
-    //              </div>
-    //              <div className="left-arrow">
-    //                <FaArrowAltCircleLeft id="arrow" onClick={prevSlide} />
-    //              </div>
-    //              <div className="video-container">
-    //                <iframe
-    //                  title="Video-frame"
-    //                  width="100%"
-    //                  height="100%"
-    //                  src={slide.URL}
-    //                  frameBorder="0"
-    //                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    //                ></iframe>
-    //              </div>
-    //              <div className="right-arrow">
-    //                <FaArrowAltCircleRight id="arrow" onClick={nextSlide} />
-    //              </div>
-    //            </div>
-    //          )}
-    //        </div>
-    //      );
-    //    })}
-    //  </div>
-  );
+        ))}
+      </div>
+      //  <div>
+      //    {SliderData.map((slide, index) => {
+      //      return (
+      //        <div
+      //          className={index === current ? "slide active" : "slide"}
+      //          key={index}
+      //        >
+      //          {index === current && (
+      //            <div className="videoframe-container">
+      //              <div className="title-desc-image">
+      //                <h3>{slide.text}</h3>
+      //                <h6>{slide.desc}</h6>
+      //                <div className="image-box">
+      //                  <img src={slide.image} width="100px" alt="something" />
+      //                </div>
+      //              </div>
+      //              <div className="left-arrow">
+      //                <FaArrowAltCircleLeft id="arrow" onClick={prevSlide} />
+      //              </div>
+      //              <div className="video-container">
+      //                <iframe
+      //                  title="Video-frame"
+      //                  width="100%"
+      //                  height="100%"
+      //                  src={slide.URL}
+      //                  frameBorder="0"
+      //                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      //                ></iframe>
+      //              </div>
+      //              <div className="right-arrow">
+      //                <FaArrowAltCircleRight id="arrow" onClick={nextSlide} />
+      //              </div>
+      //            </div>
+      //          )}
+      //        </div>
+      //      );
+      //    })}
+      //  </div>
+    );
+  }
 };
 
 export default ImageSlider;
