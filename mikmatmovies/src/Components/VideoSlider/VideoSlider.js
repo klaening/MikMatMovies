@@ -30,10 +30,6 @@ const VideoSlider = ({
     setCurrent(current === 0 ? length - 1 : current - 1);
   };
 
-  //   if (!Array.isArray(slides) || slides.length <= 0) {
-  //     return null;
-  //   }
-
   const fetchSlides = async () => {
     let slides = [];
     let path = "";
@@ -85,8 +81,12 @@ const VideoSlider = ({
     });
   };
 
+  if (!Array.isArray(slides) || slides.length <= 0) {
+    return null;
+  }
+
   const key = (movie) => {
-    if (trailerList.length > 0) {
+    if (trailerList && trailerList.length > 0) {
       let thing = trailerList.find((x) => x.movieId === movie.id).trailer.key;
       if (thing) {
         return thing;
