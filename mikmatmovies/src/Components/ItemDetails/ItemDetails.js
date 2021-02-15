@@ -28,6 +28,8 @@ function ItemDetails({ match }) {
 
   const fetchItem = async () => {
     //SetisLoading true
+    let itemPath = "";
+
     const fetchItem = await fetch(
       `https://api.themoviedb.org/3/movie/${match.params.id}?api_key=da74000c93a2ffe65d489852f39d6ddc&language=en-US`
     );

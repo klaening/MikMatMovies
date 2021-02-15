@@ -15,6 +15,9 @@ export const UpcomingMoviesProvider = (props) => {
     )
       .then((response) => response.json())
       .then((data) => {
+        data.results.forEach((element) => {
+          element["type"] = "movie";
+        });
         setUpcomingMovies(data.results);
       });
   };
@@ -39,6 +42,9 @@ export const PopularMoviesProvider = (props) => {
     )
       .then((response) => response.json())
       .then((data) => {
+        data.results.forEach((element) => {
+          element["type"] = "movie";
+        });
         setPopularMovies(data.results);
       });
   };
@@ -63,6 +69,9 @@ export const TopRatedMoviesProvider = (props) => {
     )
       .then((response) => response.json())
       .then((data) => {
+        data.results.forEach((element) => {
+          element["type"] = "movie";
+        });
         setTopRatedMovies(data.results);
       });
   };
@@ -87,6 +96,9 @@ export const OnTheAirSeriesProvider = (props) => {
     )
       .then((response) => response.json())
       .then((data) => {
+        data.results.forEach((element) => {
+          element["type"] = "series";
+        });
         setOnTheAirSeries(data.results);
       });
   };
@@ -111,6 +123,9 @@ export const PopularSeriesProvider = (props) => {
     )
       .then((response) => response.json())
       .then((data) => {
+        data.results.forEach((element) => {
+          element["type"] = "series";
+        });
         setPopularSeries(data.results);
       });
   };
@@ -135,6 +150,9 @@ export const TopRatedSeriesProvider = (props) => {
     )
       .then((response) => response.json())
       .then((data) => {
+        data.results.forEach((element) => {
+          element["type"] = "series";
+        });
         setTopRatedSeries(data.results);
       });
   };
