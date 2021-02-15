@@ -1,3 +1,7 @@
+#top {
+  background-color: var(--bg-navbar);
+}
+
 nav {
   background-color: var(--bg-navbar);
 }
@@ -39,6 +43,7 @@ nav ul li:hover .triangle {
 .logoHolder {
   display: flex;
   align-items: center;
+  margin-top: 16px;
 }
 
 .navList {

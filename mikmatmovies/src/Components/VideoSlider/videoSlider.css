@@ -3,10 +3,10 @@
   margin-top: 2vh;
   border-radius: 20px;
   justify-content: center;
-  flex-direction: row;
   width: 95%;
   padding: 2vw;
   max-height: 50vh;
+  min-height: 50vh;
   background-color: var(--bg-navbar);
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
@@ -14,27 +14,28 @@
 }
 
 .slide {
+  display: flex;
   align-items: center;
   opacity: 0;
   transition: 1s ease-in-out;
 }
 .slide.active {
+  color: white;
   opacity: 1;
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   height: 100%;
-  background-color: var(--bg-primary);
+  background-color: transparent;
 }
 
 .title-desc-image {
   width: 30%;
   padding: 5px 40px;
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 
 .video-container {
   width: 65%;
-  padding: 5px 0px;
 }
 
 .left-arrow {

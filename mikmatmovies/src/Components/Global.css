@@ -3,9 +3,16 @@
   --bg-navbar: #242935;
   --bg-card: #495870;
   --bg-cardHolder: #353c52;
-  --bg-video: #000000c5;
+  --bg-video: #0c0b16c5;
   --text-primary: #edecec;
   --shadow-card: #232635;
+
+  --bg-navbar-tv-series: #352424;
+  --bg-primary-tv-series: #412929;
+  --bg-card-tv-series: #704949;
+  --bg-cardHolder-tv-series: #523535;
+  --bg-video-tv-series: #160b0bc5;
+  --shadow-card-tv-series: #352323;
 }
 
 :is(h1, h2, h3, h4, h5, h6, p, a, li, i, div) {

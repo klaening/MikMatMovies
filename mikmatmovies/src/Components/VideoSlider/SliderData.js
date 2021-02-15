@@ -39,4 +39,12 @@ export const SliderData = [
       "https://m.media-amazon.com/images/M/MV5BMjA5MTE1MjQyNV5BMl5BanBnXkFtZTcwODI4NDMwNw@@._V1_UX182_CR0,0,182,268_AL_.jpg",
     URL: "https://www.youtube.com/embed/qdFCjwcK8IE?autoplay=1&mute=1",
   },
+  {
+    text: "Journey 2",
+    desc:
+      "Sean Anderson partners with his mom's husband on a mission to find his grandfather, who is thought to be missing on a mythical island.",
+    image:
+      "https://m.media-amazon.com/images/M/MV5BMjA5MTE1MjQyNV5BMl5BanBnXkFtZTcwODI4NDMwNw@@._V1_UX182_CR0,0,182,268_AL_.jpg",
+    URL: "https://www.youtube.com/embed/qdFCjwcK8IE?autoplay=1&mute=1",
+  },
 ];

@@ -34,80 +34,97 @@ function Nav({ setResult }) {
   };
 
   return (
-    <nav>
-      <div className="navList">
-        <div className="logoHolder">
-          <Link smooth to="/#" id="top">
-            <img id="logo" src="/logo3.png" alt="" />
+    <div id="top">
+      <nav>
+        <div className="navList">
+          <Link smooth to="/#">
+            <div className="logoHolder">
+              <img id="logo" src="/logo3.png" alt="" />
+            </div>
           </Link>
-        </div>
-        <ul>
-          <Link smooth to="/#upcoming">
-            <li>
+          <ul>
+            {/* <Link smooth to="/#upcoming">
+              <li>
               <p className="triangle"></p>
               Upcoming
-            </li>
-          </Link>
-
-          <Link smooth to="/#popular">
-            <li>
+              </li>
+              </Link>
+              
+              <Link smooth to="/#popular">
+              <li>
               <p className="triangle"></p>
               Popular
-            </li>
-          </Link>
-
-          <Link smooth to="/#toprated">
-            <li>
+              </li>
+              </Link>
+              
+              <Link smooth to="/#toprated">
+              <li>
               <p className="triangle"></p>
               Top-Rated
-            </li>
-          </Link>
+              </li>
+            </Link> */}
 
-          <Link to="/favourites">
+            <Link to="/movies">
+              <li>
+                <p className="triangle"></p>
+                Movies
+              </li>
+            </Link>
+
+            <Link to="/tv-series">
+              <li>
+                <p className="triangle"></p>
+                TV-Series
+              </li>
+            </Link>
+
+            <Link to="/favourites">
+              <li>
+                <p className="triangle"></p>
+                Favourites
+              </li>
+            </Link>
+
             <li>
-              <p className="triangle"></p>
-              Favourites
+              <div className="menu">
+                <img
+                  className="small"
+                  onClick={toggleMenu}
+                  id="menu"
+                  src="/icons/menu.png"
+                  alt=""
+                />
+              </div>
             </li>
-          </Link>
-          <li>
-            <div className="menu">
+          </ul>
+
+          {menuVis && (
+            <div className="menu active">
               <img
                 className="small"
                 onClick={toggleMenu}
-                id="menu"
-                src="/icons/menu.png"
+                src="/icons/close.png"
                 alt=""
               />
+              <p>Ful meny</p>
             </div>
-          </li>
-        </ul>
-
-        {menuVis && (
-          <div className="menu active">
-            <img
-              className="small"
-              onClick={toggleMenu}
-              src="/icons/close.png"
-              alt=""
+          )}
+        </div>
+        <div className="query-box">
+          <form onSubmit={handleQuery} className="query-container">
+            <input
+              required
+              className="animated-search"
+              type="text"
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search movie..."
             />
-            <p>Ful meny</p>
-          </div>
-        )}
-      </div>
-      <div className="query-box">
-        <form onSubmit={handleQuery} className="query-container">
-          <input
-            required
-            className="animated-search"
-            type="text"
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search movie.."
-          />
 
-          <input type="submit" value="Search" className="search-btn" />
-        </form>
-      </div>
-    </nav>
+            <input type="submit" value="Search" className="search-btn" />
+          </form>
+        </div>
+      </nav>
+    </div>
   );
 }
 

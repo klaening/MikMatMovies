@@ -18,6 +18,7 @@ import Footer from "./Components/Footer/Footer";
 import About from "./Components/Pages/About/About";
 import ContactUs from "./Components/Pages/ContactUs/ContactUs";
 import JobOffers from "./Components/Pages/JobOffers/JobOffers";
+import TVSeries from "./Components/TVSeries/TVSeries";
 
 function App() {
   const [result, setResult] = useState([]);
@@ -29,12 +30,10 @@ function App() {
         <Nav setResult={setResult} />
         <div className="main_content">
           <Switch>
-            <Route
-              path="/"
-              exact
-              component={() => <StartSite SearchResult={result} />}
-            />
-            <Route path="/favourites" component={Favourites} />
+            <Route path="/" exact component={StartSite} />
+            <Route path="/movies" exact component={StartSite} />
+            <Route path="/tv-series" exact component={TVSeries} />
+            <Route path="/favourites" exact component={Favourites} />
             <Route
               path="/search"
               component={() => (

@@ -3,8 +3,7 @@ import BackToTop from "./BackToTop/BackToTop";
 
 //Imported Components
 
-import VideoSlider from "./VideoSlider/ImageSlider";
-import { SliderData } from "./VideoSlider/SliderData";
+import VideoSlider from "./VideoSlider/VideoSlider";
 import CardHolder from "./Card/CardHolder";
 
 //Context
@@ -54,7 +53,7 @@ function Start() {
   return (
     <div>
       <MovieProvider>
-        <VideoSlider slides={SliderData} />
+        <VideoSlider movies />
         <div id="upcoming">
           <CardHolder header="Upcoming movies" movies={upcomingMovies} />
         </div>
