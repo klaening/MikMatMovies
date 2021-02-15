@@ -66,7 +66,6 @@ const VideoSlider = ({
       )
         .then((response) => response.json())
         .then((data) => {
-          console.log(data.results);
           let trailer = data.results.find((x) => x.type === "Trailer");
           if (!trailer) {
             trailer = data.results[0];
@@ -82,6 +81,7 @@ const VideoSlider = ({
             }
             console.log("No trailer");
           }
+
           setTrailerList(list);
         });
     });
@@ -128,18 +128,19 @@ const VideoSlider = ({
               <div className="videoframe-container">
                 <div className="title-desc-image">
                   {moviesBool ? <h3>{slide.title}</h3> : <h3>{slide.name}</h3>}
-                  <h6>{slide.overview}</h6>
                   <div className="image-box">
                     {slide.poster_path ? (
                       <img
                         src={imagePath + slide.poster_path}
                         width="100px"
                         alt={slide.title}
+                        align="left"
                       />
                     ) : (
                       <p>No image available</p>
                     )}
                   </div>
+                  <h6>{slide.overview}</h6>
                 </div>
                 <div className="left-arrow">
                   <FaArrowAltCircleLeft id="arrow" onClick={prevSlide} />

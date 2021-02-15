@@ -38,6 +38,11 @@
   width: 65%;
 }
 
+.image-box img {
+  margin: 1px;
+  margin-right: 10px;
+}
+
 .left-arrow {
   display: flex;
   justify-content: center;
