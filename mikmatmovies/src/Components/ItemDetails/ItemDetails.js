@@ -56,7 +56,11 @@ function ItemDetails({ match }) {
       .then((response) => response.json())
       .then((data) => {
         data.results.forEach((element) => {
-          element["type"] = "movie";
+          if (match.params.type === "movie") {
+            element["type"] = "movie";
+          } else if (match.params.type === "series") {
+            element["type"] = "series";
+          }
         });
         setRecommendations(data.results);
       });
