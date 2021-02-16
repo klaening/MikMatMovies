@@ -22,6 +22,7 @@ function ItemDetails({ match }) {
   const [Recommendations, setRecommendations] = useState([]);
   const [trailer, setTrailer] = useState(null);
   const [liked, setLiked] = useState(false);
+  const [movieName, setMovieName] = useState("");
 
   const path = `https://image.tmdb.org/t/p/w185`;
   const backdroppath = `https://image.tmdb.org/t/p/w1280`;
@@ -42,8 +43,10 @@ function ItemDetails({ match }) {
     const item = await fetchedItem.json();
     if (match.params.type === "movie") {
       item["type"] = "movie";
+      setMovieName(item.title);
     } else if (match.params.type === "series") {
       item["type"] = "series";
+      setMovieName(item.name);
     }
     setItem(item);
     storage.getLiked("likedMovies", item, setLiked);
@@ -82,10 +85,10 @@ function ItemDetails({ match }) {
 
     if (newLiked) {
       storage.storeLiked("likedMovies", item);
-      toast(`${item.title} was added to favourites!`);
+      toast(`${movieName} was added to favourites!`);
     } else {
       storage.removeLiked("likedMovies", item);
-      toast(`${item.title} was removed from favourites!`);
+      toast(`${movieName} was removed from favourites!`);
     }
   };
 
