@@ -8,6 +8,11 @@
       "type": "image/x-icon"
     },
     {
+      "src": "logo3_dark2.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
       "src": "logo192.png",
       "type": "image/png",
       "sizes": "192x192"
@@ -20,7 +25,12 @@
     {
       "src": "logo3.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "227x160"
+    },
+    {
+      "src": "logo3_dark.png",
+      "type": "image/png",
+      "sizes": "227x160"
     }
   ],
   "start_url": ".",
