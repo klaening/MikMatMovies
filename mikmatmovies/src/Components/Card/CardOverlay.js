@@ -4,6 +4,7 @@ import style from "./CardOverlay.module.css";
 import HoverRating from "../Imported/HoverRating.js";
 import QuickRead from "./QuickRead";
 import { Link } from "react-router-dom";
+import QuickComment from "./QuickComment";
 
 const CardOverlay = (props) => {
   const [messageClicked, setMessageClicked] = useState(false);
@@ -26,18 +27,17 @@ const CardOverlay = (props) => {
       <div className={style.overlayBody}>
         <div className={style.buttons}>
           {/* använd Link */}
-          <a href="#">
-            <button id={style.messageBtn} onClick={toggleMessage}>
-              <img
-                src={
-                  messageClicked
-                    ? "/icons/message-filled.png"
-                    : "/icons/message.png"
-                }
-                alt="Message button"
-              />
-            </button>
-          </a>
+          <button id={style.messageBtn} onClick={toggleMessage}>
+            <img
+              src={
+                messageClicked
+                  ? "/icons/message-filled.png"
+                  : "/icons/message.png"
+              }
+              alt="Message button"
+            />
+          </button>
+
           <button id={style.heartBtn} onClick={props.toggleLiked}>
             <img
               src={props.liked ? "/icons/heart-filled.png" : "/icons/heart.png"}
@@ -45,6 +45,11 @@ const CardOverlay = (props) => {
             />
           </button>
         </div>
+
+        {messageClicked && (
+          <QuickComment movie={props.movie} messageClicked={messageClicked} />
+        )}
+
         <div className={style.rating}>
           <p>Your rating:</p>
           <HoverRating movie={props.movie} />

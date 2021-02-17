@@ -32,6 +32,10 @@
   scale: 1.1;
 }
 
+.buttons {
+  position: relative;
+}
+
 .rating {
   display: flex;
   flex-direction: column;
@@ -51,7 +55,7 @@
   align-items: flex-start;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
   z-index: 1;
 }
 
@@ -59,7 +63,6 @@
   display: flex;
   color: #edecec;
 }
-
 .readmore a:hover {
   color: #edecec;
 }

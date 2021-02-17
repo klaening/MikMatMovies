@@ -30,10 +30,10 @@ const Card = ({ movie, movies }) => {
 
     if (newLiked) {
       storage.storeLiked(listName, movie);
-      toast(`${movieName} was added to favourites!`);
+      toast(`"${movieName}" was added to favourites!`);
     } else {
       storage.removeLiked(listName, movie);
-      toast(`${movieName} was removed from favourites!`);
+      toast(`"${movieName}" was removed from favourites!`);
     }
   };
 

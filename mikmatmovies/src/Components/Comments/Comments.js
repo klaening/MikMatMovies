@@ -53,7 +53,7 @@ const Comments = (props) => {
             className={style.inputField}
             type="text"
             onChange={(e) => setComment(e.target.value)}
-            placeholder="Comment here.."
+            placeholder="Comment here..."
           />
 
           <input type="submit" value="Comment" className={style.submit} />

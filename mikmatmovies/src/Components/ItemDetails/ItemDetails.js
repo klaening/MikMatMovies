@@ -85,10 +85,10 @@ function ItemDetails({ match }) {
 
     if (newLiked) {
       storage.storeLiked("likedMovies", item);
-      toast(`${movieName} was added to favourites!`);
+      toast(`"${movieName}" was added to favourites!`);
     } else {
       storage.removeLiked("likedMovies", item);
-      toast(`${movieName} was removed from favourites!`);
+      toast(`"${movieName}" was removed from favourites!`);
     }
   };
 

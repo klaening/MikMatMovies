@@ -1,0 +1,44 @@
+.comment_main {
+  position: absolute;
+  margin-top: 70%;
+  border: 2px solid #8492a8;
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.comment_top {
+  display: flex;
+  justify-content: space-around;
+  background-color: #cacfd8;
+}
+
+.submit_div {
+  background-color: white;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#submit_button {
+  opacity: 0.4;
+}
+#submit_button:hover {
+  opacity: 1;
+}
+
+#comment_label {
+  color: black;
+  font-size: 0.9em;
+  align-self: center;
+}
+
+#comment_close {
+  color: black;
+}
+
+#quick_comment {
+  resize: none;
+  font-size: 0.8em;
+  border: none;
+  cursor: text;
+}
