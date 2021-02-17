@@ -1,8 +1,18 @@
 import React, { useState } from "react";
 import "./QuickComment.css";
 
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const QuickComment = (props) => {
   const [comment, setComment] = useState("");
+
+  let movieName = "";
+  if (props.movie.type === "movie") {
+    movieName = props.movie.title;
+  } else if (props.movie.type === "series") {
+    movieName = props.movie.name;
+  }
 
   const saveComments = (e) => {
     e.preventDefault();
@@ -23,6 +33,8 @@ const QuickComment = (props) => {
     setComment("");
 
     localStorage.setItem("movieComments", JSON.stringify(listLocalStorage));
+
+    toast(`You commented on "${movieName}"!`);
   };
 
   return (
