@@ -9,12 +9,12 @@ import { HashLink } from "react-router-hash-link";
 
 const CardOverlay = (props) => {
   const [messageClicked, setMessageClicked] = useState(false);
+  const [className, setClassName] = useState("quickRead-inactive");
 
   const toggleMessage = () => {
     setMessageClicked(!messageClicked);
   };
 
-  const [className, setClassName] = useState("quickRead-inactive");
   const toggleClassName = () => {
     if (className === "quickRead-inactive") {
       setClassName(style.quickRead);

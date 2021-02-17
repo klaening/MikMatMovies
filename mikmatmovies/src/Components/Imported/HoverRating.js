@@ -33,7 +33,7 @@ export default function HoverRating({ movie }) {
   //Kolla rating vid start
   useEffect(() => {
     getRatings();
-  }, []);
+  }, [movie]);
 
   const getRatings = () => {
     let response = JSON.parse(localStorage.getItem(movieRatings));
