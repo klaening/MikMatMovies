@@ -26,7 +26,7 @@ const useStyles = makeStyles({
 
 export default function HoverRating({ movie }) {
   //   const [hover, setHover] = useState(-1);
-  const [value, setValue] = useState(null);
+  const [value, setValue] = useState(0);
   const name = `${movie.id}-rating`;
   const movieRatings = "movieRatings";
 
@@ -43,6 +43,8 @@ export default function HoverRating({ movie }) {
 
       if (index > -1) {
         setValue(response[index].rating);
+      } else {
+        setValue(0);
       }
     }
   };
