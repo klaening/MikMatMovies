@@ -92,7 +92,6 @@ const VideoSlider = ({
   }
 
   const key = (movie) => {
-    //Kraschar ibland, I don't fucking know why
     if (movie && movie.id && trailerList && trailerList.length > 0) {
       const index = trailerList.findIndex((x) => x.movieId === movie.id);
       if (index > -1) {

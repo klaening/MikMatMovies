@@ -3,8 +3,9 @@ import "../Global.css";
 import style from "./CardOverlay.module.css";
 import HoverRating from "../Imported/HoverRating.js";
 import QuickRead from "./QuickRead";
-import { Link } from "react-router-dom";
 import QuickComment from "./QuickComment";
+
+import { HashLink } from "react-router-hash-link";
 
 const CardOverlay = (props) => {
   const [messageClicked, setMessageClicked] = useState(false);
@@ -55,9 +56,12 @@ const CardOverlay = (props) => {
           <HoverRating movie={props.movie} />
         </div>
         <div className={style.readmore}>
-          <Link to={`/details/${props.movie.type}/${props.movie.id}`}>
+          <HashLink
+            smooth
+            to={`/details/${props.movie.type}/${props.movie.id}/#top`}
+          >
             Read more
-          </Link>
+          </HashLink>
         </div>
       </div>
 
