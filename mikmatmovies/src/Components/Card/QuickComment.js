@@ -34,7 +34,7 @@ const QuickComment = (props) => {
 
     localStorage.setItem("movieComments", JSON.stringify(listLocalStorage));
 
-    toast(`You commented on "${movieName}"!`);
+    toast.info(`You commented on "${movieName}"!`);
   };
 
   return (

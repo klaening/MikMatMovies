@@ -27,7 +27,6 @@ const CardOverlay = (props) => {
     <div className={style.main}>
       <div className={style.overlayBody}>
         <div className={style.buttons}>
-          {/* använd Link */}
           <button id={style.messageBtn} onClick={toggleMessage}>
             <img
               src={
