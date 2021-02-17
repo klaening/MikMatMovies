@@ -25,7 +25,9 @@ const Comments = (props) => {
     // Sortera efter movie id
   };
 
-  const saveComments = () => {
+  const saveComments = (e) => {
+    e.preventDefault();
+
     let listLocalStorage = JSON.parse(localStorage.getItem("movieComments"));
 
     if (!listLocalStorage) {
@@ -38,9 +40,18 @@ const Comments = (props) => {
     };
 
     listLocalStorage.push(commentObject);
-    setCommentList(listLocalStorage);
-
     localStorage.setItem("movieComments", JSON.stringify(listLocalStorage));
+
+    if (!listLocalStorage) {
+      listLocalStorage = [];
+    } else {
+      listLocalStorage = listLocalStorage.filter(
+        (comment) => comment.movieId === props.movie.id
+      );
+    }
+
+    setCommentList(listLocalStorage);
+    setComment("");
   };
 
   return (
@@ -53,6 +64,7 @@ const Comments = (props) => {
             className={style.inputField}
             type="text"
             onChange={(e) => setComment(e.target.value)}
+            value={comment}
             placeholder="Comment here..."
           />
 
