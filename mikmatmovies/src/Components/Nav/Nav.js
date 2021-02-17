@@ -94,7 +94,7 @@ function Nav({ setMovieResult, setSeriesResult }) {
             <Link to="/tv-series">
               <li>
                 <p className="triangle"></p>
-                TV-Series
+                TV-series
               </li>
             </Link>
 
