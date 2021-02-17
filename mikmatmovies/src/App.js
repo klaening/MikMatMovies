@@ -23,6 +23,7 @@ import TVSeries from "./Pages/TVSeries/TVSeries";
 function App() {
   const [movieResult, setMovieResult] = useState([]);
   const [seriesResult, setSeriesResult] = useState([]);
+  const [searchString, setSearchString] = useState("");
 
   return (
     <Router>
@@ -30,6 +31,7 @@ function App() {
         <Nav
           setMovieResult={setMovieResult}
           setSeriesResult={setSeriesResult}
+          setSearchString={setSearchString}
         />
         <div className="main_content">
           <Switch>
@@ -46,6 +48,7 @@ function App() {
                   header="search results"
                   SearchResult={movieResult}
                   seriesSearchResult={seriesResult}
+                  searchString={searchString}
                 />
               )}
             />

@@ -4,7 +4,7 @@ import { HashLink as Link } from "react-router-hash-link";
 
 import "./Nav.css";
 
-function Nav({ setMovieResult, setSeriesResult }) {
+function Nav({ setMovieResult, setSeriesResult, setSearchString }) {
   const [menuVis, setMenuVis] = useState(false);
   const [query, setQuery] = useState("");
 
@@ -18,6 +18,8 @@ function Nav({ setMovieResult, setSeriesResult }) {
     e.preventDefault();
     fetchMovieData();
     fetchSeriesData();
+    setSearchString(query);
+    setQuery("");
     history.push("/search");
   };
 
@@ -137,6 +139,7 @@ function Nav({ setMovieResult, setSeriesResult }) {
               className="animated-search"
               type="text"
               onChange={(e) => setQuery(e.target.value)}
+              value={query}
               placeholder="Search movie..."
             />
 
