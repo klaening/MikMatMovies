@@ -8,7 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import storage from "../../Services/storageService";
 
-const Card = ({ movie, movies }) => {
+const Card = ({ movie }) => {
   const [liked, setLiked] = useState(false);
   const path = "https://image.tmdb.org/t/p/original";
   const listName = "likedMovies";
@@ -37,6 +37,7 @@ const Card = ({ movie, movies }) => {
     }
 
     //Använda Context för att uppdatera listan av Movies i Favourites
+    //setMovieList(newList);
   };
 
   const year = () => {
@@ -95,12 +96,7 @@ const Card = ({ movie, movies }) => {
       </section>
 
       <section className={style.overlay}>
-        <CardOverlay
-          movie={movie}
-          liked={liked}
-          toggleLiked={toggleLiked}
-          movies={movies}
-        />
+        <CardOverlay movie={movie} liked={liked} toggleLiked={toggleLiked} />
       </section>
     </div>
   );

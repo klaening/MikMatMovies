@@ -30,7 +30,6 @@ export default function HoverRating({ movie }) {
   const name = `${movie.id}-rating`;
   const movieRatings = "movieRatings";
 
-  //Kolla rating vid start
   useEffect(() => {
     getRatings();
   }, [movie]);

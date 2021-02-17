@@ -2,16 +2,17 @@ import React, { useEffect, useState } from "react";
 import CardHolder from "../../Components/CardHolder/CardHolder";
 
 const Favourites = () => {
-  useEffect(() => {
-    getFavourites();
-  }, []);
-
-  //Här är listorna som ska uppdateras
-  //Ska göras om till Context
   const [listMovies, setListMovies] = useState([]);
   const [listSeries, setListSeries] = useState([]);
   let listOfMovies = [];
   let listOfSeries = [];
+
+  useEffect(() => {
+    getFavourites();
+  }, [listSeries, listMovies]);
+
+  //Här är listorna som ska uppdateras
+  //Ska göras om till Context
 
   const listName = "likedMovies";
   const getFavourites = () => {
@@ -41,9 +42,9 @@ const Favourites = () => {
       />
 
       <CardHolder
-        header="TV-series"
+        header="Series"
         movies={listSeries}
-        errorMessage="You currently have no favourite TV-series"
+        errorMessage="You currently have no favourite TV-shows"
       />
     </div>
   );

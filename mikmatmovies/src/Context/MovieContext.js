@@ -163,3 +163,31 @@ export const TopRatedSeriesProvider = (props) => {
     </MovieContext.Provider>
   );
 };
+
+export const FavouritesProvider = (props) => {
+  const [favourites, setFavourites] = useState([]);
+
+  useEffect(() => {
+    fetchFavourites();
+  }, []);
+
+  const fetchFavourites = () => {
+    let listOfFavourites = [];
+
+    let likedMovies = JSON.parse(localStorage.getItem("likedMovies"));
+
+    if (likedMovies && likedMovies.length > 0) {
+      likedMovies.map((movie) => {
+        listOfFavourites.push(movie);
+      });
+
+      setFavourites(listOfFavourites);
+    }
+  };
+
+  return (
+    <MovieContext.Provider value={favourites}>
+      {props.children}
+    </MovieContext.Provider>
+  );
+};

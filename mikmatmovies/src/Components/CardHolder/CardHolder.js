@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import Card from "../Card/Card";
 import "./CardHolder.css";
 import "../Global.css";
@@ -35,7 +35,7 @@ function CardHolder({
       ) : (
         <div className="cards">
           {movies.map((movie) => (
-            <Card key={movie.id} movie={movie} movies={movies} />
+            <Card key={movie.id} movie={movie} />
           ))}
         </div>
       )}
