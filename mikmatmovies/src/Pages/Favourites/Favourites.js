@@ -6,6 +6,8 @@ const Favourites = () => {
     getFavourites();
   }, []);
 
+  //Här är listorna som ska uppdateras
+  //Ska göras om till Context
   const [listMovies, setListMovies] = useState([]);
   const [listSeries, setListSeries] = useState([]);
   let listOfMovies = [];
@@ -31,6 +33,7 @@ const Favourites = () => {
 
   return (
     <div>
+      {/* Wrappa children i Providers */}
       <CardHolder
         header="Movies"
         movies={listMovies}

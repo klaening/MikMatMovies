@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import Card from "../Card/Card";
 import "./CardHolder.css";
 import "../Global.css";
@@ -15,44 +15,30 @@ function CardHolder({
   errorMessage = null,
 }) {
   let movies = useContext(MovieContext);
+  //En likadan fast för Favourites
 
   if (favourites) {
     movies = favourites;
   }
 
-  if (!movies || movies.length <= 0) {
-    return (
-      <div className="cardHolder-body">
-        <div className="ch-header">
-          <h2>{header}</h2>
-          {subTitle && <p>{subTitle}</p>}
-        </div>
-        <div className="error">
-          {errorMessage ? (
-            <h3>{errorMessage}</h3>
-          ) : (
-            <Spinner />
-            // <h3>Nothing here, sorry :&#40;</h3>
-          )}
-        </div>
-      </div>
-    );
-  }
   return (
-    <div>
-      {movies.length !== 0 ? (
-        <div className="cardHolder-body">
-          <div className="ch-header">
-            <h2>{header}</h2>
-            {subTitle && <p>{subTitle}</p>}
-          </div>
-          <div className="cards">
-            {movies.map((movie) => (
-              <Card key={movie.id} movie={movie} movies={movies} />
-            ))}
-          </div>
+    <div className="cardHolder-body">
+      <div className="ch-header">
+        <h2>{header}</h2>
+        {subTitle && <p>{subTitle}</p>}
+      </div>
+
+      {!movies || movies.length <= 0 ? (
+        <div className="error">
+          {errorMessage ? <h3>{errorMessage}</h3> : <Spinner />}
         </div>
-      ) : null}
+      ) : (
+        <div className="cards">
+          {movies.map((movie) => (
+            <Card key={movie.id} movie={movie} movies={movies} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
