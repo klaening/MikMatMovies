@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import { ToastContainer } from "react-toastify";
 
@@ -7,23 +7,22 @@ import "./Components/Global.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 //Imported components
-import Nav from "./Components/Nav";
-import Favourites from "./Components/Favourites/Favourites";
-import StartSite from "./Components/StartSite";
-import ItemDetails from "./Components/ItemDetails/ItemDetails";
-import SearchResult from "./Components/Search/SearchResult";
+import Nav from "./Components/Nav/Nav";
+import Favourites from "./Pages/Favourites/Favourites";
+import Movies from "./Pages/Movies/Movies";
+import ItemDetails from "./Pages/ItemDetails/ItemDetails";
+import SearchResult from "./Pages/Search/SearchResult";
 
 //Footer
 import Footer from "./Components/Footer/Footer";
 import About from "./Components/FooterPages/About/About";
 import ContactUs from "./Components/FooterPages/ContactUs/ContactUs";
 import JobOffers from "./Components/FooterPages/JobOffers/JobOffers";
-import TVSeries from "./Components/TVSeries/TVSeries";
+import TVSeries from "./Pages/TVSeries/TVSeries";
 
 function App() {
   const [movieResult, setMovieResult] = useState([]);
   const [seriesResult, setSeriesResult] = useState([]);
-  //   useEffect(() => {}, [movieResult]);
 
   return (
     <Router>
@@ -34,8 +33,10 @@ function App() {
         />
         <div className="main_content">
           <Switch>
-            <Route path="/" exact component={StartSite} />
-            <Route path="/movies" exact component={StartSite} />
+            <Route path="/" exact component={Movies} />
+
+            {/* NavBar Pages */}
+            <Route path="/movies" exact component={Movies} />
             <Route path="/tv-series" exact component={TVSeries} />
             <Route path="/favourites" exact component={Favourites} />
             <Route
@@ -48,7 +49,11 @@ function App() {
                 />
               )}
             />
+
+            {/* Item Details */}
             <Route path="/details/:type/:id" component={ItemDetails} />
+
+            {/* Footer Pages */}
             <Route path="/about" component={About}></Route>
             <Route path="/contact-us" component={ContactUs}></Route>
             <Route path="/job-offers" component={JobOffers}></Route>

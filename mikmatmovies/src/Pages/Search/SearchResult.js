@@ -1,5 +1,5 @@
 import React from "react";
-import CardHolder from "../Card/CardHolder";
+import CardHolder from "../../Components/CardHolder/CardHolder";
 
 const SearchResult = ({ SearchResult, seriesSearchResult }) => {
   return (

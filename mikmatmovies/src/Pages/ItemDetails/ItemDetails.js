@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import style from "./ItemDetails.module.css";
-import CardHolder from "../Card/CardHolder";
-import BackToTop from "../BackToTop/BackToTop";
+import CardHolder from "../../Components/CardHolder/CardHolder";
+import BackToTop from "../../Components/BackToTop/BackToTop";
 import { TextContainer } from "../../styles/style";
-import Comments from "../Comments/Comments";
-import HoverRating from "../Imported/HoverRating";
+import Comments from "../../Components/Comments/Comments";
+import HoverRating from "../../Components/Imported/HoverRating";
 
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

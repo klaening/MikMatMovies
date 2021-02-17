@@ -10,7 +10,6 @@ const Comments = (props) => {
   }, [props.movie]);
 
   const getComments = () => {
-    // Hämta listan från ls
     let listLocalStorage = JSON.parse(localStorage.getItem("movieComments"));
 
     if (!listLocalStorage) {
@@ -22,7 +21,6 @@ const Comments = (props) => {
     }
 
     setCommentList(listLocalStorage);
-    // Sortera efter movie id
   };
 
   const saveComments = (e) => {

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import Card from "./Card";
+import Card from "../Card/Card";
 import "./CardHolder.css";
 import "../Global.css";
 

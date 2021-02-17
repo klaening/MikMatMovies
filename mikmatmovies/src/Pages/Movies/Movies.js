@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
-import BackToTop from "./BackToTop/BackToTop";
+import BackToTop from "../../Components/BackToTop/BackToTop";
 
 //Imported Components
 
-import VideoSlider from "./VideoSlider/VideoSlider";
-import CardHolder from "./Card/CardHolder";
+import VideoSlider from "../../Components/VideoSlider/VideoSlider";
+import CardHolder from "../../Components/CardHolder/CardHolder";
 
 //Context
 import {
   TopRatedMoviesProvider,
   UpcomingMoviesProvider,
   PopularMoviesProvider,
-} from "../Context/MovieContext";
+} from "../../Context/MovieContext";
 
 function Start() {
   return (
