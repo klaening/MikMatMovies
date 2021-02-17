@@ -25,7 +25,6 @@ const useStyles = makeStyles({
 });
 
 export default function HoverRating({ movie }) {
-  //   const [hover, setHover] = useState(-1);
   const [value, setValue] = useState(0);
   const name = `${movie.id}-rating`;
   const movieRatings = "movieRatings";

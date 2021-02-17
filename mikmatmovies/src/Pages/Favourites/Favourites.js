@@ -4,22 +4,20 @@ import CardHolder from "../../Components/CardHolder/CardHolder";
 const Favourites = () => {
   const [listMovies, setListMovies] = useState([]);
   const [listSeries, setListSeries] = useState([]);
-  let listOfMovies = [];
-  let listOfSeries = [];
 
   useEffect(() => {
     getFavourites();
   }, [listSeries, listMovies]);
 
-  //Här är listorna som ska uppdateras
-  //Ska göras om till Context
-
   const listName = "likedMovies";
   const getFavourites = () => {
-    let likedMovies = JSON.parse(localStorage.getItem(listName));
+    let listOfMovies = [];
+    let listOfSeries = [];
 
-    if (likedMovies && likedMovies.length > 0) {
-      likedMovies.map((movie) => {
+    let favourites = JSON.parse(localStorage.getItem(listName));
+
+    if (favourites && favourites.length > 0) {
+      favourites.map((movie) => {
         if (movie.type === "movie") {
           listOfMovies.push(movie);
         } else if (movie.type === "series") {
@@ -34,7 +32,6 @@ const Favourites = () => {
 
   return (
     <div>
-      {/* Wrappa children i Providers */}
       <CardHolder
         header="Movies"
         movies={listMovies}

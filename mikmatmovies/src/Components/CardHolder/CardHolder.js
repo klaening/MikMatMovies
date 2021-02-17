@@ -7,18 +7,26 @@ import Spinner from "../Spinners/Spinner";
 
 //Context
 import { MovieContext } from "../../Context/MovieContext";
+import { SeriesContext } from "../../Context/SeriesContext";
 
 function CardHolder({
   header,
   subTitle = null,
+  series = false,
   movies: favourites = null,
   errorMessage = null,
 }) {
-  let movies = useContext(MovieContext);
-  //En likadan fast för Favourites
+  let movies = [];
 
-  if (favourites) {
+  const moviesContext = useContext(MovieContext);
+  const seriesContext = useContext(SeriesContext);
+
+  if (series) {
+    movies = seriesContext;
+  } else if (favourites) {
     movies = favourites;
+  } else {
+    movies = moviesContext;
   }
 
   return (

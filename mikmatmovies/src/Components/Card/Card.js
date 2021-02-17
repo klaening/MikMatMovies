@@ -35,9 +35,6 @@ const Card = ({ movie }) => {
       storage.removeLiked(listName, movie);
       toast.error(`"${movieName}" was removed from favourites!`);
     }
-
-    //Använda Context för att uppdatera listan av Movies i Favourites
-    //setMovieList(newList);
   };
 
   const year = () => {
