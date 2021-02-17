@@ -47,7 +47,11 @@ const CardOverlay = (props) => {
         </div>
 
         {messageClicked && (
-          <QuickComment movie={props.movie} messageClicked={messageClicked} />
+          <QuickComment
+            movie={props.movie}
+            messageClicked={messageClicked}
+            toggleMessage={toggleMessage}
+          />
         )}
 
         <div className={style.rating}>

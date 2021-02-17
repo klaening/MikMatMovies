@@ -31,10 +31,11 @@ const QuickComment = (props) => {
     listLocalStorage.push(commentObject);
 
     setComment("");
-
     localStorage.setItem("movieComments", JSON.stringify(listLocalStorage));
 
     toast.info(`You commented on "${movieName}"!`);
+
+    props.toggleMessage();
   };
 
   return (
@@ -56,9 +57,11 @@ const QuickComment = (props) => {
           type="reset"
         ></textarea>
         <div className="submit_div">
-          <button type="submit" id="submit_button">
-            <i id="comment_close" className="fas fa-paper-plane"></i>
-          </button>
+          {comment.length > 0 && (
+            <button type="submit" id="submit_button">
+              <i id="comment_close" className="fas fa-paper-plane"></i>
+            </button>
+          )}
         </div>
       </form>
     </div>

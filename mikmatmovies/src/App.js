@@ -15,9 +15,9 @@ import SearchResult from "./Pages/Search/SearchResult";
 
 //Footer
 import Footer from "./Components/Footer/Footer";
-import About from "./Components/FooterPages/About/About";
-import ContactUs from "./Components/FooterPages/ContactUs/ContactUs";
-import JobOffers from "./Components/FooterPages/JobOffers/JobOffers";
+import About from "./Pages/About/About";
+import ContactUs from "./Pages/ContactUs/ContactUs";
+import JobOffers from "./Pages/JobOffers/JobOffers";
 import TVSeries from "./Pages/TVSeries/TVSeries";
 
 function App() {
