@@ -7,7 +7,7 @@ const Favourites = () => {
 
   useEffect(() => {
     getFavourites();
-  }, [listSeries, listMovies]);
+  }, []);
 
   const listName = "likedMovies";
   const getFavourites = () => {
