@@ -20,6 +20,8 @@ import ContactUs from "./Pages/ContactUs/ContactUs";
 import JobOffers from "./Pages/JobOffers/JobOffers";
 import TVSeries from "./Pages/TVSeries/TVSeries";
 
+import { LikedProvider } from "./Context/LikedContext";
+
 function App() {
   const [movieResult, setMovieResult] = useState([]);
   const [seriesResult, setSeriesResult] = useState([]);
@@ -37,21 +39,23 @@ function App() {
           <Switch>
             <Route path="/" exact component={Movies} />
 
-            {/* NavBar Pages */}
-            <Route path="/movies" exact component={Movies} />
-            <Route path="/tv-series" exact component={TVSeries} />
-            <Route path="/favourites" exact component={Favourites} />
-            <Route
-              path="/search"
-              component={() => (
-                <SearchResult
-                  header="search results"
-                  SearchResult={movieResult}
-                  seriesSearchResult={seriesResult}
-                  searchString={searchString}
-                />
-              )}
-            />
+            <LikedProvider>
+              {/* NavBar Pages */}
+              <Route path="/movies" exact component={Movies} />
+              <Route path="/tv-series" exact component={TVSeries} />
+              <Route path="/favourites" exact component={Favourites} />
+              <Route
+                path="/search"
+                component={() => (
+                  <SearchResult
+                    header="search results"
+                    SearchResult={movieResult}
+                    seriesSearchResult={seriesResult}
+                    searchString={searchString}
+                  />
+                )}
+              />
+            </LikedProvider>
 
             {/* Item Details */}
             <Route path="/details/:type/:id" component={ItemDetails} />

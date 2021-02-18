@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import CardOverlay from "./CardOverlay.js";
 import style from "./Card.module.css";
 import "../Global.css";
@@ -7,14 +7,17 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import storage from "../../Services/storageService";
+import { LikedContext } from "../../Context/LikedContext";
 
 const Card = ({ movie }) => {
+  //   const [liked, setLiked] = useContext(LikedContext);
   const [liked, setLiked] = useState(false);
   const path = "https://image.tmdb.org/t/p/original";
   const listName = "likedMovies";
 
   useEffect(() => {
     storage.getLiked(listName, movie, setLiked);
+    //  setUpdate(true);
   }, [liked]);
 
   let movieName = "";
