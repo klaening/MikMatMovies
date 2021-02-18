@@ -39,9 +39,9 @@ const Favourites = () => {
       />
 
       <CardHolder
-        header="Series"
+        header="TV-series"
         movies={listSeries}
-        errorMessage="You currently have no favourite TV-shows"
+        errorMessage="You currently have no favourite TV-series"
       />
     </div>
   );
