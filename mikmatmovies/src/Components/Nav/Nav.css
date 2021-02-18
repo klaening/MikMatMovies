@@ -6,6 +6,14 @@ nav {
   background-color: var(--bg-navbar);
 }
 
+.pages {
+  padding-left: 15vw;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 10px;
+}
+
 ul {
   padding: 0 4vw;
   width: 100%;

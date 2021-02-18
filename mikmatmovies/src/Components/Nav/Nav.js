@@ -146,6 +146,28 @@ function Nav({ setMovieResult, setSeriesResult, setSearchString }) {
             <input type="submit" value="Search" className="search-btn" />
           </form>
         </div>
+        <div className="pages">
+          <Link smooth to="/#upcoming">
+            <li>
+              <p className="triangle"></p>
+              Upcoming
+            </li>
+          </Link>
+
+          <Link smooth to="/#popular">
+            <li>
+              <p className="triangle"></p>
+              Popular
+            </li>
+          </Link>
+
+          <Link smooth to="/#toprated">
+            <li>
+              <p className="triangle"></p>
+              Top-Rated
+            </li>
+          </Link>
+        </div>
       </nav>
     </div>
   );
