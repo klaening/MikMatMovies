@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import BackToTop from "../../Components/BackToTop/BackToTop";
 
 //Imported Components
@@ -13,7 +13,7 @@ import {
   PopularMoviesProvider,
 } from "../../Context/MovieContext";
 
-function Start() {
+function Movies() {
   return (
     <div>
       <UpcomingMoviesProvider>
@@ -39,4 +39,4 @@ function Start() {
   );
 }
 
-export default Start;
+export default Movies;

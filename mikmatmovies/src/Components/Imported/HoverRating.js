@@ -65,9 +65,9 @@ export default function HoverRating({ movie }) {
 
     if (!newValue) {
       response.splice(index, 1);
-      toast(`You removed rating for "${movie.title}"`);
+      toast.warning(`You removed rating for "${movie.title}"`);
     } else {
-      toast(`You gave "${movie.title}" ${newValue} stars!`);
+      toast.warning(`You gave "${movie.title}" ${newValue} stars!`);
     }
 
     localStorage.setItem(movieRatings, JSON.stringify(response));

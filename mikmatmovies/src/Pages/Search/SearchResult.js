@@ -1,6 +1,7 @@
 import React from "react";
 import CardHolder from "../../Components/CardHolder/CardHolder";
 import { HashLink as Link } from "react-router-hash-link";
+import BackToTop from "../../Components/BackToTop/BackToTop";
 
 const SearchResult = ({ SearchResult, seriesSearchResult, searchString }) => {
   return (
@@ -21,6 +22,7 @@ const SearchResult = ({ SearchResult, seriesSearchResult, searchString }) => {
           movies={seriesSearchResult}
         />
       </div>
+      <BackToTop target="/search/#top" />
     </div>
   );
 };
