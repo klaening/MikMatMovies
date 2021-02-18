@@ -7,7 +7,7 @@ const SearchResult = ({ SearchResult, seriesSearchResult, searchString }) => {
     <div>
       <h2>Search results for "{searchString}"</h2>
       <Link smooth to="#TVSERIES">
-        Tv-Series
+        Tv-series
       </Link>
       <CardHolder
         header="Movies"
@@ -16,7 +16,7 @@ const SearchResult = ({ SearchResult, seriesSearchResult, searchString }) => {
       />
       <div id="TVSERIES">
         <CardHolder
-          header="Series"
+          header="TV-series"
           subTitle={`Results: ${seriesSearchResult.length}`}
           movies={seriesSearchResult}
         />
