@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
-import "./VideoSlider.css";
+import "./videoSlider.css";
 import "../Global.css";
 
 import Spinner from "../Spinners/Spinner";
